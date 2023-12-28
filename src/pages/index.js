@@ -24,6 +24,10 @@ import Percentation from "../assets/percentation.svg"
 import Layout from "../components/layout";
 
 
+import Shield from "../assets/shield.svg"
+import Key from "../assets/key,svg"
+import Contact from "../assets/contact.svg"
+import Video from "../assets/video.svg"
 
 const IndexPage = () => {
   return (
@@ -71,13 +75,57 @@ const IndexPage = () => {
       <hr />
       <section>
         <h2>
-          
+          Our services for <br />
+          your cyber security
         </h2>
-        <div>
           <div>
-            <img src="" alt="" />
+            <Shield />
+            <h3>
+            Cloud Security
+            </h3>
+              <p>
+              We help you secure your AWS and GCP cloud while <br />
+              automating your cloud security using terraform.
+              </p>
           </div>
           <div>
+            <Key />
+            <h3>
+            VAPT
+            </h3>
+              <p>
+              We uncover and fix security vulnerabilities of mobile <br />
+              and web, while providing solutions to mitigate risk.
+              </p>
+          </div>
+          <div>
+            <Contact />
+            <h3>
+            Security Training
+            </h3>
+              <p>
+              Equip your team with the knowledge and skills to<br />
+              safeguard company data and applications.
+              </p>
+          </div>
+          <div>
+            <Video />
+            <h3>
+            Security Content Creation
+            </h3>
+              <p>
+              We craft engaging security demos, insightful blogs, and <br/>
+              ractical tutorials for our clients.
+              </p>
+          </div>
+      </section>
+
+      <section>
+          <div>
+           <div>
+             <img src="" alt="" />
+            </div>
+           <div>
             <h2>Alexander</h2>
             <p>Product Marketeer Growth, Twillio</p>
           </div>
