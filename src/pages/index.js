@@ -14,7 +14,6 @@ const IndexPage = () => {
           We help companies <br />
           scale while being secure
         </h2>
-
         <p>
           Hi, we’re a cyber security and devops agency which helps fast paced
           startups scale. ada berubah
@@ -29,7 +28,6 @@ const IndexPage = () => {
 
 
       <section>
-
         <div>
           <div>
             <img src="" alt="" />
