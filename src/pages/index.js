@@ -11,7 +11,7 @@ const IndexPage = () => {
 
         <p>
           Hi, we’re a cyber security and devops agency which helps fast paced
-          startups scale.
+          startups scale. ada berubah
         </p>
         <button>
         Book a Call
