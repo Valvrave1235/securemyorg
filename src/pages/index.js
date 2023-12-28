@@ -9,7 +9,10 @@ import LogoElastic from "../assets/logo_elastic.svg"
 
 import LogoFramer from "../assets/logo_framer.svg"
 import LogoPipedrive from "../assets/logo_pipedrive.svg"
-
+import LogoGitlab from "../assets/logo_gitlab.svg"
+import LogoMonday from "../assets/logo_monday.svg"
+import LogoBooking from "../assets/logo_booking.svg"
+import LogoDescript from "../assets/logo_descript.svg"
 
 
 
@@ -37,7 +40,9 @@ const IndexPage = () => {
           You’re  in safe hands, some of the <br /> 
           companies that have trusted us
         </h2>
-        <LogoElastic /> <Rocket /> <Rocket /> <LogoFramer /> <LogoPipedrive />
+        <LogoElastic /> <LogoFramer /> <LogoPipedrive /> <LogoGitlab /> <LogoMonday />
+
+
       </section>
 
       <section>
