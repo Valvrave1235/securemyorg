@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image"
-
+import '../styles/global.css'
 
 
 import bgGreen from "../images/bg-green.png"
@@ -18,8 +18,8 @@ import LogoDescript from "../assets/logo_descript.svg"
 
 const IndexPage = () => {
   return (
-    <main>
-      <section className="flex flex-col gap-4 bg-stone-950">
+    <main className="bg-stone-200">
+      <section className="flex flex-col gap-4 bg-stone-300">
         <h2>
           We help companies <br />
           scale while being secure
