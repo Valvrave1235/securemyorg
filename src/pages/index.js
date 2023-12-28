@@ -1,4 +1,6 @@
 import * as React from "react";
+import { StaticImage } from "gatsby-plugin-image"
+import bgGreen from "../images/bg-green.png"
 
 const IndexPage = () => {
   return (
@@ -14,8 +16,9 @@ const IndexPage = () => {
           startups scale. ada berubah
         </p>
         <button>
-        Book a Call
+          Book a Call
         </button>
+        <StaticImage src={bgGreen} alt="A dinosaur" />
       </div>
       <p></p>
     </main>
