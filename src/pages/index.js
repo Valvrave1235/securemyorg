@@ -21,11 +21,13 @@ import View from "../assets/view.svg"
 import Follow from "../assets/follow.svg"
 import Duration from "../assets/duration.svg"
 import Percentation from "../assets/percentation.svg"
+import Layout from "../components/layout";
+
 
 
 const IndexPage = () => {
   return (
-    <main className="bg-stone-200">
+    <Layout >
       <section className="flex flex-col gap-4 bg-stone-300">
         <h2>
           We help companies <br />
@@ -110,7 +112,7 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
-    </main>
+    </Layout>
   );
 };
 
