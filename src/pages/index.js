@@ -23,7 +23,7 @@ const IndexPage = () => {
           <Rocket />
           Book a Call
         </button>
-        <StaticImage src={bgGreen} alt="A dinosaur" />
+        <StaticImage src={`${bgGreen}`} alt="A dinosaur" />
       </section>
       <hr />
 
