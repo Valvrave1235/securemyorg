@@ -5,6 +5,13 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import bgGreen from "../images/bg-green.png"
 import Rocket from "../assets/rocket.svg"
+import LogoElastic from "../assets/logo_elastic.svg"
+
+import LogoFramer from "../assets/logo_framer.svg"
+import LogoPipedrive from "../assets/logo_pipedrive.svg"
+
+
+
 
 const IndexPage = () => {
   return (
@@ -13,7 +20,7 @@ const IndexPage = () => {
         <h2>
           We help companies <br />
           scale while being secure
-        </h2>
+        </h2>  
         <p>
           Hi, we’re a cyber security and devops agency which helps fast paced
           startups scale. ada berubah
@@ -22,10 +29,16 @@ const IndexPage = () => {
           <Rocket />
           Book a Call
         </button>
-        <StaticImage src={`${bgGreen}`} alt="A dinosaur" />
+        <StaticImage src="../images/bg-green.png" alt="A dinosaur" />
       </section>
       <hr />
-
+      <section>
+        <h2>
+          You’re  in safe hands, some of the <br /> 
+          companies that have trusted us
+        </h2>
+        <LogoElastic /> <Rocket /> <Rocket /> <LogoFramer /> <LogoPipedrive />
+      </section>
 
       <section>
         <div>
@@ -58,7 +71,7 @@ const IndexPage = () => {
             <div>
               <h4>Management</h4>
               <h2>How to choose the right management tool for your business</h2>
-              <p>Choosing the right management tool for your business can be a daunting task, especially when you are new to this field. With so many options available in the market, it can be confusing to select the one that fits your requirements. This is where research and understanding come into play. In this blog, we will discuss some key factors that you should consider while choosing the right management tool for your business.</p>
+              <p>Choosing the right manakgement tool for your business can be a daunting task, especially when you are new to this field. With so many options available in the market, it can be confusing to select the one that fits your requirements. This is where research and understanding come into play. In this blog, we will discuss some key factors that you should consider while choosing the right management tool for your business.</p>
             </div>
             <div>
               <p>10th Dec, 2023</p>
