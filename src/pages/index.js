@@ -23,6 +23,7 @@ import Duration from "../assets/duration.svg"
 import Percentation from "../assets/percentation.svg"
 import Layout from "../components/layout";
 
+import { Button } from "@/components/ui/button"
 
 import Shield from "../assets/shield.svg"
 import Key from "../assets/key,svg"
@@ -32,7 +33,7 @@ import Video from "../assets/video.svg"
 const IndexPage = () => {
   return (
     <Layout >
-      <section className="flex flex-col gap-4 bg-stone-300">
+      <section className="flex flex-col gap-4 ">
         <h2>
           We help companies <br />
           scale while being secure
@@ -41,10 +42,10 @@ const IndexPage = () => {
           Hi, we’re a cyber security and devops agency which helps fast paced
           startups scale. ada berubah
         </p>
-        <button>
+        <Button>
           <Rocket />
           Book a Call
-        </button>
+        </Button>
         <StaticImage src="../images/bg-green.png" alt="A dinosaur" />
       </section>
       <hr />
