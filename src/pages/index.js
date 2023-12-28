@@ -6,14 +6,21 @@ import '../styles/global.css'
 import bgGreen from "../images/bg-green.png"
 import Rocket from "../assets/rocket.svg"
 import LogoElastic from "../assets/logo_elastic.svg"
-
 import LogoFramer from "../assets/logo_framer.svg"
 import LogoPipedrive from "../assets/logo_pipedrive.svg"
 import LogoGitlab from "../assets/logo_gitlab.svg"
 import LogoMonday from "../assets/logo_monday.svg"
 import LogoBooking from "../assets/logo_booking.svg"
 import LogoDescript from "../assets/logo_descript.svg"
-
+import LogoDiscord from "../assets/logo_discord.svg"
+import LogoMaze from "../assets/logo_maze.svg"
+import LogoUpwork from "../assets/logo_upwork.svg"
+import LogoWealthsimple from "../assets/logo_wealthsimple.svg"
+import LogoBraze from "../assets/logo_braze.svg"
+import View from "../assets/view.svg"
+import Follow from "../assets/follow.svg"
+import Duration from "../assets/duration.svg"
+import Percentation from "../assets/percentation.svg"
 
 
 const IndexPage = () => {
@@ -40,12 +47,30 @@ const IndexPage = () => {
           You’re  in safe hands, some of the <br /> 
           companies that have trusted us
         </h2>
-        <LogoElastic /> <LogoFramer /> <LogoPipedrive /> <LogoGitlab /> <LogoMonday />
-
-
+      <LogoElastic /> <LogoFramer /> <LogoPipedrive /> <LogoGitlab /> <LogoMonday /> <LogoBooking />
+      <LogoDescript /> <LogoDiscord /> <LogoMaze /> <LogoUpwork /> <LogoWealthsimple /> <LogoBraze />
+        <div>
+          <View />
+          Vulnerabilities Found
+        </div>
+        <div>
+          <Follow />
+          Private Data Saved
+        </div>
+        <div>
+          <Duration />
+          For First Critical Bug
+        </div>
+        <div>
+          <Percentation />
+          Recurring Client
+        </div>
       </section>
-
+      <hr />
       <section>
+        <h2>
+          
+        </h2>
         <div>
           <div>
             <img src="" alt="" />

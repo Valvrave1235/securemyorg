@@ -10,6 +10,10 @@ module.exports = {
         apple: {
           500: '#09DE4C',
         },
+        purple:{
+          400: '#A977FF',
+        }
+
       }
     },
   },
