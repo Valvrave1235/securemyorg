@@ -77,6 +77,12 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+        purple:{
+          400: '#A977FF',
+        }
+          
+      }
+    },
   },
   plugins: [require("tailwindcss-animate")],
 }
