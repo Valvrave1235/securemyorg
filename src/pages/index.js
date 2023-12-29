@@ -37,6 +37,7 @@ import AlexBeluchi from "../images/alex_beluchi.png"
 import Alexander from "../images/alexander.png"
 import Mark from "../images/mark.png"
 import MarthaAndrews from "../images/martha_andrews.png"
+import Arrow from "../assets/arrows.svg"
 
 
 
@@ -288,19 +289,27 @@ const IndexPage = () => {
           insights into our team's performance, which has <br />
           helped us to make better decisions</p>
           <a href="Martha Andrews">Read Case Study</a>
+          <Arrow />
         </div>
-        <section>
+        <div>
           <div>
-            <img src="" alt="" />
+             <img src="../images/alex_buchi.png" alt="A dinosaur" />
           </div>
           <div>
-            <h2>Martha Andrews</h2>
+            <h3>Alex Beluchi</h3>
             <p>Product Marketeer Growth, Twillio</p>
           </div>
-          <p>We have been using Synchrowork for a few months now, and we have already seen a significant improvement in our team productivity. The ability to assign tasks, set deadlines, and track progress has been invaluable to us. We are also really impressed with the collaboration features. The ability to share files, leave comments, and chat with team members in real time has made it much easier for us to work together on projects. We are very happy with the Synchrowork and would highly recommend it to any team that is looking to improve their productivity and efficiency</p>
-        </section>
+          <p>The [team management product name] has been a <br />
+          great investment for our team. It has helped us to <br />
+          improve our communication and collaboration, and <br />
+          it has made it much easier for us to track our <br />
+          progress and meet our deadlines. We are <br />
+          especially impressed with the user interface. It is <br />
+          very easy to use and navigate. We would highly <br />
+          recommend this product to any team looking to <br />
+          improve their productivity and efficiency</p>
+        </div>
       </section>
-
 
       <section>
         <div>
