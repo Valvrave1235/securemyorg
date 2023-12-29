@@ -81,8 +81,6 @@ module.exports = {
           400: '#A977FF',
         }
           
-      }
-    },
-  },
+      },
   plugins: [require("tailwindcss-animate")],
 }
