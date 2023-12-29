@@ -213,7 +213,41 @@ const IndexPage = () => {
           product.</p>
           </div>
           <div>
-            
+            <div>
+            <img src="../images/martha_andrews.png" alt=" A dinosaur" />
+            </div>
+            <div>
+              <h3>Martha Andrews</h3>
+              <p>Product Marketeer Growth, Twillio</p>
+            </div>
+            <p>Since we started using Synchrowork, our team <br />
+            productivity has increased by 20%. The easy-to- <br />
+            use interface and powerful features make it easy <br />
+            for us to manage our tasks, collaborate with each <br />
+            other, and track our progress. We are very happy <br />
+            with the results and would highly recommend this <br />
+            product to other teams.</p>
+          </div>
+          <div>
+            <div>
+            <img src="../images/mark.png" alt="A dinosaur" />
+            </div>
+            <div>
+              <h3>Mark</h3>
+            <p>Product Marketeer Growth, Twillio</p>
+            </div>
+          <p>We have been using the [team management <br />
+          product name] for over a year now, and we love it! <br />
+          It has helped us to improve our team <br />
+          communication and collaboration, and it has made <br />
+          it much easier for us to track our progress and <br />
+          meet our deadlines. We are especially impressed <br />
+          with the task management features. The ability to <br />
+          assign tasks, set due dates, and track progress has <br />
+          been invaluable to us. We would highly recommend <br />
+          the [team management product name] to any team <br />
+          that is looking to improve their productivity and <br />
+          efficiency</p>
           </div>
           <div>
            <div>
@@ -235,6 +269,25 @@ const IndexPage = () => {
           Synchrowork and would highly recommend it to any <br />
           team that is looking to improve their productivity <br />
           and efficiency</p>
+        </div>
+        <div>
+          <div>
+            <img src="../images/martha_andrews.png" alt="A dinosaur" />
+          </div>
+          <div>
+            <h3>Martha Andrews</h3>
+            <p>Product Marketeer Growth, Twillio</p>
+          </div>
+          <p>We have been using the [team management <br />
+          product name] for a few months now, and we are <br />
+          very happy with the results. It has helped us to <br />
+          organize our tasks and projects, and it has made <br />
+          it much easier for us to collaborate with each <br />
+          other. We are also impressed with the reporting <br />
+          features. We are now able to get real-time <br />
+          insights into our team's performance, which has <br />
+          helped us to make better decisions</p>
+          <a href="Martha Andrews">Read Case Study</a>
         </div>
         <section>
           <div>
