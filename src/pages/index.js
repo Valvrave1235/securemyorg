@@ -212,7 +212,7 @@ const IndexPage = () => {
           questions and help us to get the most out of the <br />
           product.</p>
           </div>
-        
+          <dir></dir>
           <div>
            <div>
             <img src="../images/alexander.png" alt="A dinosaur" />
