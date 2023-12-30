@@ -33,6 +33,8 @@ import Number1 from "../assets/number1.svg"
 import Number2 from "../assets/number2.svg"
 import Number3 from "../assets/number3.svg"
 import Client from "../assets/client.svg"
+import Log from "../assets/log.svg"
+import Tabel from "../assets/tabel.svg"
 import AlexBeluchi from "../images/alex_beluchi.png"
 import Alexander from "../images/alexander.png"
 import Mark from "../images/mark.png"
@@ -46,13 +48,13 @@ const IndexPage = () => {
   return (
     <Layout >
       <section className="flex flex-col gap-4 ">
-        <h2>
+        <h2 className="text-6xl font-bold">
           We help companies <br />
           scale while being secure
         </h2>
         <p>
           Hi, we’re a cyber security and devops agency which helps fast paced
-          startups scale. ada berubah
+          startups scale.
         </p>
         <Button>
           <Rocket />
@@ -62,140 +64,169 @@ const IndexPage = () => {
       </section>
       <hr />
       <section>
-        <h2>
+        <h2 className="text-4xl font-bold">
           You’re  in safe hands, some of the <br />
-          companies that have trusted us
+          <span className="text-apple-500">companies</span> that have trusted us
         </h2>
-        <LogoElastic /> <LogoFramer /> <LogoPipedrive /> <LogoGitlab /> <LogoMonday /> <LogoBooking />
-        <LogoDescript /> <LogoDiscord /> <LogoMaze /> <LogoUpwork /> <LogoWealthsimple /> <LogoBraze />
-        <div>
-          <View />
-          Vulnerabilities Found
+        <div className="flex flex-col gap-4">
+          <div className="flex gap-4">
+            <LogoElastic />
+            <LogoFramer />
+            <LogoPipedrive />
+            <LogoGitlab />
+            <LogoMonday />
+            <LogoBooking />
+          </div>
+          <div className="flex gap-4">
+            <LogoDescript />
+            <LogoDiscord />
+            <LogoMaze />
+            <LogoUpwork />
+            <LogoWealthsimple />
+            <LogoBraze />
+          </div>
         </div>
-        <div>
-          <Follow />
-          Private Data Saved
-        </div>
-        <div>
-          <Duration />
-          For First Critical Bug
-        </div>
-        <div>
-          <Percentation />
-          Recurring Client
+        <div className="flex flex-col md:flex-row">
+          <div>
+            <View className="w-120 h-120" />
+            {/* Vulnerabilities Found */}
+          </div>
+          <div className="flex px-8 w-120 h-120">
+            <Follow />
+            {/* Private Data Saved */}
+          </div>
+          <div className="flex px-8 w-120 h-120">
+            <Duration />
+            {/* For First Critical Bug */}
+          </div>
+          <div className="flex pX-8 w-120 h-120">
+            <Percentation />
+            {/* Recurring Client */}
+          </div>
         </div>
       </section>
       <hr />
       <section>
-        <h2>
+        <h2 className="text-4xl font-bold">
           Our services for <br />
-          your cyber security
+          your <span className="text-apple-500">cyber security</span>
         </h2>
-        <div>
-          <Shield />
-          <h3>
-            Cloud Security
-          </h3>
-          <p>
-            We help you secure your AWS and GCP cloud while <br />
-            automating your cloud security using terraform.
-          </p>
+        <div className="flex flex-col md:flex-row flex justify-center">
+          <div>
+            <Shield />
+            <h3 className="text-2xl font-bold">
+              Cloud Security
+            </h3>
+            <p>
+              We help you secure your AWS and GCP cloud while <br />
+              automating your cloud security using terraform.
+            </p>
+          </div>
+          <div>
+            <Key />
+            <h3 className="text-2xl font-bold">
+              VAPT
+            </h3>
+            <p>
+              We uncover and fix security vulnerabilities of mobile <br />
+              and web, while providing solutions to mitigate risk.
+            </p>
+          </div>
         </div>
-        <div>
-          <Key />
-          <h3>
-            VAPT
-          </h3>
-          <p>
-            We uncover and fix security vulnerabilities of mobile <br />
-            and web, while providing solutions to mitigate risk.
-          </p>
-        </div>
-        <div>
-          <Contact />
-          <h3>
-            Security Training
-          </h3>
-          <p>
-            Equip your team with the knowledge and skills to<br />
-            safeguard company data and applications.
-          </p>
-        </div>
-        <div>
-          <Video />
-          <h3>
-            Security Content Creation
-          </h3>
-          <p>
-            We craft engaging security demos, insightful blogs, and <br />
-            ractical tutorials for our clients.
-          </p>
+        <div className="flex flex-col md:flex-row flex justify-center">
+          <div>
+            <Contact />
+            <h3 className="text-2xl font-bold">
+              Security Training
+            </h3>
+            <p>
+              Equip your team with the knowledge and skills to<br />
+              safeguard company data and applications.
+            </p>
+          </div>
+          <div>
+            <Video />
+            <h3 className="text-2xl font-bold">
+              Security Content Creation
+            </h3>
+            <p>
+              We craft engaging security demos, insightful blogs, and <br />
+              ractical tutorials for our clients.
+            </p>
+          </div>
         </div>
       </section>
       <section>
-        <h3>
+        <h3 className="text-4xl font-bold">
           The world moves fast, we <br />
           keep pace. Cut through the <br />
-          noise with our process
+          noise with our <span className="text-apple-500">process</span>
         </h3>
-        <ol className="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
-          <li className="flex md:w-full items-center text-blue-600 dark:text-blue-500 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-            <span className="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-              </svg>
-              Personal <span className="hidden sm:inline-flex sm:ms-2">Info</span>
-            </span>
-          </li>
-          <li className="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-            <span className="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-              <span className="me-2">2</span>
-              Account <span className="hidden sm:inline-flex sm:ms-2">Info</span>
-            </span>
-          </li>
-          <li className="flex items-center">
-            <span className="me-2">3</span>
-            Confirmation
-          </li>
-        </ol>
-        <Number1 />
-        <h4>
-          Discover
-        </h4>
-        <p>
-          Starting with the initial phase of getting to know <br />
-          about the project, here we set expectations and <br />
-          what are the tasks that needed to be done for the <br />
-          client.
-        </p>
-        <Number2 />
-        <h4>
-          Start Securing
-        </h4>
-        <p>
-          We start assessing the tasks that need to be done <br />
-          and try to meet the ends by doing the testing/  <br />
-          content.
-        </p>
-        <Number3 />
-        <h4>
-          Report Submission
-        </h4>
-        <p>
-          After the tasks is completed we check with the <br />
-          clients with all the to-do’s and take a sign-off by <br />
-          submitting the final report.
+        <div className="flex">
           <div>
-            <Client />
+            <ol className="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
+              <li className="flex md:w-full items-center text-blue-600 dark:text-blue-500 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
+                <span className="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                  </svg>
+                  Personal <span className="hidden sm:inline-flex sm:ms-2">Info</span>
+                </span>
+              </li>
+              <li className="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
+                <span className="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+                  <span className="me-2">2</span>
+                  Account <span className="hidden sm:inline-flex sm:ms-2">Info</span>
+                </span>
+              </li>
+              <li className="flex items-center">
+                <span className="me-2">3</span>
+                Confirmation
+              </li>
+            </ol>
+            <Number1 />
+            <h4 className="text-apple-500 font-bold">
+              Discover
+            </h4>
+            <p>
+              Starting with the initial phase of getting to know <br />
+              about the project, here we set expectations and <br />
+              what are the tasks that needed to be done for the <br />
+              client.
+            </p>
+            <Number2 />
+            <h4 className="text-apple-500 font-bold">
+              Start Securing
+            </h4>
+            <p>
+              We start assessing the tasks that need to be done <br />
+              and try to meet the ends by doing the testing/  <br />
+              content.
+            </p>
+            <Number3 />
+            <h4 className="text-apple-500 font-bold">
+              Report Submission
+            </h4>
+            <p>
+              After the tasks is completed we check with the <br />
+              clients with all the to-do’s and take a sign-off by <br />
+              submitting the final report.
+            </p>
           </div>
-        </p>
+          <div className="flex flex-col">
+            <Client />        
+            <Log />
+            <Tabel />
+          </div>
+        </div>
       </section>
       <section>
-        <h2>
+        <h2 className="font-bold text-4xl">
           People love us. See what they <br />
-          have to say about us
+          have to <span className="text-apple-500 font-bold">say about us</span>
         </h2>
-        <div>
+        <div className="flex flex-wrap">
+          <div>
           <div>
             <StaticImage src="../images/alex_beluchi.png" alt="alex buchi" />
           </div>
@@ -293,11 +324,10 @@ const IndexPage = () => {
             Read Case Study
             <Arrow />
           </Link>
-
         </div>
         <div>
           <div>
-            <StaticImage src="../images/alex_buchi.png" alt="alex buchi" />
+            <StaticImage src="../images/alex_beluchi.png" alt="alex buchi" />
           </div>
           <div>
             <h3>Alex Beluchi</h3>
@@ -312,9 +342,19 @@ const IndexPage = () => {
             very easy to use and navigate. We would highly <br />
             recommend this product to any team looking to <br />
             improve their productivity and efficiency</p>
+          <Link href="Alex Buchi" className="flex gap-4  items-center justify-center">
+            Read Case Study
+            <Arrow />
+          </Link>
+        </div>
         </div>
       </section>
-
+      <section>
+        <h2 className="text-xl font-bold">
+          We believe in giving back to the society. <br />
+          Check out our <span className="text-apple-500">blogs and articles</span>
+        </h2>
+      </section>
       <section>
         <div>
           <img src="" alt="" />

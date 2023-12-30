@@ -79,7 +79,10 @@ module.exports = {
     },
         purple:{
           400: '#A977FF',
-        }
+        },
+        apple: { 
+        500: '#09DE4C',
+        },
           
       },
   plugins: [require("tailwindcss-animate")],
