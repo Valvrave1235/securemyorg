@@ -216,7 +216,7 @@ const IndexPage = () => {
         </div>
         <div>
           <div>
-            <img src="../images/martha_andrews.png" alt=" A dinosaur" />
+            <StaticImage src="../images/martha_andrews.png" alt=" martha andrews" />
           </div>
           <div>
             <h3>Martha Andrews</h3>
@@ -232,7 +232,7 @@ const IndexPage = () => {
         </div>
         <div>
           <div>
-            <img src="../images/mark.png" alt="A dinosaur" />
+            <StaticImage src="../images/mark.png" alt="mark" />
           </div>
           <div>
             <h3>Mark</h3>
@@ -274,7 +274,7 @@ const IndexPage = () => {
         </div>
         <div>
           <div>
-            <img src="../images/martha_andrews.png" alt="martha andrews" />
+            <StaticImage src="../images/martha_andrews.png" alt="martha andrews" />
           </div>
           <div>
             <h3>Martha Andrews</h3>
@@ -297,7 +297,7 @@ const IndexPage = () => {
         </div>
         <div>
           <div>
-            <img src="../images/alex_buchi.png" alt="alex buchi" />
+            <StaticImage src="../images/alex_buchi.png" alt="alex buchi" />
           </div>
           <div>
             <h3>Alex Beluchi</h3>
