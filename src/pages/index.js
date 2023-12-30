@@ -244,12 +244,11 @@ const IndexPage = () => {
             <CardHeader className="flex flex-row gap-4 ">
               <CardTitle className="flex flex-row gap-4 text-stone-50 ">
                 <StaticImage src="../images/alex_beluchi.png" alt="alex buchi" />
-               <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1">
                   <h3 className="text-xl" >Alex Beluchi</h3>
                   <p className="text-sm text-stone-300">Product Marketeer Growth, Twillio</p>
-               </div>
+                </div>
               </CardTitle>
-             
             </CardHeader>
             <CardContent className="text-stone-50">
               <p>Synchrowork has been a lifesaver for our team. <br />
@@ -263,29 +262,31 @@ const IndexPage = () => {
                 questions and help us to get the most out of the <br />
                 product.</p>
             </CardContent>
-           
           </Card>
-
-          <div>
-            <div>
-              
-
-              <StaticImage src="../images/alex_beluchi.png" alt="alex buchi" />
-            </div>
-            <div>
-              <h3>Alex Beluchi</h3>
-              <p>Product Marketeer Growth, Twillio</p>
-            </div>
-            <p>Synchrowork has been a lifesaver for our team. <br />
-              Before we started using it, we were struggling to <br />
-              keep track of our tasks and deadlines. Now, <br />
-              everything is organized and centralized, and we can <br />
-              easily see what everyone is working on. This has <br />
-              helped us to be more efficient and productive. We <br />
-              are also really impressed with the customer <br />
-              support. They are always quick to respond to our <br />
-              questions and help us to get the most out of the <br />
-              product.</p>
+          <div className="flex flex-wrap gap-8 py-12">
+            <Card className="bg-[#19191B] border-[#343B46]">
+              <CardHeader className="flex flex-row gap-4 ">
+                <CardTitle className="flex flex-row gap-4 text-stone-50 ">
+                  <StaticImage src="../images/alex_beluchi.png" alt="alex buchi" />
+                  <div className="flex flex-col gap-1">
+                    <h3 className="text-xl" >Alex Beluchi</h3>
+                    <p className="text-sm text-stone-300">Product Marketeer Growth, Twillio</p>
+                  </div>
+                </CardTitle>
+                <CardHeader />
+                <CardContent className="text-stone-50">
+                  <p>Synchrowork has been a lifesaver for our team. <br />
+                    Before we started using it, we were struggling to <br />
+                    keep track of our tasks and deadlines. Now, <br />
+                    everything is organized and centralized, and we can <br />
+                    easily see what everyone is working on. This has <br />
+                    helped us to be more efficient and productive. We <br />
+                    are also really impressed with the customer <br />
+                    support. They are always quick to respond to our <br />
+                    questions and help us to get the most out of the <br />
+                    product.</p>
+                </CardContent>
+            </Card>
           </div>
           <div>
             <div>
