@@ -61,29 +61,31 @@ import {
 const IndexPage = () => {
   return (
     <Layout >
-      <section className="flex flex-col gap-4 ">
-        <h2 className="text-6xl font-bold">
-          We help companies
-          scale while being secure
-        </h2>
-        <p>
-          Hi, we’re a cyber security and devops agency which helps fast paced
-          startups scale.
-        </p>
-        <Button>
-          <Rocket />
-          Book a Call
-        </Button>
-        <StaticImage src="../images/bg-green.png" alt="A dinosaur" />
+      <section className="flex flex-col gap-4 relative py-52 pt-[15rem] text-center justify-center items-center">
+        <div className="z-10 relative flex flex-col justify-center items-center gap-4">
+          <h2 className="text-6xl font-bold w-10/12">
+            We help companies
+            scale while being secure
+          </h2>
+          <p className="mt-4">
+            Hi, we’re a cyber security and devops agency which helps fast paced
+            startups scale.
+          </p>
+          <Button className="mt-8 bg-stone-50 text-stone-950  rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-green-600 my-12">
+            <Rocket className="w-6 h-8" />
+            Book a Call
+          </Button>
+        </div>
+        <StaticImage src="../images/bg-green.png" className="absolute top-0 z-0" alt="A dinosaur" />
       </section>
-      <hr />
-      <section>
+      <hr className=" border-white border-b-4"/>
+      <section className="py-12 flex flex-col gap-14">
         <h2 className="text-4xl font-bold">
-          You’re  in safe hands, some of the
+          You’re  in safe hands, some of the <br />
           <span className="text-[#09DE4C]">companies</span> that have trusted us
         </h2>
-        <div className="flex flex-col gap-4">
-          <div className="flex gap-4">
+        <div className="flex flex-col gap-8">
+          <div className="flex gap-8">
             <LogoElastic />
             <LogoFramer />
             <LogoPipedrive />
@@ -91,7 +93,7 @@ const IndexPage = () => {
             <LogoMonday />
             <LogoBooking />
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-8">
             <LogoDescript />
             <LogoDiscord />
             <LogoMaze />
@@ -100,74 +102,76 @@ const IndexPage = () => {
             <LogoBraze />
           </div>
         </div>
-        <div className="flex flex-col md:flex-row">
-          <div>
-            <View className="w-120 h-120" />
+        <div className="flex flex-col md:flex-row pt-24">
+          <div className="flex pr-12 w-120 h-120">
+            <View className="w-120 h-120 " />
             {/* Vulnerabilities Found */}
           </div>
-          <div className="flex px-8 w-120 h-120">
+          <div className="flex px-12 w-120 h-120">
             <Follow />
             {/* Private Data Saved */}
           </div>
-          <div className="flex px-8 w-120 h-120">
+          <div className="flex px-12 w-120 h-120">
             <Duration />
             {/* For First Critical Bug */}
           </div>
-          <div className="flex pX-8 w-120 h-120">
+          <div className="flex px-12 w-120 h-120">
             <Percentation />
             {/* Recurring Client */}
           </div>
         </div>
       </section>
-      <hr />
-      <section>
-        <h2 className="text-4xl font-bold">
-          Our services for
+      <hr className=" border-white border-b-4"/>
+      <section className="bg-transparent text-gray-100 p-8 py-12 flex flex-col gap-4">
+        <h2 className="text-4xl font-extrabold w-8/12 py-8">
+          Our services for <br />
           your <span className="text-[#09DE4C]">cyber security</span>
         </h2>
-        <div className="flex flex-col md:flex-row flex justify-center">
-          <div>
-            <Shield />
-            <h3 className="text-2xl font-bold">
-              Cloud Security
-            </h3>
-            <p>
-              We help you secure your AWS and GCP cloud while
-              automating your cloud security using terraform.
-            </p>
+
+        <div className="grid grid-cols-2 gap-4 text-center">
+            <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
+              <Shield className="w-full h-auto" />
+              <h3 className="text-2xl font-bold">
+                Cloud Security
+              </h3>
+              <p>
+                We help you secure your AWS and GCP cloud while
+                automating your cloud security using terraform.
+              </p>
+            </div>
+          <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
+            <Key className="w-full h-auto" />
+              <h3 className="text-2xl font-bold">
+                VAPT
+              </h3>
+              <p>
+                We uncover and fix security vulnerabilities of mobile
+                and web, while providing solutions to mitigate risk.
+              </p>
+            </div>
+  
+  
+          <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
+            <Contact className="w-full h-auto" />
+              <h3 className="text-2xl font-bold">
+                Security Training
+              </h3>
+              <p>
+                Equip your team with the knowledge and skills to
+                safeguard company data and applications.
+              </p>
+            </div>
+          <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
+            <Video className="w-full h-auto" />
+              <h3 className="text-2xl font-bold">
+                Security Content Creation
+              </h3>
+              <p>
+                We craft engaging security demos, insightful blogs, and
+                ractical tutorials for our clients.
+              </p>
           </div>
-          <div>
-            <Key />
-            <h3 className="text-2xl font-bold">
-              VAPT
-            </h3>
-            <p>
-              We uncover and fix security vulnerabilities of mobile
-              and web, while providing solutions to mitigate risk.
-            </p>
-          </div>
-        </div>
-        <div className="flex flex-col md:flex-row flex justify-center">
-          <div>
-            <Contact />
-            <h3 className="text-2xl font-bold">
-              Security Training
-            </h3>
-            <p>
-              Equip your team with the knowledge and skills to
-              safeguard company data and applications.
-            </p>
-          </div>
-          <div>
-            <Video />
-            <h3 className="text-2xl font-bold">
-              Security Content Creation
-            </h3>
-            <p>
-              We craft engaging security demos, insightful blogs, and
-              ractical tutorials for our clients.
-            </p>
-          </div>
+          
         </div>
       </section>
       <section>
