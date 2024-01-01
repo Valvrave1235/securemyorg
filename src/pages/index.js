@@ -82,7 +82,7 @@ const IndexPage = () => {
         </div>
         <StaticImage src="../images/bg-green.png" className="absolute top-0 z-0" alt="A dinosaur" />
       </section>
-      <hr className=" border-white border-b-4"/>
+      <hr className=" border-white border-b-4" />
       <section className="py-12 flex flex-col gap-14">
         <h2 className="text-4xl font-bold">
           You’re  in safe hands, some of the <br />
@@ -125,7 +125,7 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
-      <hr className=" border-white border-b-4"/>
+      <hr className=" border-white border-b-4" />
       <section className="bg-transparent text-gray-100 p-8 py-12 flex flex-col gap-4">
         <h2 className="text-4xl font-extrabold w-8/12 py-8">
           Our services for <br />
@@ -133,112 +133,107 @@ const IndexPage = () => {
         </h2>
 
         <div className="grid grid-cols-2 gap-4 text-center">
-            <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-              <Shield className="w-full h-auto" />
-              <h3 className="text-2xl font-bold">
-                Cloud Security
-              </h3>
-              <p>
-                We help you secure your AWS and GCP cloud while
-                automating your cloud security using terraform.
-              </p>
-            </div>
+          <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
+            <Shield className="w-full h-auto" />
+            <h3 className="text-2xl font-bold">
+              Cloud Security
+            </h3>
+            <p>
+              We help you secure your AWS and GCP cloud while
+              automating your cloud security using terraform.
+            </p>
+          </div>
           <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
             <Key className="w-full h-auto" />
-              <h3 className="text-2xl font-bold">
-                VAPT
-              </h3>
-              <p>
-                We uncover and fix security vulnerabilities of mobile
-                and web, while providing solutions to mitigate risk.
-              </p>
-            </div>
-  
-  
+            <h3 className="text-2xl font-bold">
+              VAPT
+            </h3>
+            <p>
+              We uncover and fix security vulnerabilities of mobile
+              and web, while providing solutions to mitigate risk.
+            </p>
+          </div>
+
+
           <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
             <Contact className="w-full h-auto" />
-              <h3 className="text-2xl font-bold">
-                Security Training
-              </h3>
-              <p>
-                Equip your team with the knowledge and skills to
-                safeguard company data and applications.
-              </p>
-            </div>
+            <h3 className="text-2xl font-bold">
+              Security Training
+            </h3>
+            <p>
+              Equip your team with the knowledge and skills to
+              safeguard company data and applications.
+            </p>
+          </div>
           <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
             <Video className="w-full h-auto" />
-              <h3 className="text-2xl font-bold">
-                Security Content Creation
-              </h3>
-              <p>
-                We craft engaging security demos, insightful blogs, and
-                ractical tutorials for our clients.
-              </p>
+            <h3 className="text-2xl font-bold">
+              Security Content Creation
+            </h3>
+            <p>
+              We craft engaging security demos, insightful blogs, and
+              ractical tutorials for our clients.
+            </p>
           </div>
-          
+
         </div>
       </section>
-      <section>
+      <section className="py-12 flex flex-col gap-4">
         <h3 className="text-4xl font-bold">
           The world moves fast, we
           keep pace. Cut through the
           noise with our <span className="text-[#09DE4C]">process</span>
         </h3>
-        <div className="flex">
-          <div>
-            <ol className="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
-              <li className="flex md:w-full items-center text-blue-600 dark:text-blue-500 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-                <span className="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  Personal <span className="hidden sm:inline-flex sm:ms-2">Info</span>
-                </span>
-              </li>
-              <li className="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-                <span className="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                  <span className="me-2">2</span>
-                  Account <span className="hidden sm:inline-flex sm:ms-2">Info</span>
-                </span>
-              </li>
-              <li className="flex items-center">
-                <span className="me-2">3</span>
-                Confirmation
-              </li>
-            </ol>
-            <Number1 />
-            <h4 className="text-[#09DE4C] font-bold">
-              Discover
-            </h4>
-            <p>
-              Starting with the initial phase of getting to know
-              about the project, here we set expectations and
-              what are the tasks that needed to be done for the
-              client.
-            </p>
-            <Number2 />
-            <h4 className="text-[#09DE4C] font-bold">
-              Start Securing
-            </h4>
-            <p>
-              We start assessing the tasks that need to be done
-              and try to meet the ends by doing the testing/
-              content.
-            </p>
-            <Number3 />
-            <h4 className="text-[#09DE4C] font-bold">
-              Report Submission
-            </h4>
-            <p>
-              After the tasks is completed we check with the
-              clients with all the to-do’s and take a sign-off by
-              submitting the final report.
-            </p>
+        <div className="flex gap-4">
+          <div className="flex flex-col gap-12 py-12 ">
+
+<div className="flex gap-4">
+              <Number1  className="w-1/2"/>
+              <div className="flex flex-col w-12/12 ">
+                <h4 className="text-[#09DE4C] font-bold">
+                  Discover
+                </h4>
+                <p>
+                  Starting with the initial phase of getting to know
+                  about the project, here we set expectations and
+                  what are the tasks that needed to be done for the
+                  client.
+                </p>
+              </div>
+</div>
+            <div>
+              <Number2 />
+              <h4 className="text-[#09DE4C] font-bold">
+                Start Securing
+              </h4>
+              <p>
+                We start assessing the tasks that need to be done
+                and try to meet the ends by doing the testing/
+                content.
+              </p>
+            </div>
+           <div>
+              <Number3 />
+              <h4 className="text-[#09DE4C] font-bold">
+                Report Submission
+              </h4>
+              <p>
+                After the tasks is completed we check with the
+                clients with all the to-do’s and take a sign-off by
+                submitting the final report.
+              </p>
+           </div>
           </div>
-          <div className="flex flex-col">
-            <Client />
-            <Log />
-            <Tabel />
+          <div className="flex gap-4 flex-col">
+            <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
+              <Client className="w-full h-auto" />
+            </div>
+            <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
+              <Log />
+            </div>
+            <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
+              <Tabel />
+            </div>
           </div>
         </div>
       </section>
@@ -284,12 +279,12 @@ const IndexPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-stone-50">
-              <p>Since we started using Synchrowork, our team 
+              <p>Since we started using Synchrowork, our team
                 productivity has increased by 20%. The easy-to-
-                use interface and powerful features make it easy 
-                for us to manage our tasks, collaborate with each 
-                other, and track our progress. We are very happy 
-                with the results and would highly recommend this 
+                use interface and powerful features make it easy
+                for us to manage our tasks, collaborate with each
+                other, and track our progress. We are very happy
+                with the results and would highly recommend this
                 product to other teams</p>
             </CardContent>
           </Card>
@@ -307,15 +302,15 @@ const IndexPage = () => {
             <CardContent className="text-stone-50">
               <p>We have been using the [team management
                 product name] for over a year now, and we love it!
-                It has helped us to improve our team 
-                communication and collaboration, and it has made 
-                it much easier for us to track our progress and 
-                meet our deadlines. We are especially impressed 
-                with the task management features. The ability to 
-                assign tasks, set due dates, and track progress has 
-                been invaluable to us. We would highly recommend 
-                the [team management product name] to any team 
-                that is looking to improve their productivity and 
+                It has helped us to improve our team
+                communication and collaboration, and it has made
+                it much easier for us to track our progress and
+                meet our deadlines. We are especially impressed
+                with the task management features. The ability to
+                assign tasks, set due dates, and track progress has
+                been invaluable to us. We would highly recommend
+                the [team management product name] to any team
+                that is looking to improve their productivity and
                 efficiency</p>
             </CardContent>
           </Card>
@@ -357,14 +352,14 @@ const IndexPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-stone-50">
-              <p>We have been using the [team management 
-                product name] for a few months now, and we are 
-                very happy with the results. It has helped us to 
-                organize our tasks and projects, and it has made 
-                it much easier for us to collaborate with each 
-                other. We are also impressed with the reporting 
-                features. We are now able to get real-time 
-                insights into our team's performance, which has 
+              <p>We have been using the [team management
+                product name] for a few months now, and we are
+                very happy with the results. It has helped us to
+                organize our tasks and projects, and it has made
+                it much easier for us to collaborate with each
+                other. We are also impressed with the reporting
+                features. We are now able to get real-time
+                insights into our team's performance, which has
                 helped us to make better decisions</p>
               <Link href="Martha Andrews" className="flex gap-4  items-center justify-center">
                 Read Case Study
@@ -384,14 +379,14 @@ const IndexPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-stone-50">
-              <p>The [team management product name] has been a 
-                great investment for our team. It has helped us to 
-                improve our communication and collaboration, and 
-                it has made it much easier for us to track our 
-                progress and meet our deadlines. We are 
-                especially impressed with the user interface. It is 
-                very easy to use and navigate. We would highly 
-                recommend this product to any team looking to 
+              <p>The [team management product name] has been a
+                great investment for our team. It has helped us to
+                improve our communication and collaboration, and
+                it has made it much easier for us to track our
+                progress and meet our deadlines. We are
+                especially impressed with the user interface. It is
+                very easy to use and navigate. We would highly
+                recommend this product to any team looking to
                 improve their productivity and efficiency</p>
               <Link href="Alex Beluchi" className="flex gap-4  items-center justify-center">
                 Read Case Study
@@ -529,9 +524,9 @@ const IndexPage = () => {
       </section>
       <section className="py-12">
         <h3 className="text-3xl font-bold capitalize ">faq</h3>
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="w-full py-8">
           <AccordionItem value="item-1">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+            <AccordionTrigger>Can you look at our Web3 App ?</AccordionTrigger>
             <AccordionContent>
               Yes. It adheres to the WAI-ARIA design pattern.
             </AccordionContent>
