@@ -40,6 +40,10 @@ import Alexander from "../images/alexander.png"
 import Mark from "../images/mark.png"
 import MarthaAndrews from "../images/martha_andrews.png"
 import Arrow from "../assets/arrow.svg"
+import ArrowRight from "../assets/arrow_right.svg"
+import Agency from "../images/agency.png"
+import Freelance from "../images/freelance.png"
+import Management from "../images/management.png"
 import { Link } from "gatsby";
 import {
   Card,
