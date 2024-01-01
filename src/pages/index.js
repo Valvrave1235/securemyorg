@@ -44,6 +44,10 @@ import ArrowRight from "../assets/arrow_right.svg"
 import Agency from "../images/agency.png"
 import Freelance from "../images/freelance.png"
 import Management from "../images/management.png"
+import RightDisable from "../assets/right_disable.svg"
+import RightEnable from "../assets/right_enable.svg"
+import LeftDisable from "../assets/left_disable.svg"
+import LeftEnable from "../assets/left_enable.svg"
 import { Link } from "gatsby";
 import {
   Card,
@@ -403,23 +407,20 @@ const IndexPage = () => {
           We believe in giving back to the society.
           Check out our <span className="text-[#09DE4C]">blogs and articles</span>
         </h2>
-      </section>
-      <section>
         <div>
-          <img src="" alt="" />
-          <div>
-            <div>
-              <h4>Management</h4>
-              <h2>How to choose the right management tool for your business</h2>
-              <p>Choosing the right manakgement tool for your business can be a daunting task, especially when you are new to this field. With so many options available in the market, it can be confusing to select the one that fits your requirements. This is where research and understanding come into play. In this blog, we will discuss some key factors that you should consider while choosing the right management tool for your business.</p>
-            </div>
-            <div>
-              <p>10th Dec, 2023</p>
-              <a href="#">Read More</a>
-            </div>
-          </div>
+          <button>
+            <LeftDisable />
+            <LeftEnable />
+          </button>
+        </div>
+        <div>
+          <button>
+            <RightDisable />
+            <RightEnable />
+          </button>
         </div>
       </section>
+    
       <section className="py-12">
         <h3 className="text-3xl font-bold capitalize ">faq</h3>
         <Accordion type="single" collapsible className="w-full py-8">
@@ -443,6 +444,18 @@ const IndexPage = () => {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+      </section>
+
+      <section>
+        <div>
+          <div>
+            <h3>
+              Have problems with 
+              security and scaling? 
+              Let’s talk
+            </h3>
+          </div>
+        </div>
       </section>
     </Layout>
   );
