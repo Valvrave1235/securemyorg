@@ -252,7 +252,7 @@ const IndexPage = () => {
           <Card className="bg-[#19191B] border-[#343B46]">
             <CardHeader className="flex flex-row gap-4 ">
               <CardTitle className="flex flex-row gap-4 text-stone-50 ">
-                <StaticImage src="../images/alex_beluchi.png" alt="alex buchi" />
+                <StaticImage src="../images/alex_beluchi.png" alt="alex beluchi" />
                 <div className="flex flex-col gap-1">
                   <h3 className="text-xl" >Alex Beluchi</h3>
                   <p className="text-sm text-stone-300">Product Marketeer Growth, Twillio</p>
@@ -284,7 +284,7 @@ const IndexPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-stone-50">
-              <p>SSince we started using Synchrowork, our team 
+              <p>Since we started using Synchrowork, our team 
                 productivity has increased by 20%. The easy-to-
                 use interface and powerful features make it easy 
                 for us to manage our tasks, collaborate with each 
