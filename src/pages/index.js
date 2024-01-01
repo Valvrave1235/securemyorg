@@ -65,7 +65,7 @@ import {
 const IndexPage = () => {
   return (
     <Layout >
-      <section className="flex flex-col gap-4 relative py-52 pt-[15rem] text-center justify-center items-center">
+      <section className="flex flex-col gap-4 relative py-40 pt-[15rem] text-center justify-center items-center">
         <div className="z-10 relative flex flex-col justify-center items-center gap-4">
           <h2 className="text-6xl font-bold w-10/12">
             We help companies
@@ -400,6 +400,109 @@ const IndexPage = () => {
             </CardContent>
           </Card>
 
+          <div>
+            <div>
+              <StaticImage src="../images/martha_andrews.png" alt=" martha andrews" />
+            </div>
+            <div>
+              <h3>Martha Andrews</h3>
+              <p>Product Marketeer Growth, Twillio</p>
+            </div>
+            <p>Since we started using Synchrowork, our team
+              productivity has increased by 20%. The easy-to-
+              use interface and powerful features make it easy
+              for us to manage our tasks, collaborate with each
+              other, and track our progress. We are very happy
+              with the results and would highly recommend this
+              product to other teams.</p>
+          </div>
+          <div>
+            <div>
+              <StaticImage src="../images/mark.png" alt="mark" />
+            </div>
+            <div>
+              <h3>Mark</h3>
+              <p>Product Marketeer Growth, Twillio</p>
+            </div>
+            <p>We have been using the [team management
+              product name] for over a year now, and we love it!
+              It has helped us to improve our team
+              communication and collaboration, and it has made
+              it much easier for us to track our progress and
+              meet our deadlines. We are especially impressed
+              with the task management features. The ability to
+              assign tasks, set due dates, and track progress has
+              been invaluable to us. We would highly recommend
+              the [team management product name] to any team
+              that is looking to improve their productivity and
+              efficiency</p>
+          </div>
+
+          <div>
+            <div>
+              <StaticImage src="../images/alexander.png" alt="alexander" />
+            </div>
+            <div>
+              <h3>Alexander</h3>
+              <p>Product Marketeer Growth, Twillio</p>
+            </div>
+            <p>We have been using Synchrowork for a few months
+              now, and we have already seen a significant
+              improvement in our team productivity. The ability to
+              assign tasks, set deadlines, and track progress has
+              been invaluable to us. We are also really impressed
+              with the collaboration features. The ability to share
+              files, leave comments, and chat with team members
+              in real time has made it much easier for us to work
+              together on projects. We are very happy with the
+              Synchrowork and would highly recommend it to any
+              team that is looking to improve their productivity
+              and efficiency</p>
+          </div>
+          <div>
+            <div>
+              <StaticImage src="../images/martha_andrews.png" alt="martha andrews" />
+            </div>
+            <div>
+              <h3>Martha Andrews</h3>
+              <p>Product Marketeer Growth, Twillio</p>
+            </div>
+            <p>We have been using the [team management
+              product name] for a few months now, and we are
+              very happy with the results. It has helped us to
+              organize our tasks and projects, and it has made
+              it much easier for us to collaborate with each
+              other. We are also impressed with the reporting
+              features. We are now able to get real-time
+              insights into our team's performance, which has
+              helped us to make better decisions</p>
+            <Link href="Martha Andrews" className="flex gap-4  items-center justify-center">
+              Read Case Study
+              <Arrow />
+            </Link>
+          </div>
+          <div>
+            <div>
+              <StaticImage src="../images/alex_beluchi.png" alt="alex buchi" />
+            </div>
+            <div>
+              <h3>Alex Beluchi</h3>
+              <p>Product Marketeer Growth, Twillio</p>
+            </div>
+            <p>The [team management product name] has been a
+              great investment for our team. It has helped us to
+              improve our communication and collaboration, and
+              it has made it much easier for us to track our
+              progress and meet our deadlines. We are
+              especially impressed with the user interface. It is
+              very easy to use and navigate. We would highly
+              recommend this product to any team looking to
+              improve their productivity and efficiency</p>
+            <Link href="Alex Buchi" className="flex gap-4  items-center justify-center">
+              Read Case Study
+              <Arrow />
+            </Link>
+          </div>
         </section>
       </section>
       <section>
