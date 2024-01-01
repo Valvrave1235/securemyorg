@@ -42,12 +42,14 @@ import MarthaAndrews from "../images/martha_andrews.png"
 import Arrow from "../assets/arrow.svg"
 import ArrowRight from "../assets/arrow_right.svg"
 import Agency from "../blog/agency.png"
-import Freelance from "../blog/freelance.svg"
+import Freelance from "../blog/freelance.png"
 import Management from "../blog/management.png"
 import RightDisable from "../assets/right_disable.svg"
 import RightEnable from "../assets/right_enable.svg"
 import LeftDisable from "../assets/left_disable.svg"
 import LeftEnable from "../assets/left_enable.svg"
+import Rocket2 from "../assets/rocket_2.svg"
+
 import { Link } from "gatsby";
 import {
   Card,
@@ -205,38 +207,42 @@ const IndexPage = () => {
                 </p>
               </div>
 </div>
-            <div>
-              <Number2 />
-              <h4 className="text-[#09DE4C] font-bold">
-                Start Securing
-              </h4>
-              <p>
-                We start assessing the tasks that need to be done
-                and try to meet the ends by doing the testing/
-                content.
-              </p>
-            </div>
-           <div>
-              <Number3 />
-              <h4 className="text-[#09DE4C] font-bold">
-                Report Submission
-              </h4>
-              <p>
-                After the tasks is completed we check with the
-                clients with all the to-do’s and take a sign-off by
-                submitting the final report.
-              </p>
-           </div>
+<div className="flex gap-4">
+              <Number2 className="w-1/2" />
+              <div className="flex flex-col w-12/12 ">
+                <h4 className="text-[#09DE4C] font-bold">
+                  Start Securing
+                </h4>
+                <p>
+                  We start assessing the tasks that need to be done 
+                  and try to meet the ends by doing the testing/  
+                  content.
+                </p>
+              </div>
+</div>
+<div className="flex gap-4">
+              <Number3 className="w-1/2" />
+              <div className="flex flex-col w-12/12 ">
+                <h4 className="text-[#09DE4C] font-bold">
+                  Report Submission
+                </h4>
+                <p>
+                  After the tasks is completed we check with the clients with all the 
+                  to-do’s and take a sign-off by 
+                  submitting the final report.
+                </p>
+              </div>
+</div>
           </div>
           <div className="flex gap-4 flex-col">
             <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-              <Client className="w-full h-auto" />
+              <Client className="w-300 h-300" />
             </div>
             <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-              <Log />
+              <Log className="w-300 h-300" />
             </div>
             <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-              <Tabel />
+              <Tabel className="w-300 h-300" />
             </div>
           </div>
         </div>
@@ -449,14 +455,20 @@ const IndexPage = () => {
       <section>
         <div>
           <div>
-            <h3>
-              Have problems with 
-              security and scaling? 
+            <h3 className="text-5xl font-bold">
+              Have problems with <br />
+              security and scaling? <br />
               Let’s talk
-            </h3>
+            </h3>\
+            <Button className="mt-8 bg-stone-50 text-stone-950  rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-green-600 my-12">
+              <Rocket2 className="w-6 h-8" />
+              Schedule a Call
+            </Button>
+          
           </div>
         </div>
       </section>
+
     </Layout>
   );
 };
