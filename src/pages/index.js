@@ -59,6 +59,7 @@ import RightEnable from "../assets/right_enable.svg";
 import LeftDisable from "../assets/left_disable.svg";
 import LeftEnable from "../assets/left_enable.svg";
 import Rocket2 from "../assets/rocket_2.svg";
+import Objek from "../images/objek.png"
 
 import { Link } from "gatsby";
 import {
@@ -599,6 +600,7 @@ const IndexPage = ({ data }) => {
               <Rocket2 className="w-6 h-8" />
               Schedule a Call
             </Button>
+            <Objek />
           </div>
         </div>
       </section>
