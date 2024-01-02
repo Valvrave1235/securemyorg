@@ -7,6 +7,15 @@ import { graphql } from "gatsby";
 import { Button } from "@/components/ui/button";
 
 import bgGreen from "../images/bg-green.png";
+import bgGreen1 from "../images/bg-green_1.png"
+import bgGreen2 from "../images/bg-green_2.png"
+import bgGreen3 from "../images/bg-green_3.png"
+import Hex from "../images/hex.png"
+import Magenta from "../images/magenta.png"
+import purple from "../images/purple.png"
+import Yellow from "../images/yellow.png"
+import bgBlueMagenta from "../images/bg-blue_magenta.png"
+import bgBlueSky from "../images/bg-blue_sky.png"
 import Rocket from "../assets/rocket.svg";
 import LogoElastic from "../assets/logo_elastic.svg";
 import LogoFramer from "../assets/logo_framer.svg";

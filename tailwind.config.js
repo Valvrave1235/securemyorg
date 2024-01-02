@@ -102,7 +102,7 @@ module.exports = {
         apple: { 
         500: '#09DE4C',
         },
-          
+        
       },
   plugins: [
     require("tailwindcss-animate"),
