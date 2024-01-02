@@ -33,7 +33,11 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    backgroundImage: theme => ({
+      'text-gradient': 'linear-gradient(0deg, rgb(199, 250, 137) 0%, rgb(236, 239, 242) 100%)',
+    }),
     extend: {
+      
       fontFamily: {
         'sans': ['"Schibsted Grotesk"', ...defaultTheme.fontFamily.sans],
       },
