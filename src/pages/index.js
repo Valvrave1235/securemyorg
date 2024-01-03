@@ -69,6 +69,10 @@ import LeftDisable from "../assets/left_disable.svg";
 import LeftEnable from "../assets/left_enable.svg";
 import Rocket2 from "../assets/rocket_2.svg";
 import Objek from "../images/objek.png"
+import Plus1 from "../assets/plus1.svg"
+import Plus2 from "../assets/plus2.svg"
+import Plus3 from "../assets/plus3.svg"
+import Plus4 from "../assets/plus4.svg"
 
 import { Link } from "gatsby";
 import {
@@ -154,6 +158,11 @@ const IndexPage = ({ data }) => {
   const trustedCompaniesAnimation = useScrollAnimation();
   const servicesAnimation = useScrollAnimation();
   const testimonyAnimation = useScrollAnimation();
+  const cybersecurity = useScrollAnimation();
+  const process = useScrollAnimation();
+  const sayaboutus = useScrollAnimation();
+  const blogsandarticles = useScrollAnimation();
+  const faq = useScrollAnimation();
 
 
   return (
@@ -256,12 +265,12 @@ const IndexPage = ({ data }) => {
       </motion.div>
       <hr className=" border-white border-b-4" />
       <motion.div
-  ref={sectionRef}
-  initial={{ y: 100, opacity: 0 }}
-  animate={controls}
-  transition={{ duration: 0.5 }}
-  className="animated-section"
->
+        ref={testimonyAnimation.ref}
+        initial={{ y: 100, opacity: 0 }}
+        animate={testimonyAnimation.controls}
+        transition={{ duration: 0.5 }}
+        className="services-section"
+      >
       <section className="bg-transparent text-gray-100 py-24 flex flex-col gap-4">
         <h2 className="text-4xl font-extrabold w-8/12 py-8">
           Our services for <br />
@@ -306,15 +315,12 @@ const IndexPage = ({ data }) => {
       </section>
       </motion.div>
       <motion.div
-  ref={sectionRef}
-  initial={{ y: 100, opacity: 0 }}
-  animate={controls}
-  transition={{ duration: 0.5 }}
-  className="animated-section"
->
-
-
-
+        ref={cybersecurity.ref}
+        initial={{ y: 100, opacity: 0 }}
+        animate={cybersecurity.controls}
+        transition={{ duration: 0.5 }}
+        className="services-section"
+      >
       <section className="py-24 flex flex-col gap-4">
         <h3 className="text-4xl font-bold">
           The world moves fast, we keep pace. Cut through the noise with our{" "}
@@ -323,17 +329,23 @@ const IndexPage = ({ data }) => {
         <div className="flex gap-4">
           <div className="flex flex-col gap-12 py-12 ">
             <div className="flex gap-4">
-              <Number1 className="w-1/2" />
-              <div className="flex flex-col w-12/12 ">
-                <h4 className="text-[#09DE4C] font-bold">Discover</h4>
-                <p>
-                  Starting with the initial phase of getting to know about the
-                  project, here we set expectations and what are the tasks that
-                  needed to be done for the client.
-                </p>
+              <div>
+                <Number1 className="w-1/2" />
+                <div className="flex flex-col w-12/12 ">
+                  <h4 className="text-[#09DE4C] font-bold">Discover</h4>
+                  <p>
+                    Starting with the initial phase of getting to know about the
+                    project, here we set expectations and what are the tasks that
+                    needed to be done for the client.
+                  </p>
+                </div>
               </div>
+                <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
+                  <Client className="w-300 h-300" />
+                </div>
             </div>
             <div className="flex gap-4">
+              <div>
               <Number2 className="w-1/2" />
               <div className="flex flex-col w-12/12 ">
                 <h4 className="text-[#09DE4C] font-bold">Start Securing</h4>
@@ -343,7 +355,12 @@ const IndexPage = ({ data }) => {
                 </p>
               </div>
             </div>
+                <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
+                  <Log className="w-300 h-300" />
+                </div>
+            </div>
             <div className="flex gap-4">
+            <div>
               <Number3 className="w-1/2" />
               <div className="flex flex-col w-12/12 ">
                 <h4 className="text-[#09DE4C] font-bold">Report Submission</h4>
@@ -354,16 +371,9 @@ const IndexPage = ({ data }) => {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="flex gap-4 flex-col">
-            <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-              <Client className="w-300 h-300" />
-            </div>
-            <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-              <Log className="w-300 h-300" />
-            </div>
-            <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-              <Tabel className="w-300 h-300" />
+                <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
+                  <Tabel className="w-300 h-300" />
+                </div>
             </div>
           </div>
         </div>
@@ -371,9 +381,9 @@ const IndexPage = ({ data }) => {
       </motion.div>
 
       <motion.div
-        ref={testimonyAnimation.ref}
+        ref={process.ref}
         initial={{ y: 100, opacity: 0 }}
-        animate={testimonyAnimation.controls}
+        animate={process.controls}
         transition={{ duration: 0.5 }}
         className="services-section"
       >
@@ -586,9 +596,9 @@ const IndexPage = ({ data }) => {
         </div>
       </section> */}
       <motion.div
-  ref={sectionRef}
+  ref={sayaboutus.ref}
   initial={{ y: 100, opacity: 0 }}
-  animate={controls}
+  animate={sayaboutus.controls}
   transition={{ duration: 0.5 }}
   className="animated-section"
 >
@@ -653,9 +663,9 @@ const IndexPage = ({ data }) => {
       </motion.div>
 
       <motion.div
-  ref={sectionRef}
+  ref={blogsandarticles.ref}
   initial={{ y: 100, opacity: 0 }}
-  animate={controls}
+  animate={blogsandarticles.controls}
   transition={{ duration: 0.5 }}
   className="animated-section"
 >
@@ -663,33 +673,45 @@ const IndexPage = ({ data }) => {
         <h3 className="text-3xl font-bold capitalize ">faq</h3>
         <Accordion type="single" collapsible className="w-full py-8">
           <AccordionItem value="item-1">
-            <AccordionTrigger>Can you look at our Web3 App ?</AccordionTrigger>
+              <AccordionTrigger>We're launching our new Feature/Application/Infrastructure. How do I know we're secure ?</AccordionTrigger>
             <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
+                We'll seek your permission and look at the different security metrics, check for security loopholes and update you about it. We will also guide you, how to maintain these further 😃
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger>Is it styled?</AccordionTrigger>
+              <AccordionTrigger>We want to have continuous monitoring on our critical assets including DNS, remote instances etc. Can
+                you provide some solution around it ?</AccordionTrigger>
             <AccordionContent>
-              Yes. It comes with default styles that matches the other
-              components&apos; aesthetic.
+                Yes. The kind of solution you're looking for, we've already built and deployed it at many organisations, now we're providing it as a SaaS offering to our clients.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionTrigger>Can you look at our Web3 App ?</AccordionTrigger>
             <AccordionContent>
-              Yes. It's animated by default, but you can disable it if you
-              prefer.
+                Yes. We can. We're updated with the latest trends and have done security audits of Web3 applications.
             </AccordionContent>
           </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger>Can you help us evaluate a vendor that we are onboarding ?</AccordionTrigger>
+              <AccordionContent>
+                We have checklists that we use when onboarding different vendors. This includes things like --- How data is handled, different types of compliance ( like ISO 27001, SoC 2, HIPPA compliance etc ) that they are compliant to etc
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-5">
+              <AccordionTrigger>What all do you require to start a pentest ?</AccordionTrigger>
+              <AccordionContent>
+                We'll seek your permission and look at the different security metrics, check for security loopholes and update you about it. We will also guide you, how to maintain these further 😃
+              </AccordionContent>
+            </AccordionItem>
         </Accordion>
+        
       </section>
       </motion.div>
 
       <motion.div
-  ref={sectionRef}
+  ref={faq.ref}
   initial={{ y: 100, opacity: 0 }}
-  animate={controls}
+  animate={faq.controls}
   transition={{ duration: 0.5 }}
   className="animated-section"
 >
@@ -706,7 +728,8 @@ const IndexPage = ({ data }) => {
               <Rocket2 className="w-6 h-8" />
               Schedule a Call
             </Button>
-            <Objek />
+            <StaticImage src="../images/objek.png" alt="object"/>
+            
           </div>
         </div>
       </section>
