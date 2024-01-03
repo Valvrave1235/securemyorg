@@ -87,6 +87,18 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+const useScrollAnimation = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ y: 0, opacity: 1 });
+    }
+  }, [controls, inView]);
+
+  return { ref, controls };
+};
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -108,6 +120,18 @@ const IndexPage = ({ data }) => {
     }
   }, [controls, inView]);
 
+  const { ref: sectionRef, inView: sectionInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true // Ensures the animation only happens once
+  });
+
+
+  useEffect(() => {
+    if (sectionInView) {
+      controls.start({ y: 0, opacity: 1 });
+    }
+  }, [controls, sectionInView]);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,7 +140,7 @@ const IndexPage = ({ data }) => {
         controls.start({ y: 0, opacity: 1 });
       } else if (window.scrollY <= 50 && isScrolled) {
         setIsScrolled(false);
-        controls.start({ y: -100, opacity: 0 });
+        controls.start({ y: 100, opacity: 0 });
       }
     };
 
@@ -127,13 +151,18 @@ const IndexPage = ({ data }) => {
     };
   }, [controls, isScrolled]);
 
+  const trustedCompaniesAnimation = useScrollAnimation();
+  const servicesAnimation = useScrollAnimation();
+  const testimonyAnimation = useScrollAnimation();
+
+
   return (
     <Layout>
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
+      <motion.section
+        initial={{ y: 100, opacity: 0 }} // Start from below
         animate={heroControls}
-        transition={{ duration: 0.5 }}
-      // ... other props
+        transition={{ duration: 0.5, delay: 0.2 }} // Delayed start for visibility
+        className="hero-section"
       >
         <section className="flex flex-col gap-4 relative py-40 pt-[15rem] text-center justify-center items-center">
           <div className="z-10 relative flex flex-col justify-center items-center gap-4">
@@ -155,12 +184,14 @@ const IndexPage = ({ data }) => {
             alt="A dinosaur"
           />
         </section>
-      </motion.div>
+      </motion.section>
       <hr className=" border-white border-b-4" />
       <motion.div
-        initial={{ y: -100, opacity: 0 }}
-        animate={controls}
+        ref={trustedCompaniesAnimation.ref}
+        initial={{ y: 100, opacity: 0 }}
+        animate={trustedCompaniesAnimation.controls}
         transition={{ duration: 0.5 }}
+        className="trusted-companies-section"
       >
         <section className="py-24 flex flex-col gap-14">
           <h2 className="text-4xl font-bold">
@@ -168,45 +199,69 @@ const IndexPage = ({ data }) => {
             <span className="text-[#09DE4C]">companies</span> that have trusted
             us
           </h2>
-          <div className="flex flex-col gap-8">
-            <div className="flex gap-8">
-              <LogoElastic />
-              <LogoFramer />
-              <LogoPipedrive />
-              <LogoGitlab />
-              <LogoMonday />
-              <LogoBooking />
+          <motion.div
+            ref={servicesAnimation.ref}
+            initial={{ y: 100, opacity: 0 }}
+            animate={servicesAnimation.controls}
+            transition={{ duration: 0.5 }}
+            className="services-section"
+          >
+            <div className="flex flex-col gap-8">
+              <div className="flex gap-8">
+                <LogoElastic />
+                <LogoFramer />
+                <LogoPipedrive />
+                <LogoGitlab />
+                <LogoMonday />
+                <LogoBooking />
+              </div>
+              <div className="flex gap-8">
+                <LogoDescript />
+                <LogoDiscord />
+                <LogoMaze />
+                <LogoUpwork />
+                <LogoWealthsimple />
+                <LogoBraze />
+              </div>
             </div>
-            <div className="flex gap-8">
-              <LogoDescript />
-              <LogoDiscord />
-              <LogoMaze />
-              <LogoUpwork />
-              <LogoWealthsimple />
-              <LogoBraze />
+          </motion.div>
+
+         <motion.div
+  ref={sectionRef}
+  initial={{ y: 100, opacity: 0 }}
+  animate={controls}
+  transition={{ duration: 0.5 }}
+  className="animated-section"
+>
+            <div className="flex flex-col md:flex-row pt-24">
+              <div className="flex pr-12 w-120 h-120">
+                <View className="w-120 h-120 " />
+                {/* Vulnerabilities Found */}
+              </div>
+              <div className="flex px-12 w-120 h-120">
+                <Follow />
+                {/* Private Data Saved */}
+              </div>
+              <div className="flex px-12 w-120 h-120">
+                <Duration />
+                {/* For First Critical Bug */}
+              </div>
+              <div className="flex px-12 w-120 h-120">
+                <Percentation />
+                {/* Recurring Client */}
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col md:flex-row pt-24">
-            <div className="flex pr-12 w-120 h-120">
-              <View className="w-120 h-120 " />
-              {/* Vulnerabilities Found */}
-            </div>
-            <div className="flex px-12 w-120 h-120">
-              <Follow />
-              {/* Private Data Saved */}
-            </div>
-            <div className="flex px-12 w-120 h-120">
-              <Duration />
-              {/* For First Critical Bug */}
-            </div>
-            <div className="flex px-12 w-120 h-120">
-              <Percentation />
-              {/* Recurring Client */}
-            </div>
-          </div>
+          </motion.div>
         </section>
       </motion.div>
       <hr className=" border-white border-b-4" />
+      <motion.div
+  ref={sectionRef}
+  initial={{ y: 100, opacity: 0 }}
+  animate={controls}
+  transition={{ duration: 0.5 }}
+  className="animated-section"
+>
       <section className="bg-transparent text-gray-100 py-24 flex flex-col gap-4">
         <h2 className="text-4xl font-extrabold w-8/12 py-8">
           Our services for <br />
@@ -249,6 +304,17 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
+      </motion.div>
+      <motion.div
+  ref={sectionRef}
+  initial={{ y: 100, opacity: 0 }}
+  animate={controls}
+  transition={{ duration: 0.5 }}
+  className="animated-section"
+>
+
+
+
       <section className="py-24 flex flex-col gap-4">
         <h3 className="text-4xl font-bold">
           The world moves fast, we keep pace. Cut through the noise with our{" "}
@@ -302,6 +368,15 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
+      </motion.div>
+
+      <motion.div
+        ref={testimonyAnimation.ref}
+        initial={{ y: 100, opacity: 0 }}
+        animate={testimonyAnimation.controls}
+        transition={{ duration: 0.5 }}
+        className="services-section"
+      >
       <section>
         <h2 className="font-bold text-4xl">
           People love us. See what they have to{" "}
@@ -490,7 +565,7 @@ const IndexPage = ({ data }) => {
           </Card>
         </section>
       </section>
-
+      </motion.div>
       {/* <section>
         <h2 className="text-4xl font-bold">
           We believe in giving back to the society. 
@@ -510,7 +585,13 @@ const IndexPage = ({ data }) => {
           </button>
         </div>
       </section> */}
-
+      <motion.div
+  ref={sectionRef}
+  initial={{ y: 100, opacity: 0 }}
+  animate={controls}
+  transition={{ duration: 0.5 }}
+  className="animated-section"
+>
       <section className="py-24">
         <Carousel>
           <div className="flex justify-between w-full items-center ">
@@ -569,7 +650,15 @@ const IndexPage = ({ data }) => {
           </CarouselContent>
         </Carousel>
       </section>
+      </motion.div>
 
+      <motion.div
+  ref={sectionRef}
+  initial={{ y: 100, opacity: 0 }}
+  animate={controls}
+  transition={{ duration: 0.5 }}
+  className="animated-section"
+>
       <section className="py-24">
         <h3 className="text-3xl font-bold capitalize ">faq</h3>
         <Accordion type="single" collapsible className="w-full py-8">
@@ -595,7 +684,15 @@ const IndexPage = ({ data }) => {
           </AccordionItem>
         </Accordion>
       </section>
+      </motion.div>
 
+      <motion.div
+  ref={sectionRef}
+  initial={{ y: 100, opacity: 0 }}
+  animate={controls}
+  transition={{ duration: 0.5 }}
+  className="animated-section"
+>
       <section>
         <div>
           <div>
@@ -613,6 +710,8 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
+
+      </motion.div>
     </Layout>
   );
 };
