@@ -12,15 +12,16 @@ export default function BlogPost({ data }) {
 
     return (
       <Layout>
-        <div className='relative py-10 lg:py-20 px-4 lg:px-0 max-w-7xl mx-auto'>
+        <div className='relative container mx-auto py-10 lg:py-20  max-w-7xl px-4'>
           {thumbnail && (
             <GatsbyImage
               image={thumbnail}
               alt={post.frontmatter.title}
-              className='rounded-lg shadow-lg mb-8'
+              
+              className='rounded-lg shadow-lg mb-8 w-1/2 h-auto mx-auto  '
             />
           )}
-          <h1 className='text-4xl lg:text-6xl font-bold text-gray-800 mb-6'>
+          <h1 className='text-4xl lg:text-6xl font-bold text-gray-300 mb-6'>
             {post.frontmatter.title}
           </h1>
           <p className='text-lg text-gray-600 mb-8'>
@@ -45,7 +46,7 @@ export const query = graphql`
         description
         thumbnail {
           childImageSharp {
-            gatsbyImageData(width: 200, layout: CONSTRAINED)
+            gatsbyImageData(width: 2000, layout: CONSTRAINED)
           }
         }
       }
