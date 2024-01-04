@@ -290,8 +290,8 @@ const IndexPage = ({ data }) => {
         transition={{ duration: 0.5 }}
         className="services-section"
       >
-        <section className="bg-transparent text-gray-100 md:py-24 py-6 flex flex-col gap-4">
-          <h2 className="md:text-4xl text-3xl font-extrabold py-8">
+        <section className="bg-transparent text-gray-100 py-24 flex flex-col gap-4">
+          <h2 className="text-4xl font-extrabold w-full md:w-8/12  py-8">
             Our services for <br />
             your <span className="text-[#09DE4C]">cyber security</span>
           </h2>
@@ -348,7 +348,7 @@ const IndexPage = ({ data }) => {
           <div className="flex gap-4">
             <div className="flex flex-col gap-12 py-12 ">
               <div className="flex flex-col md:flex-row gap-4">
-                <div className="flex w-12/12 gap-4 md:flex-row flex-col  ">
+                <div className="flex w-12/12 gap-4 flex-col md:flex-row  ">
                   <Number1 className="md:w-1/12 " />
                   <div className="w-full">
                     <h4 className="text-[#09DE4C] text-2xl mb-4 font-extrabold">Discover</h4>

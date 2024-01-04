@@ -11,14 +11,27 @@ export default function BlogPost({ data }) {
     const thumbnail = getImage(post.frontmatter.thumbnail);
 
     return (
-        <Layout>
-            <div className='py-32 pt-52 prose prose-invert prose-stone max-w-none '>
-                {thumbnail && <GatsbyImage image={thumbnail} alt={post.frontmatter.title} />}
-                <h1>{post.frontmatter.title}</h1>
-                <p>{formatDate(post.frontmatter.date)}</p>
-                <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            </div>
-        </Layout>
+      <Layout>
+        <div className='relative py-10 lg:py-20 px-4 lg:px-0 max-w-7xl mx-auto'>
+          {thumbnail && (
+            <GatsbyImage
+              image={thumbnail}
+              alt={post.frontmatter.title}
+              className='rounded-lg shadow-lg mb-8'
+            />
+          )}
+          <h1 className='text-4xl lg:text-6xl font-bold text-gray-800 mb-6'>
+            {post.frontmatter.title}
+          </h1>
+          <p className='text-lg text-gray-600 mb-8'>
+            {formatDate(post.frontmatter.date)}
+          </p>
+          <div
+            className='prose prose-lg prose-invert max-w-none'
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        </div>
+      </Layout>
     );
 }
 
