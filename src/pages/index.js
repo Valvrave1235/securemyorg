@@ -179,7 +179,7 @@ const IndexPage = ({ data }) => {
             <h2 className="text-4xl md:text-6xl font-bold w-10/12 text-transparent bg-clip-text bg-text-gradient ">
               We help companies scale while being secure
             </h2>
-            <p className="mt-4 text-transparent bg-clip-text bg-text-gradient ">
+            <p className="mt-4 text-transparent bg-clip-text bg-text-gradient text-xs w-8/12  ">
               Hi, we’re a cyber security and devops agency which helps fast
               paced startups scale.
             </p>
@@ -203,9 +203,9 @@ const IndexPage = ({ data }) => {
         transition={{ duration: 0.5 }}
         className="trusted-companies-section"
       >
-        <section className="py-24 flex flex-col gap-14">
-          <h2 className="text-4xl font-bold">
-            You’re in safe hands, some of the <br />
+        <section className="md:py-24 py-12 flex flex-col gap-14">
+          <h2 className="md:text-4xl text-3xl font-bold">
+            You’re in safe hands, some of the <br className="hidden md:flex"/>
             <span className="text-[#09DE4C]">companies</span> that have trusted
             us
           </h2>
@@ -261,7 +261,7 @@ const IndexPage = ({ data }) => {
             transition={{ duration: 0.5 }}
             className="animated-section"
           >
-            <div className=" pt-24 grid grid-cols-2 gap-4 md:flex md:flex-row">
+            <div className=" md:pt-24   grid grid-cols-2 gap-4 md:flex md:flex-row">
               <div className="flex md:pr-12 ">
                 <View className=" " />
                 {/* Vulnerabilities Found */}
@@ -290,8 +290,8 @@ const IndexPage = ({ data }) => {
         transition={{ duration: 0.5 }}
         className="services-section"
       >
-        <section className="bg-transparent text-gray-100 py-24 flex flex-col gap-4">
-          <h2 className="text-4xl font-extrabold w-8/12 py-8">
+        <section className="bg-transparent text-gray-100 md:py-24 py-6 flex flex-col gap-4">
+          <h2 className="md:text-4xl text-3xl font-extrabold py-8">
             Our services for <br />
             your <span className="text-[#09DE4C]">cyber security</span>
           </h2>
@@ -341,7 +341,7 @@ const IndexPage = ({ data }) => {
         className="services-section"
       >
         <section className="py-24 flex flex-col gap-4">
-          <h3 className="text-4xl font-bold">
+          <h3 className="md:text-4xl text-3xl font-bold">
             The world moves fast, we keep pace. Cut through the noise with our{" "}
             <span className="text-[#09DE4C]">process</span>
           </h3>
@@ -409,7 +409,7 @@ const IndexPage = ({ data }) => {
         className="services-section"
       >
         <section>
-          <h2 className="font-bold text-4xl">
+          <h2 className="font-bold md:text-4xl text-3xl">
             People love us. See what they have to{" "}
             <span className="text-[#09DE4C] font-bold">say about us</span>
           </h2>
@@ -637,17 +637,17 @@ const IndexPage = ({ data }) => {
       >
         <section className="py-24">
           <Carousel>
-            <div className="flex justify-between w-full items-center ">
+            <div className="flex justify-between w-full items-center md:flex-row flex-col ">
               <div>
-                <h2 className="text-4xl font-bold ">
+                <h2 className="md:text-4xl text-3xl text font-bold ">
                   We believe in giving back to the society.
                 </h2>
-                <h2 className="text-4xl font-bold ">
+                <h2 className="md:text-4xl text-3xl font-bold ">
                   Check out our{" "}
                   <span className="text-[#09DE4C]">blogs and articles</span>
                 </h2>
               </div>
-              <div className="flex gap-4 h-full justify-center self-end items-end pt-4 mt-8">
+              <div className="flex gap-4 h-full justify-end self-start md:justify-center md:self-end items-end pt-4 mt-8">
                 <CarouselPrevious />
                 <CarouselNext />
               </div>
@@ -775,7 +775,7 @@ const IndexPage = ({ data }) => {
             background: 'linear-gradient(180deg, rgba(35, 39, 46, 0) 0%, rgba(35, 39, 46, 0.00838519) 11.79%, rgba(35, 39, 46, 0.0324148) 21.38%, rgba(35, 39, 46, 0.0704) 29.12%, rgba(35, 39, 46, 0.120652) 35.34%, rgba(35, 39, 46, 0.181481) 40.37%, rgba(35, 39, 46, 0.2512) 44.56%, rgba(35, 39, 46, 0.328119) 48.24%, rgba(35, 39, 46, 0.410548) 51.76%, rgba(35, 39, 46, 0.4968) 55.44%, rgba(35, 39, 46, 0.585185) 59.63%, rgba(35, 39, 46, 0.674015) 64.66%, rgba(35, 39, 46, 0.7616) 70.88%, rgba(35, 39, 46, 0.846252) 78.62%, rgba(35, 39, 46, 0.926281) 88.21%, #23272E 100%)'
           }}
         >
-          <div className="py-12 pt-24 px-8 pb-[10rem]">
+          <div className="py-12 pt-24 px-8 pb-[10rem] md:pb-0">
             <h3 className="text-4xl font-extrabold">
               Have problems with <br />
               security and scaling? <br />
@@ -822,4 +822,4 @@ export const pageQuery = graphql`
 
 export default IndexPage;
 
-export const Head = () => <title>Home Page</title>;
+export const Head = () => <title>Secure My Org - Enterprise Security in 3 Simple Steps</title>;

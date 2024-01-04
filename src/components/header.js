@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <header>
-      <header className=" fixed w-full max-w-screen-lg top-0 overflow-hidden h-24 flex md:hidden items-center justify-between px-4 z-50">
+      <header className=" fixed md:w-full max-w-screen-lg top-0 overflow-hidden h-24 flex md:hidden items-center justify-between px-4 z-50 w-11/12">
         {/* Logo and Title */}
         <div className="flex items-center">
           {/* <StaticImage src="/path-to-your-logo.png" alt="SecureMyOrg Logo" className="h-12" /> */}
