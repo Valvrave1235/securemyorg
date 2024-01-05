@@ -23,23 +23,23 @@ module.exports = {
         icon: `src/images/logo-icon.png`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-favicons',
-      options: {
-        logo: `src/assets/logo.svg`,
-        appName: 'Secure My Org - Enterprise Security in 3 Simple Steps',
-        background: '#000',
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          yandex: false,
-          windows: false
-        }
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-favicons',
+    //   options: {
+    //     logo: `./src/assets/logo.svg`,
+    //     appName: 'Secure My Org - Enterprise Security in 3 Simple Steps',
+    //     background: '#000',
+    //     icons: {
+    //       android: true,
+    //       appleIcon: true,
+    //       appleStartup: true,
+    //       coast: false,
+    //       favicons: true,
+    //       yandex: false,
+    //       windows: false
+    //     }
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
