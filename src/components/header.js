@@ -58,7 +58,7 @@ const Header = () => {
 
   return (
     <header className="">
-      <div className={`absolute z-50 w-full ${isMenuOpen ? "bg-stone-950" : ""} top-0 max-w-screen-lg mx-auto px-4 py-2 flex justify-between items-center`}>
+      <div className={`absolute md:hidden z-50 w-full ${isMenuOpen ? "bg-stone-950" : ""} top-0 max-w-screen-lg mx-auto px-4 py-2 flex justify-between items-center`}>
         {/* Logo and Title */}
         <Link to="/">
           <Logo className="h-12" aria-label="SecureMyOrg Logo" />
@@ -91,7 +91,7 @@ const Header = () => {
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={controls}
-        className={`fixed w-full z-50 top-4 ${isScrolled ? 'bg-stone-950' : 'bg-transparent'}`}
+        className={`fixed md:hidden w-full z-50 top-4 ${isScrolled ? 'bg-stone-950' : 'bg-transparent'}`}
       >
         <div className="max-w-screen-lg mx-auto px-6 py-2 flex justify-between items-center">
           {/* Logo and Title */}
