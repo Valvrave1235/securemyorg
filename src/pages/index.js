@@ -175,7 +175,7 @@ const IndexPage = ({ data }) => {
           transition={{ duration: 0.5, delay: 0.2 }} // Delayed start for visibility
           className="hero-section"
         >
-          <section className="flex flex-col gap-4 relative py-40 pt-[15rem] text-center justify-center items-center">
+          <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] text-center justify-center items-center">
             <div className="z-10 relative flex flex-col justify-center items-center gap-4">
               <h2 className="text-4xl md:text-6xl font-bold w-10/12 text-transparent bg-clip-text bg-text-gradient ">
                 We help companies scale while being secure

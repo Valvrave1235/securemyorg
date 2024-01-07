@@ -7,9 +7,14 @@ import { motion, useAnimation } from "framer-motion";
 import Arrow from "../assets/arrow_header.svg";
 import Logo from "../assets/logo_full.svg";
 import { StaticImage } from "gatsby-plugin-image";
+import { Menu, Transition } from '@headlessui/react';
+import { MenuIcon, XIcon } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSecondMenuOpen, setIsSecondMenuOpen] = useState(false);
+
   const controls = useAnimation();
 
   useEffect(() => {
@@ -30,25 +35,93 @@ const Header = () => {
     };
   }, [controls, isScrolled]);
 
+
+
+  const toggleMenu = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log("clicked");
+    setIsMenuOpen(!isMenuOpen);
+
+    console.log("Current menu state:", isMenuOpen);
+  };
+  const secondToggleMenu = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log("clicked");
+    setIsSecondMenuOpen(!isSecondMenuOpen);
+    console.log("Current menu state:", isSecondMenuOpen);
+  };
+
+
+  console.log("Current menu state:", isMenuOpen); // This will log the state change
+
   return (
-    <header>
-      <header className=" fixed md:w-full max-w-screen-lg top-0 overflow-hidden h-24 flex md:hidden items-center justify-between px-4 z-50 w-11/12">
+    <header className="">
+      <div className={`absolute z-50 w-full ${isMenuOpen ? "bg-stone-950" : ""} top-0 max-w-screen-lg mx-auto px-4 py-2 flex justify-between items-center`}>
         {/* Logo and Title */}
-        <div className="flex items-center">
-          {/* <StaticImage src="/path-to-your-logo.png" alt="SecureMyOrg Logo" className="h-12" /> */}
-          <Logo className="h-12" />
-          {/* <span className="text-white font-bold ml-2">SecureMyOrg</span> */}
+        <Link to="/">
+          <Logo className="h-12" aria-label="SecureMyOrg Logo" />
+        </Link>
+        {/* Mobile Menu Button */}
+        {/* Open Menu Button */}
+        <button onClick={toggleMenu} className="md:hidden text-white">
+          {isMenuOpen ? <XIcon className='w-6 h-6' /> : <MenuIcon className='w-6 h-6' />}
+        </button>
+
+      </div>
+
+      {/* Mobile Menu */}
+      <Transition
+        show={isMenuOpen}
+        enter="transition ease-out duration-100 transform"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="transition ease-in duration-75 transform"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+        className="md:hidden absolute  top-12 w-full z-50"
+      >
+        <div className="absolute  top-full text-center left-0 w-full justify-center items-center flex flex-col gap-4 py-6 px-4 bg-stone-950 shadow-md z-50 pb-12">
+          <Link to="/pricing" className="flex w-full hover:border border-green-600 rounded-xl justify-center items-center  px-4 py-2 text-white hover:bg-gray-700">Pricing</Link>
+          <Link to="/contact" className="flex w-full hover:border border-green-600 rounded-xl justify-center items-center  px-4 py-2 text-white hover:bg-gray-700">Talk to us</Link>
+          {/* Add other links as needed */}
+        </div>
+      </Transition>
+      <motion.header
+        initial={{ y: -100, opacity: 0 }}
+        animate={controls}
+        className={`fixed w-full z-50 top-4 ${isScrolled ? 'bg-stone-950' : 'bg-transparent'}`}
+      >
+        <div className="max-w-screen-lg mx-auto px-6 py-2 flex justify-between items-center">
+          {/* Logo and Title */}
+          <Link to="/">
+            <Logo className="h-12" aria-label="SecureMyOrg Logo" />
+          </Link>
+          {/* Mobile Menu Button */}
+          <button onClick={secondToggleMenu} className="md:hidden text-white">
+            {isSecondMenuOpen ? <XIcon className='w-6 h-6' /> : <MenuIcon className='w-6 h-6' />}
+          </button>
         </div>
 
-        {/* Call to Action Button */}
-        <Link
-          to="/contact-us"
-          className="bg-transparent text-white py-2 px-4 rounded-full  flex  gap-2 border-2 font-semibold hover:bg-green-700 transition duration-300 ease-in-out items-center justify-center border-green-600 w-fit "
+        {/* Mobile Menu */}
+        <Transition
+          show={isSecondMenuOpen}
+          enter="transition ease-out duration-100 transform"
+          enterFrom="opacity-0 scale-95"
+          enterTo="opacity-100 scale-100"
+          leave="transition ease-in duration-75 transform"
+          leaveFrom="opacity-100 scale-100"
+          leaveTo="opacity-0 scale-95"
+          className="md:hidden"
         >
-          <span>Talk to Us </span>
-          <Arrow className="h-8" />
-        </Link>
-      </header>
+          <div className="absolute top-full text-center left-0 w-full justify-center items-center flex flex-col gap-4 py-6 px-4 bg-stone-950 shadow-md z-50">
+            <Link to="/pricing" className="flex w-full hover:border border-green-600 rounded-xl justify-center items-center  px-4 py-2 text-white hover:bg-gray-700">Pricing</Link>
+            <Link to="/contact" className="flex w-full hover:border border-green-600 rounded-xl justify-center items-center  px-4 py-2 text-white hover:bg-gray-700">Talk to us</Link>
+            {/* Add other links as needed */}
+          </div>
+        </Transition>
+      </motion.header>
 
       <header className="bg-transparent absolute top-0 w-full max-w-screen-lg  overflow-hidden py-4 rounded-xl  md:flex items-center justify-between px-4 z-50 hidden">
         {/* Logo and Title */}
@@ -75,9 +148,8 @@ const Header = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={controls}
         transition={{ duration: 0.5 }}
-        className={`fixed w-full z-50 ${
-          isScrolled ? "bg-stone-800" : "bg-transparent"
-        }`}
+        className={`fixed w-full z-50 ${isScrolled ? "bg-stone-800" : "bg-transparent"
+          }`}
       >
         <header className="bg-[#19191B]/90 fixed w-full max-w-screen-lg top-4  overflow-hidden py-4 px-2 rounded-xl  md:flex items-center justify-between px-4 z-50 hidden">
           {/* Logo and Title */}

@@ -1,49 +1,41 @@
-import * as React from "react"
-import { Link } from "gatsby"
-
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import React from 'react';
+import { Link } from 'gatsby';
+import { motion } from 'framer-motion';
+import { Button } from "@/components/ui/button";
+import { Slot } from "@radix-ui/react-slot";
+import Layout from '../components/layout';
 
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <Layout>
+      <div className="flex flex-col items-center justify-center h-screen bg-stone-950 text-white">
+        <motion.h1
+          className="text-7xl mb-3 font-bold"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          Oops!
+        </motion.h1>
+        <motion.p
+          className="text-3xl mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          The page you're looking for can't be found.
+        </motion.p>
+        <Link
+          to="/"
+          className="bg-transparent text-white py-2 px-4 rounded-full  flex  gap-2 border-2 font-semibold hover:bg-green-700 transition duration-300 ease-in-out items-center justify-center border border-green-600 w-fit "
+        >
+          <span>Go Back Home </span>
 
-export default NotFoundPage
+        </Link>
+       
+      </div>
+    </Layout>
+  );
+};
 
-export const Head = () => <title>Not found</title>
+export default NotFoundPage;
