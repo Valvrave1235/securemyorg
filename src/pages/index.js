@@ -193,6 +193,11 @@ const IndexPage = ({ data }) => {
               src="../images/bg-green.png"
               className="absolute top-0 z-0"
               alt="A dinosaur"
+              style={
+                {
+                  position: "absolute"
+                }
+              }
             />
           </section>
         </motion.section>
