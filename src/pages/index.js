@@ -120,6 +120,17 @@ const IndexPage = ({ data }) => {
     threshold: 0.1,
   });
 
+  // State to track if accordion is open
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Function to toggle accordion state
+  const toggleAccordion = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const contentClassName = isOpen ? 'accordion-expand' : 'accordion-close';
+
+
   useEffect(() => {
     if (inView) {
       controls.start({ y: 0, opacity: 1 });
@@ -173,9 +184,9 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }} // Start from below
           animate={heroControls}
           transition={{ duration: 0.5, delay: 0.2 }} // Delayed start for visibility
-          className="hero-section"
+          className="hero-section relative"
         >
-          <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] text-center justify-center items-center">
+          <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] text-center justify-center items-center  md:max-w-screen-lg mx-auto ">
             <div className="z-10 relative flex flex-col justify-center items-center gap-4">
               <h2 className="text-4xl md:text-6xl font-bold w-10/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient ">
                 We help companies scale while being secure
@@ -189,25 +200,29 @@ const IndexPage = ({ data }) => {
                 Book a Call
               </Button>
             </div>
-            <StaticImage
-              src="../images/bg-green.png"
-              className="absolute top-0 z-0"
-              alt="A dinosaur"
-              style={
-                {
-                  position: "absolute"
-                }
-              }
-            />
+           
+
+           
           </section>
+          <StaticImage
+            src="../images/bg-green.png"
+            className="block w-full h-full z-0 top-0 absolute object-cover"
+            style={{
+              //  width: "max-content",
+              position: "absolute"
+            }}
+            sizes="100vw"
+            alt="green background gradient"
+          />
+          <hr className=" border-white border-b-4  md:max-w-screen-lg mx-auto " />
         </motion.section>
-        <hr className=" border-white border-b-4" />
+      
         <motion.div
           ref={trustedCompaniesAnimation.ref}
           initial={{ y: 100, opacity: 0 }}
           animate={trustedCompaniesAnimation.controls}
           transition={{ duration: 0.5 }}
-          className="trusted-companies-section"
+          className="trusted-companies-section md:max-w-screen-lg mx-auto"
         >
           <section className="md:py-24 py-12 flex flex-col gap-14">
             <h2 className="md:text-4xl text-3xl font-bold">
@@ -315,14 +330,15 @@ const IndexPage = ({ data }) => {
               </div>
             </motion.div>
           </section>
+          <hr className=" border-white border-b-4" />
         </motion.div>
-        <hr className=" border-white border-b-4" />
+ 
         <motion.div
           ref={testimonyAnimation.ref}
           initial={{ y: 100, opacity: 0 }}
           animate={testimonyAnimation.controls}
           transition={{ duration: 0.5 }}
-          className="services-section"
+          className="services-section md:max-w-screen-lg mx-auto"
         >
           <section className="bg-transparent text-gray-100 py-24 flex flex-col gap-4">
             <h2 className="text-4xl font-extrabold w-full md:w-8/12  py-8">
@@ -372,7 +388,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={cybersecurity.controls}
           transition={{ duration: 0.5 }}
-          className="services-section"
+          className="services-section md:max-w-screen-lg mx-auto"
         >
           <section className="py-24 flex flex-col gap-4">
             <h3 className="md:text-4xl text-3xl font-bold">
@@ -440,7 +456,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={process.controls}
           transition={{ duration: 0.5 }}
-          className="services-section"
+          className="services-section md:max-w-screen-lg mx-auto"
         >
           <section>
             <h2 className="font-bold md:text-4xl text-3xl">
@@ -667,7 +683,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={sayaboutus.controls}
           transition={{ duration: 0.5 }}
-          className="animated-section"
+          className="animated-section md:max-w-screen-lg mx-auto"
         >
           <section className="py-24">
             <Carousel>
@@ -734,48 +750,48 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={blogsandarticles.controls}
           transition={{ duration: 0.5 }}
-          className="animated-section"
+          className="animated-section md:max-w-screen-lg mx-auto"
         >
           <section className="py-24 pb-6">
             <h3 className="text-3xl font-bold capitalize ">faq</h3>
             <Accordion type="single" collapsible className="w-full py-8">
               <AccordionItem value="item-1">
-                <AccordionTrigger>
+               <AccordionTrigger onClick={toggleAccordion}>
                   We're launching our new Feature/Application/Infrastructure. How
                   do I know we're secure ?
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className={contentClassName}>
                   We'll seek your permission and look at the different security
                   metrics, check for security loopholes and update you about it.
                   We will also guide you, how to maintain these further 😃
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger>
+               <AccordionTrigger onClick={toggleAccordion}>
                   We want to have continuous monitoring on our critical assets
                   including DNS, remote instances etc. Can you provide some
                   solution around it ?
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className={contentClassName}>
                   Yes. The kind of solution you're looking for, we've already
                   built and deployed it at many organisations, now we're providing
                   it as a SaaS offering to our clients.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
-                <AccordionTrigger>
+               <AccordionTrigger onClick={toggleAccordion}>
                   Can you look at our Web3 App ?
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className={contentClassName}>
                   Yes. We can. We're updated with the latest trends and have done
                   security audits of Web3 applications.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
-                <AccordionTrigger>
+               <AccordionTrigger onClick={toggleAccordion}>
                   Can you help us evaluate a vendor that we are onboarding ?
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className={contentClassName}>
                   We have checklists that we use when onboarding different
                   vendors. This includes things like --- How data is handled,
                   different types of compliance ( like ISO 27001, SoC 2, HIPPA
@@ -783,10 +799,10 @@ const IndexPage = ({ data }) => {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5">
-                <AccordionTrigger>
+               <AccordionTrigger onClick={toggleAccordion}>
                   What all do you require to start a pentest ?
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className={contentClassName}>
                   We'll seek your permission and look at the different security
                   metrics, check for security loopholes and update you about it.
                   We will also guide you, how to maintain these further 😃
@@ -801,7 +817,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={faq.controls}
           transition={{ duration: 0.5 }}
-          className="animated-section"
+          className="animated-section md:max-w-screen-lg mx-auto"
         >
           <section
             className="flex gap-4 p-4  my-12 rounded-3xl relative"

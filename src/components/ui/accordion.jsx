@@ -30,11 +30,13 @@ AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 const AccordionContent = React.forwardRef(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden bg-[#19191B]  text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down pb-2 text-stone-300"
-    {...props}>
-    <div className={cn("pb-4 px-6 pt-0", className)}>{children}</div>
+    className={`overflow-hidden bg-[#19191B] text-sm transition-all pb-2 text-stone-300 ${className} accordion-collapse`}
+    {...props}
+  >
+    <div className={`pb-4 px-6 pt-0 ${className}`}>{children}</div>
   </AccordionPrimitive.Content>
-))
+));
+
 
 AccordionContent.displayName = AccordionPrimitive.Content.displayName
 

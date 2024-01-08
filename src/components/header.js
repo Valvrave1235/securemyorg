@@ -57,7 +57,7 @@ const Header = () => {
   console.log("Current menu state:", isMenuOpen); // This will log the state change
 
   return (
-    <header className="">
+    <header className="md:max-w-screen-lg mx-auto">
       <div className={`absolute md:hidden z-50 w-full ${isMenuOpen ? "bg-stone-950" : ""} top-0 max-w-screen-lg mx-auto px-4 py-2 flex justify-between items-center`}>
         {/* Logo and Title */}
         <Link to="/">
