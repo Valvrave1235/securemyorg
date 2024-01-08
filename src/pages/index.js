@@ -165,7 +165,7 @@ const IndexPage = ({ data }) => {
   const faq = useScrollAnimation();
 
 
-  
+
   return (
     <Layout>
       <div className="px-4">
@@ -177,7 +177,7 @@ const IndexPage = ({ data }) => {
         >
           <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] text-center justify-center items-center">
             <div className="z-10 relative flex flex-col justify-center items-center gap-4">
-              <h2 className="text-4xl md:text-6xl font-bold w-10/12 text-transparent bg-clip-text bg-text-gradient ">
+              <h2 className="text-4xl md:text-6xl font-bold w-10/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient ">
                 We help companies scale while being secure
               </h2>
               <p className="mt-4 text-transparent bg-clip-text bg-text-gradient text-xs w-8/12  ">
@@ -211,7 +211,7 @@ const IndexPage = ({ data }) => {
         >
           <section className="md:py-24 py-12 flex flex-col gap-14">
             <h2 className="md:text-4xl text-3xl font-bold">
-              You’re in safe hands, some of the <br className="hidden md:flex"/>
+              You’re in safe hands, some of the <br className="hidden md:flex" />
               <span className="text-[#09DE4C]">companies</span> that have trusted
               us
             </h2>
@@ -222,24 +222,46 @@ const IndexPage = ({ data }) => {
               transition={{ duration: 0.5 }}
               className="services-section"
             >
-            <div className="md:hidden">
+              <div className="md:hidden">
                 <Marquee >
-                 <div className="mx-4"> 
-                 <LogoElastic />
-                 </div>
-                  <div className="mx-4">  <LogoFramer /></div>
-                  <div className="mx-4"> <LogoPipedrive /></div>
-                  <div className="mx-4">  <LogoGitlab /></div>
-                  <div className="mx-4">   <LogoMonday /></div>
-                  <div className="mx-4"> <LogoBooking /></div>
-                  <div className="mx-4">   <LogoDescript /></div>
-                  <div className="mx-4">   <LogoDiscord /></div>
-                  <div className="mx-4">     <LogoMaze /></div>
-                  <div className="mx-4"> <LogoUpwork /></div>
-                  <div className="mx-4">  <LogoWealthsimple /></div>
-                  <div className="mx-4">  <LogoBraze /></div>
+                  <div className="mx-4">
+                    <LogoElastic />
+                  </div>
+                  <div className="mx-4">
+                    <LogoFramer />
+                  </div>
+                  <div className="mx-4">
+                    <LogoPipedrive />
+                  </div>
+                  <div className="mx-4">
+                    <LogoGitlab />
+                  </div>
+                  <div className="mx-4">
+                    <LogoMonday />
+                  </div>
+                  <div className="mx-4">
+                    <LogoBooking />
+                  </div>
+                  <div className="mx-4">
+                    <LogoDescript />
+                  </div>
+                  <div className="mx-4">
+                    <LogoDiscord />
+                  </div>
+                  <div className="mx-4">
+                    <LogoMaze />
+                  </div>
+                  <div className="mx-4">
+                    <LogoUpwork />
+                  </div>
+                  <div className="mx-4">
+                    <LogoWealthsimple />
+                  </div>
+                  <div className="mx-4">
+                    <LogoBraze />
+                  </div>
                 </Marquee>
-            </div>
+              </div>
               <div className="hidden md:flex flex-col gap-8">
                 <div className="flex gap-8">
                   <LogoElastic />
@@ -259,7 +281,7 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
             </motion.div>
-  
+
             <motion.div
               ref={sectionRef}
               initial={{ y: 100, opacity: 0 }}
@@ -268,20 +290,26 @@ const IndexPage = ({ data }) => {
               className="animated-section"
             >
               <div className=" md:pt-24   grid grid-cols-2 gap-4 md:flex md:flex-row">
-                <div className="flex md:pr-12 ">
-                  <View className=" " />
+                <div className="flex md:pr-12 py-1 ">
+                  {/* <StaticImage
+                  quality={100}
+                    src="../images/numbers/1.png"
+                    className="w-full h-full"
+                    alt="recurring"
+                  /> */}
+                  <View className="overflow-visible " />
                   {/* Vulnerabilities Found */}
                 </div>
-                <div className="flex md:px-12 ">
-                  <Follow />
+                <div className="flex md:px-12 py-1 ">
+                  <Follow className="overflow-visible " />
                   {/* Private Data Saved */}
                 </div>
-                <div className="flex md:px-12 ">
-                  <Duration />
+                <div className="flex md:px-12 py-1 ">
+                  <Duration className="overflow-visible " />
                   {/* For First Critical Bug */}
                 </div>
-                <div className="flex md:px-12 ">
-                  <Percentation />
+                <div className="flex md:px-12 py-1 ">
+                  <Percentation className="overflow-visible " />
                   {/* Recurring Client */}
                 </div>
               </div>
@@ -301,7 +329,7 @@ const IndexPage = ({ data }) => {
               Our services for <br />
               your <span className="text-[#09DE4C]">cyber security</span>
             </h2>
-  
+
             <div className="grid md:grid-cols-2 grid-cols-1 gap-4 text-center">
               <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
                 <Shield className="w-full h-auto" />
@@ -319,7 +347,7 @@ const IndexPage = ({ data }) => {
                   while providing solutions to mitigate risk.
                 </p>
               </div>
-  
+
               <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
                 <Contact className="w-full h-auto" />
                 <h3 className="text-2xl font-bold">Security Training</h3>
@@ -406,7 +434,7 @@ const IndexPage = ({ data }) => {
             </div>
           </section>
         </motion.div>
-  
+
         <motion.div
           ref={process.ref}
           initial={{ y: 100, opacity: 0 }}
@@ -450,7 +478,7 @@ const IndexPage = ({ data }) => {
                   </p>
                 </CardContent>
               </Card>
-  
+
               <Card className="bg-[#19191B] border-[#343B46]">
                 <CardHeader className="flex flex-row gap-4 ">
                   <CardTitle className="flex flex-row gap-4 text-stone-50 ">
@@ -479,7 +507,7 @@ const IndexPage = ({ data }) => {
                   </p>
                 </CardContent>
               </Card>
-  
+
               <Card className="bg-[#19191B] border-[#343B46]">
                 <CardHeader className="flex flex-row gap-4 ">
                   <CardTitle className="flex flex-row gap-4 justify-center items-center text-stone-50 ">
@@ -508,12 +536,12 @@ const IndexPage = ({ data }) => {
                   </p>
                 </CardContent>
               </Card>
-  
+
               <Card className="bg-[#19191B] border-[#343B46]">
                 <CardHeader className="flex flex-row gap-4 ">
                   <CardTitle className="flex flex-row gap-4 text-stone-50 ">
-                    <Avatar asChild className="w-14 h-14">  
-                    <StaticImage src="../images/alexander.png" alt="alexander" />
+                    <Avatar asChild className="w-14 h-14">
+                      <StaticImage src="../images/alexander.png" alt="alexander" />
                     </Avatar>
                     <div className="flex flex-col gap-1">
                       <h3 className="text-xl">Alexander</h3>
@@ -538,7 +566,7 @@ const IndexPage = ({ data }) => {
                   </p>
                 </CardContent>
               </Card>
-  
+
               <Card className="bg-[#19191B] border-[#343B46]">
                 <CardHeader className="flex flex-row gap-4 ">
                   <CardTitle className="flex flex-row gap-4 text-stone-50 ">
@@ -547,7 +575,7 @@ const IndexPage = ({ data }) => {
                         src="../images/martha_andrews.png"
                         alt="martha andrews"
                       />
-                   </Avatar>
+                    </Avatar>
                     <div className="flex flex-col gap-1">
                       <h3 className="text-xl">Martha Andrews</h3>
                       <p className="text-sm text-stone-300">
@@ -571,11 +599,11 @@ const IndexPage = ({ data }) => {
                     className="flex gap-2 pt-6 text-gray-500 font-bold items-center "
                   >
                     Read Case Study
-                    <ArrowGray className="mt-1 text-gray-500"/>
+                    <ArrowGray className="mt-1 text-gray-500" />
                   </Link>
                 </CardContent>
               </Card>
-  
+
               <Card className="bg-[#19191B] border-[#343B46]">
                 <CardHeader className="flex flex-row gap-4 ">
                   <CardTitle className="flex flex-row gap-4 text-stone-50 ">
@@ -584,7 +612,7 @@ const IndexPage = ({ data }) => {
                         src="../images/alex_beluchi.png"
                         alt="alex beluchi"
                       />
-                   </Avatar>
+                    </Avatar>
                     <div className="flex flex-col gap-1">
                       <h3 className="text-xl">Alex Beluchi</h3>
                       <p className="text-sm text-stone-300">
@@ -700,7 +728,7 @@ const IndexPage = ({ data }) => {
             </Carousel>
           </section>
         </motion.div>
-  
+
         <motion.div
           ref={blogsandarticles.ref}
           initial={{ y: 100, opacity: 0 }}
@@ -767,7 +795,7 @@ const IndexPage = ({ data }) => {
             </Accordion>
           </section>
         </motion.div>
-  
+
         <motion.div
           ref={faq.ref}
           initial={{ y: 100, opacity: 0 }}
@@ -794,7 +822,7 @@ const IndexPage = ({ data }) => {
             </div>
             <StaticImage src="../images/objek.png" alt="object" className="md:w-[28rem] w-[15rem]  h-auto absolute -bottom-[0rem] -right-0" />
           </section>
-  
+
         </motion.div>
       </div>
     </Layout>
