@@ -120,15 +120,6 @@ const IndexPage = ({ data }) => {
     threshold: 0.1,
   });
 
-  // State to track if accordion is open
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Function to toggle accordion state
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const contentClassName = isOpen ? 'accordion-expand' : 'accordion-close';
 
 
   useEffect(() => {
@@ -659,25 +650,7 @@ const IndexPage = ({ data }) => {
             </section>
           </section>
         </motion.div>
-        {/* <section>
-          <h2 className="text-4xl font-bold">
-            We believe in giving back to the society. 
-            Check out our{" "} <br />
-            <span className="text-[#09DE4C]">blogs and articles</span>
-          </h2>
-          <div>
-            <button>
-              <LeftDisable />
-              <LeftEnable />
-            </button>
-          </div>
-          <div>
-            <button>
-              <RightDisable />
-              <RightEnable />
-            </button>
-          </div>
-        </section> */}
+        
         <motion.div
           ref={sayaboutus.ref}
           initial={{ y: 100, opacity: 0 }}
@@ -744,7 +717,7 @@ const IndexPage = ({ data }) => {
             </Carousel>
           </section>
         </motion.div>
-
+{/* 
         <motion.div
           ref={blogsandarticles.ref}
           initial={{ y: 100, opacity: 0 }}
@@ -756,42 +729,42 @@ const IndexPage = ({ data }) => {
             <h3 className="text-3xl font-bold capitalize ">faq</h3>
             <Accordion type="single" collapsible className="w-full py-8">
               <AccordionItem value="item-1">
-               <AccordionTrigger onClick={toggleAccordion}>
+             <AccordionTrigger >
                   We're launching our new Feature/Application/Infrastructure. How
                   do I know we're secure ?
                 </AccordionTrigger>
-                <AccordionContent className={contentClassName}>
+                  <AccordionContent >
                   We'll seek your permission and look at the different security
                   metrics, check for security loopholes and update you about it.
                   We will also guide you, how to maintain these further 😃
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-               <AccordionTrigger onClick={toggleAccordion}>
+             <AccordionTrigger >
                   We want to have continuous monitoring on our critical assets
                   including DNS, remote instances etc. Can you provide some
                   solution around it ?
                 </AccordionTrigger>
-                <AccordionContent className={contentClassName}>
+                  <AccordionContent >
                   Yes. The kind of solution you're looking for, we've already
                   built and deployed it at many organisations, now we're providing
                   it as a SaaS offering to our clients.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
-               <AccordionTrigger onClick={toggleAccordion}>
+             <AccordionTrigger >
                   Can you look at our Web3 App ?
                 </AccordionTrigger>
-                <AccordionContent className={contentClassName}>
+                  <AccordionContent >
                   Yes. We can. We're updated with the latest trends and have done
                   security audits of Web3 applications.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
-               <AccordionTrigger onClick={toggleAccordion}>
+             <AccordionTrigger >
                   Can you help us evaluate a vendor that we are onboarding ?
                 </AccordionTrigger>
-                <AccordionContent className={contentClassName}>
+                  <AccordionContent >
                   We have checklists that we use when onboarding different
                   vendors. This includes things like --- How data is handled,
                   different types of compliance ( like ISO 27001, SoC 2, HIPPA
@@ -799,10 +772,10 @@ const IndexPage = ({ data }) => {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5">
-               <AccordionTrigger onClick={toggleAccordion}>
+             <AccordionTrigger >
                   What all do you require to start a pentest ?
                 </AccordionTrigger>
-                <AccordionContent className={contentClassName}>
+                  <AccordionContent >
                   We'll seek your permission and look at the different security
                   metrics, check for security loopholes and update you about it.
                   We will also guide you, how to maintain these further 😃
@@ -810,7 +783,7 @@ const IndexPage = ({ data }) => {
               </AccordionItem>
             </Accordion>
           </section>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           ref={faq.ref}

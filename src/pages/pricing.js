@@ -139,7 +139,7 @@ const PricingPage = () => {
                             <AccordionTrigger className="font-semibold">
                                 We're launching our new Feature/Application/Infrastructure. How do I know we're secure?
                             </AccordionTrigger>
-                            <AccordionContent className=" p-4 rounded">
+                            <AccordionContent className="">
                                 We'll audit your new feature/application/infrastructure to ensure it meets current security standards and provide you with a comprehensive report.
                             </AccordionContent>
                         </AccordionItem>
@@ -148,7 +148,7 @@ const PricingPage = () => {
                             <AccordionTrigger className="font-semibold">
                                 We want continuous monitoring on our critical assets. Can you provide some solution around it?
                             </AccordionTrigger>
-                            <AccordionContent className=" p-4 rounded">
+                            <AccordionContent className="">
                                 Yes, our continuous monitoring solutions can keep track of your assets and alert you to any security issues in real-time.
                             </AccordionContent>
                         </AccordionItem>
@@ -157,7 +157,7 @@ const PricingPage = () => {
                             <AccordionTrigger className="font-semibold">
                                 Can you look at our Web3 App?
                             </AccordionTrigger>
-                            <AccordionContent className=" p-4 rounded">
+                            <AccordionContent className="">
                                 Absolutely, our team is well-versed in Web3 applications and can provide a full security audit for you.
                             </AccordionContent>
                         </AccordionItem>
@@ -166,7 +166,7 @@ const PricingPage = () => {
                             <AccordionTrigger className="font-semibold">
                                 Can you help us evaluate a vendor we're onboarding?
                             </AccordionTrigger>
-                            <AccordionContent className=" p-4 rounded">
+                            <AccordionContent className="">
                                 We can assist with vendor evaluations to ensure they meet your security requirements and industry standards.
                             </AccordionContent>
                         </AccordionItem>
@@ -175,7 +175,7 @@ const PricingPage = () => {
                             <AccordionTrigger className="font-semibold">
                                 What all do you require to start a pentest?
                             </AccordionTrigger>
-                            <AccordionContent className=" p-4 rounded">
+                            <AccordionContent className="">
                                 To begin a penetration test, we need a list of assets, your authorization, and a timeline to conduct the tests.
                             </AccordionContent>
                         </AccordionItem>

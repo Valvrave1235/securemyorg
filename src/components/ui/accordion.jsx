@@ -1,43 +1,55 @@
-import * as React from "react"
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDown, Plus } from "lucide-react"
-
+import * as React from 'react';
+import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { ChevronDownIcon, PlusIcon } from 'lucide-react'; // Assuming you use Heroicons for icons
 import { cn } from "@/lib/utils"
+// Define Accordion components
+const Accordion = AccordionPrimitive.Root;
 
-const Accordion = AccordionPrimitive.Root
+const AccordionItem = React.forwardRef(({ ...props }, ref) => (
 
-const AccordionItem = React.forwardRef(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item ref={ref} className={cn("[&[data-state=open]]:bg-[#19191B] border-[#343B46] [&[data-state=open]]:border [&[data-state=open]]:rounded-xl font-bold", className)} {...props} />
-))
-AccordionItem.displayName = "AccordionItem"
+
+  <AccordionPrimitive.Item
+    ref={ref}
+    className ="bg-[#19191B] border  border-[#343B46] mb-5 rounded-xl" // Tailwind classes for styling
+    {...props}
+  />
+));
+AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 bg-[#19191B] text-xl text-start font-bold border-[#343B46] my-3 px-6 py-6 rounded-xl border  items-center justify-between transition-all [&[data-state=open]]:border-0  [&[data-state=open]]:pb-2 [&[data-state=open]>svg]:hidden",
+        "bg-[#19191B] flex justify-between items-center w-full text-left text-white py-5 px-6 transition-all  [&[data-state=open]>svg]:hidden rounded-xl",
         className
       )}
       {...props}>
       {children}
-      <Plus className="h-4 w-4 shrink-0 transition-transform duration-200" />
+   
+        <PlusIcon className="h-5 w-5 text-white" />
+      
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
-))
+));
+// AccordionTrigger.displayName = "AccordionTrigger";
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 
 const AccordionContent = React.forwardRef(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className={`overflow-hidden bg-[#19191B] text-sm transition-all pb-2 text-stone-300 ${className} accordion-collapse`}
+    // Apply the animations for accordion content
+    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down bg-[#19191B] rounded-xl"
     {...props}
   >
-    <div className={`pb-4 px-6 pt-0 ${className}`}>{children}</div>
+    <div className={cn("pb-4 px-6 pt-0", className)}>{children}</div>
   </AccordionPrimitive.Content>
 ));
-
-
 AccordionContent.displayName = AccordionPrimitive.Content.displayName
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+
+// AccordionContent.displayName = AccordionPrimitive.Content.displayName
+
+
+// Export your components
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };

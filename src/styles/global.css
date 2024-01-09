@@ -80,39 +80,15 @@ body{
 }
 
 
-/* Add this CSS to your stylesheet */
-@keyframes slideDown {
-  from {
-    max-height: 0;
-    opacity: 0;
-  }
-  to {
-    max-height: 30rem; /* Adjust as needed */
-    opacity: 1;
-  }
+
+
+/* Hide the SVG when the accordion is open */
+[data-state="open"] > svg {
+  display: none;
+}
+/* Styles to hide the PlusIcon when the accordion is open */
+[data-state='open'] .accordion-trigger-indicator {
+  display: none;
 }
 
-@keyframes slideUp {
-  from {
-    max-height: 30rem; /* Adjust as needed */
-    opacity: 1;
-  }
-  to {
-    max-height: 0;
-    opacity: 0;
-  }
-}
 
-.accordion-collapse {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-}
-
-.accordion-expand {
-  animation: slideDown 0.5s ease forwards;
-}
-
-.accordion-close {
-  animation: slideUp 0.5s ease forwards;
-}
