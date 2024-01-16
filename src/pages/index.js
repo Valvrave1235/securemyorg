@@ -55,6 +55,7 @@ import Number3 from "../assets/number3.svg";
 import Client from "../assets/client.svg";
 import Log from "../assets/log.svg";
 import Tabel from "../assets/tabel.svg";
+import BgGreen from "../assets/bg-green.svg";
 import AlexBeluchi from "../images/alex_beluchi.png";
 import Alexander from "../images/alexander.png";
 import Mark from "../images/mark.png";
@@ -76,6 +77,14 @@ import Plus2 from "../assets/plus2.svg";
 import Plus3 from "../assets/plus3.svg";
 import Plus4 from "../assets/plus4.svg";
 
+import Ripling from "../assets/ripling.svg";
+import Yahoo from "../assets/yahoo.svg";
+import Spacebasic from "../assets/spacebasic.svg";
+import Gojek from "../assets/gojek.svg";
+import Cloudanix from "../assets/cloudanix.svg";
+import Blinkit from "../assets/blinkit.svg";
+import Berrybox from "../assets/berrybox.svg";
+
 import { Link } from "gatsby";
 import {
   Card,
@@ -95,11 +104,14 @@ import {
 } from "@/components/ui/accordion";
 const useScrollAnimation = () => {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: false });
 
   useEffect(() => {
     if (inView) {
       controls.start({ y: 0, opacity: 1 });
+    } else {
+      // Reset the animation when the element is not in view
+      controls.start({ y: 100, opacity: 0 });
     }
   }, [controls, inView]);
 
@@ -130,7 +142,7 @@ const IndexPage = ({ data }) => {
 
   const { ref: sectionRef, inView: sectionInView } = useInView({
     threshold: 0.1,
-    triggerOnce: true, // Ensures the animation only happens once
+    triggerOnce: false, // Ensures the animation only happens once
   });
 
   useEffect(() => {
@@ -165,7 +177,9 @@ const IndexPage = ({ data }) => {
   const sayaboutus = useScrollAnimation();
   const blogsandarticles = useScrollAnimation();
   const faq = useScrollAnimation();
-
+  const asideAnimation1 = useScrollAnimation();
+  const asideAnimation2 = useScrollAnimation();
+  const asideAnimation3 = useScrollAnimation();
 
 
   return (
@@ -176,15 +190,15 @@ const IndexPage = ({ data }) => {
           animate={heroControls}
           transition={{ duration: 0.5, delay: 0.2 }} // Delayed start for visibility
           className="hero-section relative"
+          // style={{ backgroundImage: 'url(/bg-green.png)' }}
         >
           <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] text-center justify-center items-center  md:max-w-screen-lg mx-auto ">
             <div className="z-10 relative flex flex-col justify-center items-center gap-4">
-              <h2 className="text-4xl md:text-6xl font-bold w-10/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient ">
-                We help companies scale while being secure
+              <h2 className="text-4xl md:text-6xl font-bold w-12/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient ">
+                Scale Securely in 3 Simple Steps
               </h2>
-              <p className="mt-4 text-transparent bg-clip-text bg-text-gradient text-xs w-8/12  ">
-                Hi, we’re a cyber security and devops agency which helps fast
-                paced startups scale.
+              <p className="mt-4 text-white bg-clip-text  bg-text-gradient text-md w-8/12  ">
+                We are your cybersecurity partner, to ensure your app, code and cloud security.
               </p>
               <Button className="mt-8 bg-stone-50 text-stone-950  rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-green-600 my-12">
                 <Rocket className="w-6 h-8" />
@@ -195,16 +209,7 @@ const IndexPage = ({ data }) => {
 
            
           </section>
-          <StaticImage
-            src="../images/bg-green.png"
-            className="block w-full h-full z-0 top-0 absolute object-cover"
-            style={{
-              //  width: "max-content",
-              position: "absolute"
-            }}
-            sizes="100vw"
-            alt="green background gradient"
-          />
+          <BgGreen className="block w-full h-full z-0 top-0 absolute object-cover"/>
           <hr className=" border-white border-b-4  md:max-w-screen-lg mx-auto " />
         </motion.section>
       
@@ -216,11 +221,17 @@ const IndexPage = ({ data }) => {
           className="trusted-companies-section md:max-w-screen-lg mx-auto"
         >
           <section className="md:py-24 py-12 flex flex-col gap-14">
+            <motion.div
+              ref={sectionRef}
+              initial={{ y: 100, opacity: 0 }}
+              animate={controls}
+              transition={{ duration: 0.5 }}
+              className="animated-section"
+            >
             <h2 className="md:text-4xl text-3xl font-bold">
-              You’re in safe hands, some of the <br className="hidden md:flex" />
-              <span className="text-[#09DE4C]">companies</span> that have trusted
-              us
+              You’re in safe hands, some of the <span className="text-[#09DE4C]"> companies</span>  we <br className="hidden md:flex" /> have worked with.
             </h2>
+            </motion.div>
             <motion.div
               ref={servicesAnimation.ref}
               initial={{ y: 100, opacity: 0 }}
@@ -268,8 +279,31 @@ const IndexPage = ({ data }) => {
                   </div>
                 </Marquee>
               </div>
-              <div className="hidden md:flex flex-col gap-8">
-                <div className="flex gap-8">
+              <motion.div
+                ref={sectionRef}
+                initial={{ y: 100, opacity: 0 }}
+                animate={controls}
+                transition={{ duration: 0.5 }}
+                className="animated-section"
+              >
+              <div className="hidden md:flex flex-col gap-14">
+                <div className="flex justify-between items-center"> 
+                    <Ripling/>
+                    <Yahoo/>
+                    <Gojek/>
+                    <Blinkit/>
+                    <Cloudanix/>
+                </div>
+                  <div className="flex items-center gap-24"> 
+                    <Spacebasic />
+                    {/* <Berrybox /> */}
+                    <StaticImage 
+                    src="../images/berrybox.webp" 
+                    alt="berrybox" 
+                    className="w-[15rem] h-auto" 
+                    />
+                </div>
+                {/* <div className="flex gap-8">
                   <LogoElastic />
                   <LogoFramer />
                   <LogoPipedrive />
@@ -284,8 +318,9 @@ const IndexPage = ({ data }) => {
                   <LogoUpwork />
                   <LogoWealthsimple />
                   <LogoBraze />
-                </div>
+                </div> */}
               </div>
+              </motion.div>
             </motion.div>
 
             <motion.div
@@ -295,7 +330,7 @@ const IndexPage = ({ data }) => {
               transition={{ duration: 0.5 }}
               className="animated-section"
             >
-              <div className=" md:pt-24   grid grid-cols-2 gap-4 md:flex md:flex-row">
+              <div className=" md:pt-12   grid grid-cols-2 gap-4 md:flex md:flex-row">
                 <div className="flex md:pr-12 py-1 ">
                   {/* <StaticImage
                   quality={100}
@@ -382,13 +417,15 @@ const IndexPage = ({ data }) => {
           className="services-section md:max-w-screen-lg mx-auto"
         >
           <section className="py-24 flex flex-col gap-4">
-            <h3 className="md:text-4xl text-3xl font-bold">
+            <h3 className="md:text-4xl md:w-8/12 leading-10 py-12 text-3xl font-bold">
               The world moves fast, we keep pace. Cut through the noise with our{" "}
               <span className="text-[#09DE4C]">process</span>
             </h3>
             <div className="flex gap-4">
               <div className="flex flex-col gap-12 py-12 ">
+               
                 <div className="flex flex-col md:flex-row gap-4">
+                  
                   <div className="flex w-12/12 gap-4 flex-col md:flex-row  ">
                     <Number1 className="md:w-1/12 " />
                     <div className="w-full">
@@ -400,10 +437,18 @@ const IndexPage = ({ data }) => {
                       </p>
                     </div>
                   </div>
-                  <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-                    <Client className="w-[20rem] h-auto" />
-                  </div>
+                  <motion.div
+                    ref={asideAnimation1.ref}
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={asideAnimation1.controls}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <aside className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center">
+                      <Client className="w-[20rem] h-auto" />
+                    </aside>
+                  </motion.div>
                 </div>
+           
                 <div className="flex flex-col md:flex-row  gap-4">
                   <div className="flex w-12/12 gap-4 md:flex-row flex-col">
                     <Number2 className="md:w-1/12" />
@@ -415,9 +460,15 @@ const IndexPage = ({ data }) => {
                       </p>
                     </div>
                   </div>
-                  <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
+                  <motion.aside
+                    ref={asideAnimation2.ref}
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={asideAnimation2.controls}
+                    transition={{ duration: 0.5 }}
+                    className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center"
+                  >
                     <Log className="w-[20rem] h-auto" />
-                  </div>
+                  </motion.aside>
                 </div>
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex w-12/12 gap-4 md:flex-row flex-col">
@@ -433,9 +484,15 @@ const IndexPage = ({ data }) => {
                       </p>
                     </div>
                   </div>
-                  <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-                    <Tabel className="w-[20rem] h-auto" />
-                  </div>
+                  <motion.div
+                    ref={asideAnimation3.ref}
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={asideAnimation3.controls}
+                    transition={{ duration: 0.5 }}
+                    
+                  >
+                    <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center"><Tabel className="w-[20rem] h-auto" /></div>
+                  </motion.div>
                 </div>
               </div>
             </div>
@@ -450,12 +507,104 @@ const IndexPage = ({ data }) => {
           className="services-section md:max-w-screen-lg mx-auto"
         >
           <section>
-            <h2 className="font-bold md:text-4xl text-3xl">
-              People love us. See what they have to{" "}
+            <h2 className="font-bold md:text-4xl text-3xl md:leading-relaxed">
+              People love us. See what they <br className="hidden md:flex" /> have to{" "}
               <span className="text-[#09DE4C] font-bold">say about us</span>
             </h2>
             <section className="grid grid-cols-1 md:grid-cols-3 gap-8 py-24">
               <Card className="bg-[#19191B] border-[#343B46]">
+                <CardHeader className="flex flex-row gap-4 ">
+                  <CardTitle className="flex flex-row gap-4 text-stone-50 ">
+                    <Avatar asChild className="w-10 h-10">
+                      <StaticImage
+                        src="../images/sujay.webp"
+                        alt="Sujay"
+                      />
+                    </Avatar>
+                    <a href="https://www.linkedin.com/in/sujaymaheshwari/" className="flex flex-col gap-1">
+                      <h3 className="text-xl">Sujay Maheshwari</h3>
+                      <p className="text-xs text-stone-400">
+                        Founder Cloudanix, YC Startup
+                      </p>
+                    </a>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-stone-50 text-sm">
+                  <p>
+                    We have always had a wonderful experience with Aseem and his team. Their professionalism and timely updates have reassured me of good work. When we had a crucial feature going live, SecureMyOrg conducted timely and thorough testing, ensuring a secure launch and providing us with nuclei templates to keep any upcoming similar features secure as well. Their efficiency and comprehensive reporting exceeded our expectations and also fortified our confidence in their services. They have been an invaluable partner in safeguarding Cloudanix.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="bg-[#19191B] border-[#343B46]">
+                <CardHeader className="flex flex-row gap-4 ">
+                  <CardTitle className="flex flex-row gap-4 text-stone-50 ">
+                    <Avatar asChild className="w-10 h-10">
+                      <StaticImage
+                        src="../images/Avinash.webp"
+                        alt="Avinash"
+                      />
+                    </Avatar>
+                    <a href="https://www.linkedin.com/in/avinashjain619/" className="flex flex-col gap-1">
+                      <h3 className="text-xl">Avinash Jain</h3>
+                      <p className="text-xs text-stone-400">
+                        Security at Microsoft (Identity Platform)
+                      </p>
+                    </a>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-stone-50 text-sm">
+                  <p>
+                    I have worked with Aseem in Blinkit (Grofers) and I feel very proud to get to know him, such a hard-working and all-rounder in his role. His overall presence has really a positive impact in and outside the team. He dives into unknown problems and always comes up with a solid breakthrough in not much time. He is a developer who can do security which gives him an edge over many others there.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="bg-[#19191B] border-[#343B46]">
+                <CardHeader className="flex flex-row gap-4 ">
+                  <CardTitle className="flex flex-row gap-4 text-stone-50 ">
+                    <Avatar asChild className="w-10 h-10">
+                      <StaticImage
+                        src="../images/placholder.webp"
+                        alt="Kenny"
+                      />
+                    </Avatar>
+                    <a href="https://www.linkedin.com/in/kgotama/" className="flex flex-col gap-1">
+                      <h3 className="text-xl">Kenny Gotama</h3>
+                      <p className="text-xs text-stone-400">
+                        Gojek Product Security
+                      </p>
+                    </a>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-stone-50 text-sm">
+                  <p>
+                    I have worked with Aseem for a year. He has a great technical skillset combined with being an excellent problem solver which has helped a lot to solve the Security challenge in the organization. One of the great impressions that has always been shown constantly is the calmness, and creativity that is reflected in every challenge.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="bg-[#19191B] border-[#343B46]">
+                <CardHeader className="flex flex-row gap-4 ">
+                  <CardTitle className="flex flex-row gap-4 text-stone-50 ">
+                    <Avatar asChild className="w-10 h-10">
+                      <StaticImage
+                        src="../images/srekar.webp"
+                        alt="Sreekar"
+                      />
+                    </Avatar>
+                    <a href="https://www.linkedin.com/in/sreekaro/" className="flex flex-col gap-1">
+                      <h3 className="text-xl">Sreekar Obulampalli</h3>
+                      <p className="text-xs text-stone-400">
+                        Founder @ BerryBox Benefits | InsurTech, HealthTech
+                      </p>
+                    </a>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-stone-50 text-sm">
+                  <p>
+                    We were referred to Aseem by one of our employees who had happened to know Aseem. To begin with, Aseem helped us understand our security posture. He helped put the basics in place, gave us valuable inputs and was part of the discussions when we chose our ISMS platform in the process of getting audited for various standards and certifications. He also helped with execution of our VAPT (Vulnerability Assessment and Penetration Test) and subsequent work on risk mitigations from the findings. SecureMyOrg and Aseem have been a valuable asset for Berrybox. We achieved all this in a very short span of time in about a month.
+                  </p>
+                </CardContent>
+              </Card>
+              {/* <Card className="bg-[#19191B] border-[#343B46]">
                 <CardHeader className="flex flex-row gap-4 ">
                   <CardTitle className="flex flex-row gap-4 text-stone-50 ">
                     <Avatar asChild className="w-14 h-14">
@@ -646,7 +795,7 @@ const IndexPage = ({ data }) => {
                     <ArrowGray className="mt-1 text-gray-500" />
                   </Link>
                 </CardContent>
-              </Card>
+              </Card> */}
             </section>
           </section>
         </motion.div>
@@ -717,73 +866,7 @@ const IndexPage = ({ data }) => {
             </Carousel>
           </section>
         </motion.div>
-{/* 
-        <motion.div
-          ref={blogsandarticles.ref}
-          initial={{ y: 100, opacity: 0 }}
-          animate={blogsandarticles.controls}
-          transition={{ duration: 0.5 }}
-          className="animated-section md:max-w-screen-lg mx-auto"
-        >
-          <section className="py-24 pb-6">
-            <h3 className="text-3xl font-bold capitalize ">faq</h3>
-            <Accordion type="single" collapsible className="w-full py-8">
-              <AccordionItem value="item-1">
-             <AccordionTrigger >
-                  We're launching our new Feature/Application/Infrastructure. How
-                  do I know we're secure ?
-                </AccordionTrigger>
-                  <AccordionContent >
-                  We'll seek your permission and look at the different security
-                  metrics, check for security loopholes and update you about it.
-                  We will also guide you, how to maintain these further 😃
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-             <AccordionTrigger >
-                  We want to have continuous monitoring on our critical assets
-                  including DNS, remote instances etc. Can you provide some
-                  solution around it ?
-                </AccordionTrigger>
-                  <AccordionContent >
-                  Yes. The kind of solution you're looking for, we've already
-                  built and deployed it at many organisations, now we're providing
-                  it as a SaaS offering to our clients.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-             <AccordionTrigger >
-                  Can you look at our Web3 App ?
-                </AccordionTrigger>
-                  <AccordionContent >
-                  Yes. We can. We're updated with the latest trends and have done
-                  security audits of Web3 applications.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-             <AccordionTrigger >
-                  Can you help us evaluate a vendor that we are onboarding ?
-                </AccordionTrigger>
-                  <AccordionContent >
-                  We have checklists that we use when onboarding different
-                  vendors. This includes things like --- How data is handled,
-                  different types of compliance ( like ISO 27001, SoC 2, HIPPA
-                  compliance etc ) that they are compliant to etc
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-5">
-             <AccordionTrigger >
-                  What all do you require to start a pentest ?
-                </AccordionTrigger>
-                  <AccordionContent >
-                  We'll seek your permission and look at the different security
-                  metrics, check for security loopholes and update you about it.
-                  We will also guide you, how to maintain these further 😃
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </section>
-        </motion.div> */}
+
 
         <motion.div
           ref={faq.ref}
@@ -799,17 +882,20 @@ const IndexPage = ({ data }) => {
             }}
           >
             <div className="py-12 pt-24 px-8 pb-[10rem] md:pb-0">
-              <h3 className="text-4xl font-extrabold">
+              <h3 className="text-4xl font-bold">
                 Have problems with <br />
                 security and scaling? <br />
                 Let’s talk
               </h3>
-              <Button className="mt-8 bg-stone-50 text-stone-950 rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-green-600 my-12">
-                <Rocket2 className="w-6 h-8" />
-                Schedule a Call
+              <Button className="mt-8 bg-stone-50 text-stone-950 rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-green-600 my-12" asChild>
+                <a href="https://cal.com/securemyorg/firstmeet">
+                  <Rocket2 className="w-6 h-8" />
+                  Book a Call
+               </a>
               </Button>
             </div>
             <StaticImage src="../images/objek.png" alt="object" className="md:w-[28rem] w-[15rem]  h-auto absolute -bottom-[0rem] -right-0" />
+            {/* <Objek /> */}
           </section>
 
         </motion.div>

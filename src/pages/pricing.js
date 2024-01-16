@@ -55,7 +55,7 @@ const PricingCard = ({ title, price, features, footnote, buttonText, link }) => 
                 <div className="p-4">
                     <h3 className="text-base mt-4 font-light">{title}</h3>
                     <div className="flex gap-3 items-end pt-2">
-                        <div className='text-5xl m-0 text-[#09DE4C] font-extrabold'>
+                        <div className='text-5xl m-0 text-[#09DE4C] font-bold'>
                             {isNaN(price) ? price : `$${price}`}
                         </div>
                         {footnote && <p className="text-sm">{footnote}</p>}
@@ -88,7 +88,7 @@ const PricingCard = ({ title, price, features, footnote, buttonText, link }) => 
 const PricingPage = () => {
     return (
         <Layout >
-            <div className="container mx-auto text-white py-32 pt-52">
+            <div className="container mx-auto md:max-w-screen-lg  text-white py-32 pt-52">
                 <h1 className="text-6xl font-bold text-center mb-6">Simple Transparent <span className='text-[#09DE4C]'>Pricing</span></h1>
                 <p className='mb-12 text-center'>Plans that are crafted just for you</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
@@ -104,7 +104,7 @@ const PricingPage = () => {
                         ]}
                         footnote="For 10 assets"
                         buttonText="Book A Call"
-                        link="https://cal.com/securemyorg/cybersecurity-partner"
+                        link="https://cal.com/securemyorg/book-a-pentest"
                     />
 
                     <PricingCard
@@ -132,9 +132,9 @@ const PricingPage = () => {
                     />
                 </div>
 
-                <div className="my-10">
+                <div className="my-24">
                     <h2 className="text-3xl font-bold mb-4">FAQ</h2>
-                    <Accordion defaultValue="item-1" collapsible>
+                    <Accordion  collapsible className="my-12">
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="font-semibold">
                                 We're launching our new Feature/Application/Infrastructure. How do I know we're secure?

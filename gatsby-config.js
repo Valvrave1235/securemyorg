@@ -11,6 +11,15 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Schibsted Grotesk\:400,700,900,800` // you can add more weights/styles if you need
+        ],
+        display: 'swap'
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Secure My Org`,

@@ -12,21 +12,30 @@ export default function BlogPost({ data }) {
 
     return (
       <Layout>
-        <div className='relative container mx-auto py-10 lg:py-20  max-w-7xl px-4'>
+        <div className='relative md:max-w-screen-lg mx-auto  container py-10  lg:py-32  max-w-7xl px-4'>
+          <h1 className='text-4xl lg:text-6xl font-bold text-gray-300 mb-6'>
+            {post.frontmatter.title}
+          </h1>
+
+         <div className='flex flex-col gap-2 py-4'>
+            <p className='text-lg '>
+              <span>By</span> <strong>{post.frontmatter.author}</strong> on {formatDate(post.frontmatter.date)}
+            </p>
+            <p className='text-lg font-bold'>
+              {post.frontmatter.category}
+            </p>
+         </div>
+
           {thumbnail && (
             <GatsbyImage
               image={thumbnail}
               alt={post.frontmatter.title}
               
-              className='rounded-lg shadow-lg mb-8 w-1/2 h-auto mx-auto  '
+              className='rounded-lg shadow-lg mb-8 w-full object-cover my-4 h-auto mx-auto  flex justify-center items-center'
             />
           )}
-          <h1 className='text-4xl lg:text-6xl font-bold text-gray-300 mb-6'>
-            {post.frontmatter.title}
-          </h1>
-          <p className='text-lg text-gray-600 mb-8'>
-            {formatDate(post.frontmatter.date)}
-          </p>
+        
+         
           <div
             className='prose prose-lg prose-invert max-w-none'
             dangerouslySetInnerHTML={{ __html: post.html }}
@@ -43,7 +52,9 @@ export const query = graphql`
       frontmatter {
         title
         date
+        author
         description
+        category
         thumbnail {
           childImageSharp {
             gatsbyImageData(width: 2000, layout: CONSTRAINED)

@@ -57,8 +57,8 @@ const Header = () => {
   console.log("Current menu state:", isMenuOpen); // This will log the state change
 
   return (
-    <header className="md:max-w-screen-lg mx-auto">
-      <div className={`absolute md:hidden z-50 w-full ${isMenuOpen ? "bg-stone-950" : ""} top-0 max-w-screen-lg mx-auto px-4 py-2 flex justify-between items-center`}>
+    <header className="md:max-w-6xl  mx-auto">
+      <div className={`absolute md:hidden z-50 w-full ${isMenuOpen ? "bg-stone-950" : ""} top-0 max-w-6xl  mx-auto px-4 py-2 flex justify-between items-center`}>
         {/* Logo and Title */}
         <Link to="/">
           <Logo className="h-12" aria-label="SecureMyOrg Logo" />
@@ -93,7 +93,7 @@ const Header = () => {
         animate={controls}
         className={`fixed md:hidden w-full z-50 top-4 ${isScrolled ? 'bg-stone-950' : 'bg-transparent'}`}
       >
-        <div className="max-w-screen-lg mx-auto px-6 py-2 flex justify-between items-center">
+        <div className="max-w-6xl  mx-auto px-6 py-2 flex justify-between items-center">
           {/* Logo and Title */}
           <Link to="/">
             <Logo className="h-12" aria-label="SecureMyOrg Logo" />
@@ -123,26 +123,34 @@ const Header = () => {
         </Transition>
       </motion.header>
 
-      <header className="bg-transparent absolute top-0 w-full max-w-screen-lg  overflow-hidden py-4 rounded-xl  md:flex items-center justify-between px-4 z-50 hidden">
+      <header className="bg-transparent absolute top-0 w-full max-w-6xl   overflow-hidden py-4 rounded-xl  md:flex items-center justify-between px-4 z-50 hidden">
         {/* Logo and Title */}
         <Link to="/" className="flex items-center opacity-100">
           <StaticImage
             src="../images/logo.png"
             alt="SecureMyOrg Logo"
-            className=""
+            className="w-40 h-auto"
           />
           {/* <Logo className="h-12" /> */}
           {/* <span className="text-white font-bold ml-2">SecureMyOrg</span> */}
         </Link>
 
         {/* Call to Action Button */}
-        <Link
-          to="/contact-us"
-          className="bg-transparent text-white py-2 px-4 rounded-full  flex  gap-2 border-2 font-semibold hover:bg-green-700 transition duration-300 ease-in-out items-center justify-center border border-green-600 w-fit "
-        >
-          <span>Talk to Us </span>
-          <Arrow className="h-8" />
-        </Link>
+       <div className="flex gap-2">
+          <Link
+            to="/pricing"
+            className="bg-transparent text-white py-2 px-4 rounded-full  flex  gap-2 font-semibold hover:bg-green-700 transition duration-300 ease-in-out items-center justify-center w-fit "
+          >
+            <span>Pricing </span>
+          </Link>
+          <Link
+            href="https://cal.com/securemyorg/firstmeet"
+            className="bg-transparent text-white py-3 px-6 rounded-xl  flex  gap-2 border-2 font-semibold hover:bg-green-700 transition duration-300 ease-in-out items-center justify-center border border-[#09de4c] w-fit "
+          >
+            <span>Talk to Us </span>
+            {/* <Arrow className="h-8" /> */}
+          </Link>
+       </div>
       </header>
       <motion.header
         initial={{ y: -100, opacity: 0 }}
@@ -151,26 +159,34 @@ const Header = () => {
         className={`fixed w-full z-50 ${isScrolled ? "bg-stone-800" : "bg-transparent"
           }`}
       >
-        <header className="bg-[#19191B]/90 fixed w-full max-w-screen-lg top-4  overflow-hidden py-4 px-2 rounded-xl  md:flex items-center justify-between px-4 z-50 hidden">
+        <header className="bg-[#19191B]/90 fixed w-full max-w-6xl  top-4  overflow-hidden py-4 px-2 rounded-xl  md:flex items-center justify-between px-4 z-50 hidden">
           {/* Logo and Title */}
           <Link to="/" className="flex items-center opacity-100">
             <StaticImage
               src="../images/logo.png"
               alt="SecureMyOrg Logo"
-              className=""
+              className="w-40 h-auto"
             />
             {/* <Logo className="h-12" /> */}
             {/* <span className="text-white font-bold ml-2">SecureMyOrg</span> */}
           </Link>
 
           {/* Call to Action Button */}
-          <Link
-            to="/contact-us"
-            className="bg-transparent text-white py-2 px-4 rounded-full  flex  gap-2 border-2 font-semibold hover:bg-green-700 transition duration-300 ease-in-out items-center justify-center border border-green-600 w-fit "
-          >
-            <span>Talk to Us </span>
-            <Arrow className="h-8" />
-          </Link>
+          <div className="flex gap-2">
+            <Link
+              to="/pricing"
+              className="bg-transparent text-white py-2 px-4 rounded-full  flex  gap-2 font-semibold hover:bg-green-700 transition duration-300 ease-in-out items-center justify-center w-fit "
+            >
+              <span>Pricing </span>
+            </Link>
+            <a
+              href="https://cal.com/securemyorg/firstmeet"
+              className="bg-transparent text-white py-3 px-6 rounded-xl  flex  gap-2 border-2 font-semibold hover:bg-green-700 transition duration-300 ease-in-out items-center justify-center border border-[#09de4c] w-fit "
+            >
+              <span>Talk to Us </span>
+              {/* <Arrow className="h-8" /> */}
+            </a>
+        </div>
         </header>
       </motion.header>
     </header>
