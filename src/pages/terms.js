@@ -1,15 +1,27 @@
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Link } from 'gatsby';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Slot } from "@radix-ui/react-slot";
 import Layout from '../components/layout';
+import Particles from "react-particles";
+import particlesConfig from '../../particlesConfig.json'; // Ensure this path is correct
+import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 
 const Terms = () => {
+
     return (
         <Layout>
             <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem]  md:max-w-screen-lg mx-auto  ">
+                {/* Particles component added here */}
+                {/* <Particles
+                    id="tsparticles"
+                    init={particlesInit}
+                    loaded={particlesLoaded}
+                    options={particlesConfig}
+                /> */}
+
                 <h1 className="text-7xl mb-3 px-4 py-2 font-bold">Terms Of Service</h1>
 
                 <article className="text-xl px-4 py-2 prose-invert prose-h2:text-4xl prose-p:mb-4 prose-headings:font-bold prose-headings:my-12 font-sans prose-headings:font-sans  prose-ul:list-disc prose-ul:pl-6 prose-ul:py-4">

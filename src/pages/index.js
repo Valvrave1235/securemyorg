@@ -1,8 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { StaticImage, getImage, GatsbyImage } from "gatsby-plugin-image";
 import "../styles/global.css";
 import { useInView } from "react-intersection-observer";
 import Marquee from "react-fast-marquee";
+
+import Particles from "react-particles";
+
+import particlesConfig from '../../particlesConfig.json'; // Ensure this path is correct
+
+import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 
 import { graphql } from "gatsby";
 import { Button } from "@/components/ui/button";
@@ -44,6 +50,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { motion, useAnimation } from "framer-motion";
+
 
 import Shield from "../assets/shield.svg";
 import Key from "../assets/key.svg";
@@ -118,6 +125,9 @@ const useScrollAnimation = () => {
   return { ref, controls };
 };
 
+
+
+
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
   const [isScrolled, setIsScrolled] = useState(false);
@@ -131,6 +141,13 @@ const IndexPage = ({ data }) => {
   const { ref, inView } = useInView({
     threshold: 0.1,
   });
+
+  // useEffect(() => {
+  //   tsParticles.load('particles-container', {
+  //     ...particlesConfig
+  //   });
+  // }, []);
+
 
 
 
@@ -181,7 +198,18 @@ const IndexPage = ({ data }) => {
   const asideAnimation2 = useScrollAnimation();
   const asideAnimation3 = useScrollAnimation();
 
+  const particlesInit = useCallback(async engine => {
+    console.log(engine);
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    //await loadFull(engine);
+    await loadSlim(engine);
+  }, []);
 
+  const particlesLoaded = useCallback(async container => {
+    await console.log(container);
+  }, []);
   return (
     <Layout>
       <div className="px-4">
@@ -189,10 +217,20 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }} // Start from below
           animate={heroControls}
           transition={{ duration: 0.5, delay: 0.2 }} // Delayed start for visibility
-          className="hero-section relative"
+          className="hero-section relative  particles-container"
           // style={{ backgroundImage: 'url(/bg-green.png)' }}
         >
+          {/* Particles component added here */}
+          <Particles
+
+            className="absolute h-full opacity-90 "
+            id="tsparticles"
+            init={particlesInit}
+            loaded={particlesLoaded}
+            options={particlesConfig}
+          />
           <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] text-center justify-center items-center  md:max-w-screen-lg mx-auto ">
+           
             <div className="z-10 relative flex flex-col justify-center items-center gap-4">
               <h2 className="text-4xl md:text-6xl font-bold w-12/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient ">
                 Scale Securely in 3 Simple Steps
