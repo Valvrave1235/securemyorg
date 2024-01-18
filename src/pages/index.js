@@ -223,23 +223,28 @@ const IndexPage = ({ data }) => {
           {/* Particles component added here */}
           <Particles
 
-            className="absolute h-full opacity-90 "
+            className="absolute h-full opacity-90 z-50"
             id="tsparticles"
             init={particlesInit}
             loaded={particlesLoaded}
             options={particlesConfig}
           />
-          <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] text-center justify-center items-center  md:max-w-screen-lg mx-auto ">
+          <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] lg:pt-[24rem] text-center justify-center items-center  md:max-w-screen-lg lg:max-w-screen-xl px-12 mx-auto ">
            
             <div className="z-10 relative flex flex-col justify-center items-center gap-4">
-              <h2 className="text-4xl md:text-6xl font-bold w-12/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient ">
+              <h2 className="text-4xl md:text-6xl font-bold w-12/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient lg:text-[4rem] lg:w-full lg:mb-8 "
+              
+              style={{
+                  backgroundImage : "linear-gradient(0deg, rgb(199, 250, 137) 0%, var(--token-359d51d1-40e3-4fe7-a0b2-ff2bb63577d5, rgb(236, 239, 242)) 100%);"
+              }}
+              >
                 Scale Securely in 3 Simple Steps
               </h2>
-              <p className="mt-4 text-white bg-clip-text  bg-text-gradient text-md w-8/12  ">
+              <p className="mt-4 text-stone-100 font-sans bg-clip-text  bg-text-gradient text-md w-8/12  ">
                 We are your cybersecurity partner, to ensure your app, code and cloud security.
               </p>
-              <Button className="mt-8 bg-stone-50 text-stone-950  rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-green-600 my-12">
-                <Rocket className="w-6 h-8" />
+              <Button className="mt-8 bg-stone-50 text-stone-950  rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-green-600 my-12 lg:py-10 lg:px-8 lg:text-2xl lg:mt-24">
+                <Rocket className="w-6 h-8 lg:w-8 lg:h-auto " />
                 Book a Call
               </Button>
             </div>
@@ -247,8 +252,8 @@ const IndexPage = ({ data }) => {
 
            
           </section>
-          <BgGreen className="block w-full h-full z-0 top-0 absolute object-cover"/>
-          <hr className=" border-white border-b-4  md:max-w-screen-lg mx-auto " />
+          <BgGreen className="block w-full h-full z-0 top-0 absolute object-cover  lg:h-[70rem]"/>
+          <hr className=" border-white border-b-4  md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto lg:mt-12" />
         </motion.section>
       
         <motion.div
@@ -256,7 +261,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={trustedCompaniesAnimation.controls}
           transition={{ duration: 0.5 }}
-          className="trusted-companies-section md:max-w-screen-lg mx-auto"
+          className="trusted-companies-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
         >
           <section className="md:py-24 py-12 flex flex-col gap-14">
             <motion.div
@@ -402,7 +407,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={testimonyAnimation.controls}
           transition={{ duration: 0.5 }}
-          className="services-section md:max-w-screen-lg mx-auto"
+          className="services-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
         >
           <section className="bg-transparent text-gray-100 py-24 flex flex-col gap-4">
             <h2 className="text-4xl font-extrabold w-full md:w-8/12  py-8">
@@ -452,7 +457,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={cybersecurity.controls}
           transition={{ duration: 0.5 }}
-          className="services-section md:max-w-screen-lg mx-auto"
+          className="services-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
         >
           <section className="py-24 flex flex-col gap-4">
             <h3 className="md:text-4xl md:w-8/12 leading-10 py-12 text-3xl font-bold">
@@ -542,7 +547,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={process.controls}
           transition={{ duration: 0.5 }}
-          className="services-section md:max-w-screen-lg mx-auto"
+          className="services-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
         >
           <section>
             <h2 className="font-bold md:text-4xl text-3xl md:leading-relaxed">
@@ -843,7 +848,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={sayaboutus.controls}
           transition={{ duration: 0.5 }}
-          className="animated-section md:max-w-screen-lg mx-auto"
+          className="animated-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
         >
           <section className="py-24">
             <Carousel>
@@ -911,7 +916,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={faq.controls}
           transition={{ duration: 0.5 }}
-          className="animated-section md:max-w-screen-lg mx-auto"
+          className="animated-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
         >
           <section
             className="flex gap-4 p-4  my-12 rounded-3xl relative"

@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
 const Footer = () => {
     return (
         <footer className="bg-[#19191B]  text-white p-10">
-            <div className="md:max-w-screen-lg mx-auto  flex flex-col md:flex-row justify-between items-start">
+            <div className="md:max-w-screen-lg  lg:max-w-screen-xl px-12 mx-auto  flex flex-col md:flex-row justify-between items-start">
                 {/* Links Section */}
                 <div className='py-12 md:py-0'>
                     <h5 className="text-xl font-bold mb-4">Useful Links</h5>
