@@ -62,7 +62,11 @@ const Header = () => {
       <div className={`absolute md:hidden z-50 w-full ${isMenuOpen ? "bg-stone-950" : ""} top-4 max-w-6xl  lg:max-w-7xl mx-auto px-4 py-2 flex justify-between items-center`}>
         {/* Logo and Title */}
         <Link to="/">
-          <Logo className="h-12" aria-label="SecureMyOrg Logo" />
+          <StaticImage
+              src="../images/logo.png"
+              alt="SecureMyOrg Logo"
+              className="w-[12rem] h-auto"
+            />
         </Link>
         {/* Mobile Menu Button */}
         {/* Open Menu Button */}
@@ -97,7 +101,11 @@ const Header = () => {
         <div className="max-w-6xl  lg:max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
           {/* Logo and Title */}
           <Link to="/">
-            <Logo className="h-12" aria-label="SecureMyOrg Logo" />
+            <StaticImage
+              src="../images/logo.png"
+              alt="SecureMyOrg Logo"
+              className="w-[12rem] h-auto"
+            />
           </Link>
           {/* Mobile Menu Button */}
           <button onClick={secondToggleMenu} className="md:hidden text-white">
@@ -140,13 +148,13 @@ const Header = () => {
        <div className="flex gap-2">
           <Link
             to="/pricing"
-            className="bg-transparent text-white py-2 px-4 rounded-full  flex  gap-2 font-semibold hover:bg-green-700 transition duration-300 ease-in-out items-center justify-center w-fit "
+            className="bg-transparent text-white py-2 px-4 rounded-full  flex  gap-2 font-semibold hover:text-[#09de4c] transition duration-300 ease-in-out items-center justify-center w-fit "
           >
             <span>Pricing </span>
           </Link>
           <Link
             href="https://cal.com/securemyorg/firstmeet"
-            className="bg-transparent text-white py-3 px-6 rounded-xl  flex  gap-2 border-2 font-semibold hover:bg-green-700 transition duration-300 ease-in-out items-center justify-center border border-[#09de4c] w-fit "
+            className="bg-transparent text-white py-3 px-6 rounded-xl  flex  gap-2 border-2 font-semibold hover:text-[#09de4c] transition duration-300 ease-in-out items-center justify-center border border-[#09de4c] w-fit "
           >
             <span>Talk to Us </span>
             {/* <Arrow className="h-8" /> */}
@@ -176,13 +184,13 @@ const Header = () => {
           <div className="flex gap-2">
             <Link
               to="/pricing"
-              className="bg-transparent text-white py-2 px-4 rounded-full  flex  gap-2 font-semibold hover:bg-green-700 transition duration-300 ease-in-out items-center justify-center w-fit "
+              className="bg-transparent text-white py-2 px-4 rounded-full  flex  gap-2 font-semibold hover:text-[#09de4c] transition duration-300 ease-in-out items-center justify-center w-fit "
             >
               <span>Pricing </span>
             </Link>
             <a
               href="https://cal.com/securemyorg/firstmeet"
-              className="bg-transparent text-white py-3 px-6 rounded-xl  flex  gap-2 border-2 font-semibold hover:bg-green-700 transition duration-300 ease-in-out items-center justify-center border border-[#09de4c] w-fit "
+              className="bg-transparent text-white py-3 px-6 rounded-xl  flex  gap-2 border-2 font-semibold hover:text-[#09de4c] transition duration-300 ease-in-out items-center justify-center border border-[#09de4c] w-fit "
             >
               <span>Talk to Us </span>
               {/* <Arrow className="h-8" /> */}

@@ -6,7 +6,7 @@ import Marquee from "react-fast-marquee";
 
 import Particles from "react-particles";
 
-import particlesConfig from '../../particlesConfig.json'; // Ensure this path is correct
+import particlesConfig from "../../particlesConfig.json"; // Ensure this path is correct
 
 import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 
@@ -50,7 +50,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { motion, useAnimation } from "framer-motion";
-
 
 import Shield from "../assets/shield.svg";
 import Key from "../assets/key.svg";
@@ -127,7 +126,6 @@ const useScrollAnimation = () => {
 
 
 
-
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
   const [isScrolled, setIsScrolled] = useState(false);
@@ -147,9 +145,6 @@ const IndexPage = ({ data }) => {
   //     ...particlesConfig
   //   });
   // }, []);
-
-
-
 
   useEffect(() => {
     if (inView) {
@@ -197,8 +192,9 @@ const IndexPage = ({ data }) => {
   const asideAnimation1 = useScrollAnimation();
   const asideAnimation2 = useScrollAnimation();
   const asideAnimation3 = useScrollAnimation();
+  const Vulnerabilities = useScrollAnimation();
 
-  const particlesInit = useCallback(async engine => {
+  const particlesInit = useCallback(async (engine) => {
     console.log(engine);
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -207,7 +203,7 @@ const IndexPage = ({ data }) => {
     await loadSlim(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async container => {
+  const particlesLoaded = useCallback(async (container) => {
     await console.log(container);
   }, []);
   return (
@@ -222,48 +218,44 @@ const IndexPage = ({ data }) => {
         >
           {/* Particles component added here */}
           <Particles
-
-            className="absolute h-full opacity-90 z-50"
+            className="absolute h-full opacity-90 z-0"
             id="tsparticles"
             init={particlesInit}
             loaded={particlesLoaded}
             options={particlesConfig}
           />
-          <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] lg:pt-[24rem] text-center justify-center items-center  md:max-w-screen-lg lg:max-w-screen-xl px-12 mx-auto ">
-           
+          <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] lg:pt-[18rem] text-center justify-center items-center  md:max-w-screen-lg lg:max-w-screen-xl px-12 mx-auto ">
             <div className="z-10 relative flex flex-col justify-center items-center gap-4">
-              <h2 className="text-4xl md:text-6xl font-bold w-12/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient lg:text-[4rem] lg:w-full lg:mb-8 "
-              
-              style={{
-                  backgroundImage : "linear-gradient(0deg, rgb(199, 250, 137) 0%, var(--token-359d51d1-40e3-4fe7-a0b2-ff2bb63577d5, rgb(236, 239, 242)) 100%);"
-              }}
+              <h1
+                className="text-4xl md:text-6xl font-bold w-12/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient lg:text-[4rem] lg:w-8/12 lg:mb-8 "
+                style={{
+                  backgroundImage:
+                    "linear-gradient(0deg, rgb(199, 250, 137) 0%, var(--token-359d51d1-40e3-4fe7-a0b2-ff2bb63577d5, rgb(236, 239, 242)) 100%);",
+                }}
               >
                 Scale Securely in 3 Simple Steps
-              </h2>
+              </h1>
               <p className="mt-4 text-stone-100 font-sans bg-clip-text  bg-text-gradient text-md w-8/12  ">
-                We are your cybersecurity partner, to ensure your app, code and cloud security.
+                We are your cybersecurity partner, to ensure your app, code and
+                cloud security.
               </p>
-              <Button className="mt-8 bg-stone-50 text-stone-950  rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-green-600 my-12 lg:py-10 lg:px-8 lg:text-2xl lg:mt-24">
+              <Button className="mt-8 bg-stone-50 text-stone-950  rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-stone-100 my-12 lg:py-10 lg:px-8 lg:text-2xl lg:mt-24">
                 <Rocket className="w-6 h-8 lg:w-8 lg:h-auto " />
                 Book a Call
               </Button>
             </div>
-           
-
-           
           </section>
-          <BgGreen className="block w-full h-full z-0 top-0 absolute object-cover  lg:h-[70rem]"/>
-          <hr className=" border-white border-b-4  md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto lg:mt-12" />
+          <BgGreen className="block w-full h-full z-0 top-0 absolute object-cover  lg:h-[70rem]" />
         </motion.section>
-      
-        <motion.div
+        <hr className=" border-white border-b-4  md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto lg:mt-12" />
+        {/* <motion.div
           ref={trustedCompaniesAnimation.ref}
           initial={{ y: 100, opacity: 0 }}
           animate={trustedCompaniesAnimation.controls}
           transition={{ duration: 0.5 }}
           className="trusted-companies-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
-        >
-          <section className="md:py-24 py-12 flex flex-col gap-14">
+        > */}
+        <section className="md:py-24 py-12 flex flex-col gap-14 md:max-w-screen-lg lg:max-w-screen-xl px-12 mx-auto">
             <motion.div
               ref={sectionRef}
               initial={{ y: 100, opacity: 0 }}
@@ -271,9 +263,11 @@ const IndexPage = ({ data }) => {
               transition={{ duration: 0.5 }}
               className="animated-section"
             >
-            <h2 className="md:text-4xl text-3xl font-bold">
-              You’re in safe hands, some of the <span className="text-[#09DE4C]"> companies</span>  we <br className="hidden md:flex" /> have worked with.
-            </h2>
+              <h2 className="md:text-4xl text-3xl font-bold">
+                You’re in safe hands, some of the{" "}
+                <span className="text-[#09DE4C]"> companies</span> we{" "}
+                <br className="hidden md:flex" /> have worked with.
+              </h2>
             </motion.div>
             <motion.div
               ref={servicesAnimation.ref}
@@ -283,7 +277,7 @@ const IndexPage = ({ data }) => {
               className="services-section"
             >
               <div className="md:hidden">
-                <Marquee >
+                <Marquee>
                   <div className="mx-4">
                     <LogoElastic />
                   </div>
@@ -329,24 +323,24 @@ const IndexPage = ({ data }) => {
                 transition={{ duration: 0.5 }}
                 className="animated-section"
               >
-              <div className="hidden md:flex flex-col gap-14">
-                <div className="flex justify-between items-center"> 
-                    <Ripling/>
-                    <Yahoo/>
-                    <Gojek/>
-                    <Blinkit/>
-                    <Cloudanix/>
-                </div>
-                  <div className="flex items-center gap-24"> 
+                <div className="hidden md:flex flex-col gap-14">
+                  <div className="flex justify-between items-center">
+                    <Ripling />
+                    <Yahoo />
+                    <Gojek />
+                    <Blinkit />
+                    <Cloudanix />
+                  </div>
+                  <div className="flex items-center gap-24">
                     <Spacebasic />
                     {/* <Berrybox /> */}
-                    <StaticImage 
-                    src="../images/berrybox.webp" 
-                    alt="berrybox" 
-                    className="w-[15rem] h-auto" 
+                    <StaticImage
+                      src="../images/berrybox.webp"
+                      alt="berrybox"
+                      className="w-[15rem] h-auto"
                     />
-                </div>
-                {/* <div className="flex gap-8">
+                  </div>
+                  {/* <div className="flex gap-8">
                   <LogoElastic />
                   <LogoFramer />
                   <LogoPipedrive />
@@ -362,10 +356,17 @@ const IndexPage = ({ data }) => {
                   <LogoWealthsimple />
                   <LogoBraze />
                 </div> */}
-              </div>
+                </div>
               </motion.div>
             </motion.div>
 
+            <motion.div
+              ref={Vulnerabilities.ref}
+              initial={{ y: 100, opacity: 0 }}
+              animate={Vulnerabilities.controls}
+              transition={{ duration: 0.5 }}
+              className="services-section"
+            >
             <motion.div
               ref={sectionRef}
               initial={{ y: 100, opacity: 0 }}
@@ -373,35 +374,65 @@ const IndexPage = ({ data }) => {
               transition={{ duration: 0.5 }}
               className="animated-section"
             >
-              <div className=" md:pt-12   grid grid-cols-2 gap-4 md:flex md:flex-row">
-                <div className="flex md:pr-12 py-1 ">
-                  {/* <StaticImage
-                  quality={100}
-                    src="../images/numbers/1.png"
-                    className="w-full h-full"
-                    alt="recurring"
-                  /> */}
-                  <View className="overflow-visible " />
-                  {/* Vulnerabilities Found */}
+                <div className=" md:pt-12   grid grid-cols-2 gap-4 md:flex md:flex-row">
+                  <div className="flex md:pr-12 py-1 ">
+                    {/* <StaticImage
+                    quality={100}
+                      src="../images/numbers/1.png"
+                      className="w-full h-full"
+                      alt="recurring"
+                    /> */}
+                    {/* <View className="overflow-visible " /> */}
+                    <div className="flex flex-col">
+                      <h4 className="text-purple-400 font-bold text-6xl mb-2">
+                        120+
+                      </h4>
+                      <p className="text-stone-200 text-base">
+                        Vulnerabilities Found
+                      </p>
+                    </div>
+                    {/* Vulnerabilities Found */}
+                  </div>
+                  <div className="flex md:px-12 py-1 ">
+                    <div className="flex flex-col">
+                      <h4 className="text-purple-400 font-bold text-6xl mb-2">
+                        1M +
+                      </h4>
+                      <p className="text-stone-200 text-base">
+                        Vulnerabilities Found
+                      </p>
+                    </div>
+                    {/* <Follow className="overflow-visible " /> */}
+                    {/* Private Data Saved */}
+                  </div>
+                  <div className="flex md:px-12 py-1 ">
+                    <div className="flex flex-col">
+                      <h4 className="text-purple-400 font-bold text-6xl mb-2">
+                        ~ 20h
+                      </h4>
+                      <p className="text-stone-200 text-base">
+                        For First Critical Bug
+                      </p>
+                    </div>
+                    {/* <Duration className="overflow-visible " /> */}
+                    {/* For First Critical Bug */}
+                  </div>
+                  <div className="flex md:px-12 py-1 ">
+                    <div className="flex flex-col">
+                      <h4 className="text-purple-400 font-bold text-6xl mb-2">
+                        100%
+                      </h4>
+                      <p className="text-stone-200 text-base">Recurring Client</p>
+                    </div>
+                    {/* <Percentation className="overflow-visible " /> */}
+                    {/* Recurring Client */}
+                  </div>
                 </div>
-                <div className="flex md:px-12 py-1 ">
-                  <Follow className="overflow-visible " />
-                  {/* Private Data Saved */}
-                </div>
-                <div className="flex md:px-12 py-1 ">
-                  <Duration className="overflow-visible " />
-                  {/* For First Critical Bug */}
-                </div>
-                <div className="flex md:px-12 py-1 ">
-                  <Percentation className="overflow-visible " />
-                  {/* Recurring Client */}
-                </div>
-              </div>
+            </motion.div>
             </motion.div>
           </section>
-          <hr className=" border-white border-b-4" />
-        </motion.div>
- 
+
+        <hr className="border-white border-b  md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto lg:mt-12" />
         <motion.div
           ref={testimonyAnimation.ref}
           initial={{ y: 100, opacity: 0 }}
@@ -410,7 +441,7 @@ const IndexPage = ({ data }) => {
           className="services-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
         >
           <section className="bg-transparent text-gray-100 py-24 flex flex-col gap-4">
-            <h2 className="text-4xl font-extrabold w-full md:w-8/12  py-8">
+            <h2 className="text-4xl lg:text-5xl mb-4 font-extrabold w-full md:w-8/12  py-8">
               Our services for <br />
               your <span className="text-[#09DE4C]">cyber security</span>
             </h2>
@@ -420,8 +451,8 @@ const IndexPage = ({ data }) => {
                 <Shield className="w-full h-auto" />
                 <h3 className="text-2xl font-bold">Cloud Security</h3>
                 <p>
-                  We help you secure your AWS and GCP cloud while automating your
-                  cloud security using terraform.
+                  We help you secure your AWS and GCP cloud while automating
+                  your cloud security using terraform.
                 </p>
               </div>
               <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
@@ -443,10 +474,12 @@ const IndexPage = ({ data }) => {
               </div>
               <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
                 <Video className="w-full h-auto" />
-                <h3 className="text-2xl font-bold">Security Content Creation</h3>
+                <h3 className="text-2xl font-bold">
+                  Security Content Creation
+                </h3>
                 <p>
-                  We craft engaging security demos, insightful blogs, and ractical
-                  tutorials for our clients.
+                  We craft engaging security demos, insightful blogs, and
+                  ractical tutorials for our clients.
                 </p>
               </div>
             </div>
@@ -466,18 +499,21 @@ const IndexPage = ({ data }) => {
             </h3>
             <div className="flex gap-4">
               <div className="flex flex-col gap-12 py-12 ">
-               
-                <div className="flex flex-col md:flex-row gap-4">
-                  
-                  <div className="flex w-12/12 gap-4 flex-col md:flex-row  ">
-                    <Number1 className="md:w-1/12 " />
-                    <div className="w-full">
-                      <h4 className="text-[#09DE4C] text-2xl mb-4 font-extrabold">Discover</h4>
-                      <p className="md:w-1/2">
-                        Starting with the initial phase of getting to know about
-                        the project, here we set expectations and what are the
-                        tasks that needed to be done for the client.
-                      </p>
+                <div className="flex flex-col md:flex-row gap-8 ">
+                  <div className="flex w-12/12 gap-8 flex-col md:flex-row h-full  relative">
+                    {/* <Number1 className="md:w-1/12 sticky top-32 " /> */}
+                    <h4 className="text-stone-50 rounded-full p-3 py-2 w-fit h-fit sticky top-32 text-2xl bg-purple-600">01</h4>
+                    <div className="flex flex-col relative">
+                      <div className="sticky top-32">
+                        <h4 className="text-[#09DE4C]  text-2xl mb-4  font-extrabold  ">
+                          Discover
+                        </h4>
+                        <p className="md:w-1/2 ">
+                          Starting with the initial phase of getting to know about
+                          the project, here we set expectations and what are the
+                          tasks that needed to be done for the client.
+                        </p>
+                    </div>
                     </div>
                   </div>
                   <motion.div
@@ -491,16 +527,21 @@ const IndexPage = ({ data }) => {
                     </aside>
                   </motion.div>
                 </div>
-           
-                <div className="flex flex-col md:flex-row  gap-4">
-                  <div className="flex w-12/12 gap-4 md:flex-row flex-col">
-                    <Number2 className="md:w-1/12" />
-                    <div className="flex flex-col w-full ">
-                      <h4 className="text-[#09DE4C] text-2xl mb-4 font-extrabold">Start Securing</h4>
-                      <p className="md:w-1/2">
-                        We start assessing the tasks that need to be done and try
-                        to meet the ends by doing the testing/ content.
-                      </p>
+
+                <div className="flex flex-col md:flex-row  gap-4 ">
+                  <div className="flex w-12/12 gap-8 flex-col md:flex-row h-full  relative">
+                    {/* <Number2 className="md:w-1/12 sticky top-32" /> */}
+                    <h4 className="text-stone-50 rounded-full p-2 py-2 w-fit h-fit sticky top-32 text-2xl bg-purple-600">02</h4>
+                    <div className="flex flex-col relative">
+                      <div className="sticky top-32">
+                        <h4 className="text-[#09DE4C] text-2xl mb-4 font-extrabold">
+                          Start Securing
+                        </h4>
+                        <p className="md:w-1/2">
+                          We start assessing the tasks that need to be done and
+                          try to meet the ends by doing the testing/ content.
+                        </p>
+                      </div>
                     </div>
                   </div>
                   <motion.aside
@@ -513,18 +554,21 @@ const IndexPage = ({ data }) => {
                     <Log className="w-[20rem] h-auto" />
                   </motion.aside>
                 </div>
-                <div className="flex flex-col md:flex-row gap-4">
-                  <div className="flex w-12/12 gap-4 md:flex-row flex-col">
-                    <Number3 className="md:w-1/12" />
-                    <div className="flex flex-col w-full">
-                      <h4 className="text-[#09DE4C] text-2xl mb-4 font-extrabold">
-                        Report Submission
-                      </h4>
-                      <p className="md:w-1/2">
-                        After the tasks is completed we check with the clients
-                        with all the to-do’s and take a sign-off by submitting the
-                        final report.
-                      </p>
+                <div className="flex flex-col md:flex-row gap-8 sticky top-32">
+                  <div className="flex w-12/12 gap-8 flex-col md:flex-row h-full  relative">
+                    {/* <Number3 className="md:w-1/12" /> */}
+                    <h4 className="text-stone-50 rounded-full p-2 py-2 w-fit h-fit sticky top-32 text-2xl bg-purple-600">03</h4>
+                    <div className="flex flex-col relative">
+                      <div className="sticky top-32">
+                        <h4 className="text-[#09DE4C] text-2xl mb-4 font-extrabold">
+                          Report Submission
+                        </h4>
+                        <p className="md:w-1/2">
+                          After the tasks is completed we check with the clients
+                          with all the to-do’s and take a sign-off by submitting
+                          the final report.
+                        </p>
+                      </div>
                     </div>
                   </div>
                   <motion.div
@@ -532,9 +576,10 @@ const IndexPage = ({ data }) => {
                     initial={{ y: 100, opacity: 0 }}
                     animate={asideAnimation3.controls}
                     transition={{ duration: 0.5 }}
-                    
                   >
-                    <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center"><Tabel className="w-[20rem] h-auto" /></div>
+                    <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center">
+                      <Tabel className="w-[20rem] h-auto" />
+                    </div>
                   </motion.div>
                 </div>
               </div>
@@ -551,7 +596,8 @@ const IndexPage = ({ data }) => {
         >
           <section>
             <h2 className="font-bold md:text-4xl text-3xl md:leading-relaxed">
-              People love us. See what they <br className="hidden md:flex" /> have to{" "}
+              People love us. See what they <br className="hidden md:flex" />{" "}
+              have to{" "}
               <span className="text-[#09DE4C] font-bold">say about us</span>
             </h2>
             <section className="grid grid-cols-1 md:grid-cols-3 gap-8 py-24">
@@ -559,12 +605,12 @@ const IndexPage = ({ data }) => {
                 <CardHeader className="flex flex-row gap-4 ">
                   <CardTitle className="flex flex-row gap-4 text-stone-50 ">
                     <Avatar asChild className="w-10 h-10">
-                      <StaticImage
-                        src="../images/sujay.webp"
-                        alt="Sujay"
-                      />
+                      <StaticImage src="../images/sujay.webp" alt="Sujay" />
                     </Avatar>
-                    <a href="https://www.linkedin.com/in/sujaymaheshwari/" className="flex flex-col gap-1">
+                    <a
+                      href="https://www.linkedin.com/in/sujaymaheshwari/"
+                      className="flex flex-col gap-1"
+                    >
                       <h3 className="text-xl">Sujay Maheshwari</h3>
                       <p className="text-xs text-stone-400">
                         Founder Cloudanix, YC Startup
@@ -574,7 +620,16 @@ const IndexPage = ({ data }) => {
                 </CardHeader>
                 <CardContent className="text-stone-50 text-sm">
                   <p>
-                    We have always had a wonderful experience with Aseem and his team. Their professionalism and timely updates have reassured me of good work. When we had a crucial feature going live, SecureMyOrg conducted timely and thorough testing, ensuring a secure launch and providing us with nuclei templates to keep any upcoming similar features secure as well. Their efficiency and comprehensive reporting exceeded our expectations and also fortified our confidence in their services. They have been an invaluable partner in safeguarding Cloudanix.
+                    We have always had a wonderful experience with Aseem and his
+                    team. Their professionalism and timely updates have
+                    reassured me of good work. When we had a crucial feature
+                    going live, SecureMyOrg conducted timely and thorough
+                    testing, ensuring a secure launch and providing us with
+                    nuclei templates to keep any upcoming similar features
+                    secure as well. Their efficiency and comprehensive reporting
+                    exceeded our expectations and also fortified our confidence
+                    in their services. They have been an invaluable partner in
+                    safeguarding Cloudanix.
                   </p>
                 </CardContent>
               </Card>
@@ -582,12 +637,12 @@ const IndexPage = ({ data }) => {
                 <CardHeader className="flex flex-row gap-4 ">
                   <CardTitle className="flex flex-row gap-4 text-stone-50 ">
                     <Avatar asChild className="w-10 h-10">
-                      <StaticImage
-                        src="../images/Avinash.webp"
-                        alt="Avinash"
-                      />
+                      <StaticImage src="../images/Avinash.webp" alt="Avinash" />
                     </Avatar>
-                    <a href="https://www.linkedin.com/in/avinashjain619/" className="flex flex-col gap-1">
+                    <a
+                      href="https://www.linkedin.com/in/avinashjain619/"
+                      className="flex flex-col gap-1"
+                    >
                       <h3 className="text-xl">Avinash Jain</h3>
                       <p className="text-xs text-stone-400">
                         Security at Microsoft (Identity Platform)
@@ -597,7 +652,13 @@ const IndexPage = ({ data }) => {
                 </CardHeader>
                 <CardContent className="text-stone-50 text-sm">
                   <p>
-                    I have worked with Aseem in Blinkit (Grofers) and I feel very proud to get to know him, such a hard-working and all-rounder in his role. His overall presence has really a positive impact in and outside the team. He dives into unknown problems and always comes up with a solid breakthrough in not much time. He is a developer who can do security which gives him an edge over many others there.
+                    I have worked with Aseem in Blinkit (Grofers) and I feel
+                    very proud to get to know him, such a hard-working and
+                    all-rounder in his role. His overall presence has really a
+                    positive impact in and outside the team. He dives into
+                    unknown problems and always comes up with a solid
+                    breakthrough in not much time. He is a developer who can do
+                    security which gives him an edge over many others there.
                   </p>
                 </CardContent>
               </Card>
@@ -610,7 +671,10 @@ const IndexPage = ({ data }) => {
                         alt="Kenny"
                       />
                     </Avatar>
-                    <a href="https://www.linkedin.com/in/kgotama/" className="flex flex-col gap-1">
+                    <a
+                      href="https://www.linkedin.com/in/kgotama/"
+                      className="flex flex-col gap-1"
+                    >
                       <h3 className="text-xl">Kenny Gotama</h3>
                       <p className="text-xs text-stone-400">
                         Gojek Product Security
@@ -620,7 +684,12 @@ const IndexPage = ({ data }) => {
                 </CardHeader>
                 <CardContent className="text-stone-50 text-sm">
                   <p>
-                    I have worked with Aseem for a year. He has a great technical skillset combined with being an excellent problem solver which has helped a lot to solve the Security challenge in the organization. One of the great impressions that has always been shown constantly is the calmness, and creativity that is reflected in every challenge.
+                    I have worked with Aseem for a year. He has a great
+                    technical skillset combined with being an excellent problem
+                    solver which has helped a lot to solve the Security
+                    challenge in the organization. One of the great impressions
+                    that has always been shown constantly is the calmness, and
+                    creativity that is reflected in every challenge.
                   </p>
                 </CardContent>
               </Card>
@@ -628,12 +697,12 @@ const IndexPage = ({ data }) => {
                 <CardHeader className="flex flex-row gap-4 ">
                   <CardTitle className="flex flex-row gap-4 text-stone-50 ">
                     <Avatar asChild className="w-10 h-10">
-                      <StaticImage
-                        src="../images/srekar.webp"
-                        alt="Sreekar"
-                      />
+                      <StaticImage src="../images/srekar.webp" alt="Sreekar" />
                     </Avatar>
-                    <a href="https://www.linkedin.com/in/sreekaro/" className="flex flex-col gap-1">
+                    <a
+                      href="https://www.linkedin.com/in/sreekaro/"
+                      className="flex flex-col gap-1"
+                    >
                       <h3 className="text-xl">Sreekar Obulampalli</h3>
                       <p className="text-xs text-stone-400">
                         Founder @ BerryBox Benefits | InsurTech, HealthTech
@@ -643,7 +712,17 @@ const IndexPage = ({ data }) => {
                 </CardHeader>
                 <CardContent className="text-stone-50 text-sm">
                   <p>
-                    We were referred to Aseem by one of our employees who had happened to know Aseem. To begin with, Aseem helped us understand our security posture. He helped put the basics in place, gave us valuable inputs and was part of the discussions when we chose our ISMS platform in the process of getting audited for various standards and certifications. He also helped with execution of our VAPT (Vulnerability Assessment and Penetration Test) and subsequent work on risk mitigations from the findings. SecureMyOrg and Aseem have been a valuable asset for Berrybox. We achieved all this in a very short span of time in about a month.
+                    We were referred to Aseem by one of our employees who had
+                    happened to know Aseem. To begin with, Aseem helped us
+                    understand our security posture. He helped put the basics in
+                    place, gave us valuable inputs and was part of the
+                    discussions when we chose our ISMS platform in the process
+                    of getting audited for various standards and certifications.
+                    He also helped with execution of our VAPT (Vulnerability
+                    Assessment and Penetration Test) and subsequent work on risk
+                    mitigations from the findings. SecureMyOrg and Aseem have
+                    been a valuable asset for Berrybox. We achieved all this in
+                    a very short span of time in about a month.
                   </p>
                 </CardContent>
               </Card>
@@ -842,7 +921,7 @@ const IndexPage = ({ data }) => {
             </section>
           </section>
         </motion.div>
-        
+
         <motion.div
           ref={sayaboutus.ref}
           initial={{ y: 100, opacity: 0 }}
@@ -910,7 +989,6 @@ const IndexPage = ({ data }) => {
           </section>
         </motion.div>
 
-
         <motion.div
           ref={faq.ref}
           initial={{ y: 100, opacity: 0 }}
@@ -921,7 +999,8 @@ const IndexPage = ({ data }) => {
           <section
             className="flex gap-4 p-4  my-12 rounded-3xl relative"
             style={{
-              background: 'linear-gradient(180deg, rgba(35, 39, 46, 0) 0%, rgba(35, 39, 46, 0.00838519) 11.79%, rgba(35, 39, 46, 0.0324148) 21.38%, rgba(35, 39, 46, 0.0704) 29.12%, rgba(35, 39, 46, 0.120652) 35.34%, rgba(35, 39, 46, 0.181481) 40.37%, rgba(35, 39, 46, 0.2512) 44.56%, rgba(35, 39, 46, 0.328119) 48.24%, rgba(35, 39, 46, 0.410548) 51.76%, rgba(35, 39, 46, 0.4968) 55.44%, rgba(35, 39, 46, 0.585185) 59.63%, rgba(35, 39, 46, 0.674015) 64.66%, rgba(35, 39, 46, 0.7616) 70.88%, rgba(35, 39, 46, 0.846252) 78.62%, rgba(35, 39, 46, 0.926281) 88.21%, #23272E 100%)'
+              background:
+                "linear-gradient(180deg, rgba(35, 39, 46, 0) 0%, rgba(35, 39, 46, 0.00838519) 11.79%, rgba(35, 39, 46, 0.0324148) 21.38%, rgba(35, 39, 46, 0.0704) 29.12%, rgba(35, 39, 46, 0.120652) 35.34%, rgba(35, 39, 46, 0.181481) 40.37%, rgba(35, 39, 46, 0.2512) 44.56%, rgba(35, 39, 46, 0.328119) 48.24%, rgba(35, 39, 46, 0.410548) 51.76%, rgba(35, 39, 46, 0.4968) 55.44%, rgba(35, 39, 46, 0.585185) 59.63%, rgba(35, 39, 46, 0.674015) 64.66%, rgba(35, 39, 46, 0.7616) 70.88%, rgba(35, 39, 46, 0.846252) 78.62%, rgba(35, 39, 46, 0.926281) 88.21%, #23272E 100%)",
             }}
           >
             <div className="py-12 pt-24 px-8 pb-[10rem] md:pb-0">
@@ -930,17 +1009,23 @@ const IndexPage = ({ data }) => {
                 security and scaling? <br />
                 Let’s talk
               </h3>
-              <Button className="mt-8 bg-stone-50 text-stone-950 rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-green-600 my-12" asChild>
-                <a href="https://cal.com/securemyorg/firstmeet">
+              <Button
+                className="mt-8 bg-stone-50 text-stone-950 rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-stone-50 my-12"
+                asChild
+              >
+                <a href="https://cal.com/securemyorg/firstmeet" className="hover:bg-stone-50">
                   <Rocket2 className="w-6 h-8" />
                   Book a Call
-               </a>
+                </a>
               </Button>
             </div>
-            <StaticImage src="../images/objek.png" alt="object" className="md:w-[28rem] w-[15rem]  h-auto absolute -bottom-[0rem] -right-0" />
+            <StaticImage
+              src="../images/objek.png"
+              alt="object"
+              className="md:w-[28rem] w-[15rem]  h-auto absolute -bottom-[0rem] -right-0"
+            />
             {/* <Objek /> */}
           </section>
-
         </motion.div>
       </div>
     </Layout>
@@ -975,4 +1060,6 @@ export const pageQuery = graphql`
 
 export default IndexPage;
 
-export const Head = () => <title>Secure My Org - Enterprise Security in 3 Simple Steps</title>;
+export const Head = () => (
+  <title>Secure My Org - Enterprise Security in 3 Simple Steps</title>
+);

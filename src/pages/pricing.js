@@ -75,7 +75,7 @@ const PricingCard = ({ title, price, features, footnote, buttonText, link }) => 
                 </div>
             </div>
             <div className="p-4 z-10 relative">
-                <Button className="border border-[#09DE4C] bg-stone-900 justify-center w-full rounded-xl text-white py-2 px-4 hover:bg-[#09DE4C]">
+                <Button className="border border-[#09DE4C] bg-stone-900 justify-center w-full rounded-xl text-white py-2 px-4 hover:bg-stone-950">
                     {buttonText}
                 </Button>
             </div>

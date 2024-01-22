@@ -13,7 +13,7 @@ export default function BlogPost({ data }) {
     return (
       <Layout>
         <div className='relative md:max-w-screen-lg  lg:max-w-screen-xlmx-auto  container py-10  lg:py-32  max-w-7xl px-4'>
-          <h1 className='text-4xl lg:text-6xl font-bold text-gray-300 mb-6'>
+          <h1 className='text-4xl lg:text-6xl font-bold text-stone-50 mb-6'>
             {post.frontmatter.title}
           </h1>
 
@@ -37,7 +37,7 @@ export default function BlogPost({ data }) {
         
          
           <div
-            className='prose prose-lg prose-invert max-w-none'
+            className='prose prose-lg prose-invert max-w-none text-stone-50'
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </div>

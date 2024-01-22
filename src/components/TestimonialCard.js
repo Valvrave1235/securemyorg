@@ -14,7 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const TestimonialCard = ({ name, role, testimonial, children }) => {
     return (
-        <Card className="bg-[#19191B] border-[#343B46]">
+        <Card className="bg-[#19191B] border-[#343B46] rounded-xl">
             <CardHeader className="flex flex-row gap-4">
                 <CardTitle className="flex flex-row gap-4 justify-center items-center text-stone-50">
                     <Avatar asChild className="w-14 h-14">

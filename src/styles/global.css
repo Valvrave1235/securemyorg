@@ -80,6 +80,9 @@ body{
 }
 
 
+a{
+  @apply hover:text-green-500 hover:bg-transparent; 
+}
 
 
 /* Hide the SVG when the accordion is open */
