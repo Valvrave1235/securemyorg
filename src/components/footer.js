@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { Button } from "./ui/button"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
 import { Input } from "@/components/ui/input"
 import { toast } from "@/components/ui/use-toast"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -16,7 +16,7 @@ const FormSchema = z.object({
 })
 
 const Footer = () => {
-    const form = useForm < z.infer < typeof FormSchema >> ({
+    const form = useForm ({
         resolver: zodResolver(FormSchema),
         defaultValues: {
             username: "",
@@ -33,6 +33,7 @@ const Footer = () => {
             ),
         })
     }
+
 
     return (
         <footer className="bg-[#19191B] text-white p-10">
@@ -62,22 +63,17 @@ const Footer = () => {
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="flex mt-4">
                             <FormField
-                                control={form.control}
                                 name="username"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Username</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="shadcn" {...field} />
+                                            <Input placeholder="shadcn" {...field} className="rounded-l-xl bg-stone-50 text-stone-950" />
                                         </FormControl>
-                                        <FormDescription>
-                                            This is your public display name.
-                                        </FormDescription>
                                         <FormMessage />
                                     </FormItem>
                                 )}
                             />
-                            <Button type="submit" className="flex bg-green-500 hover:bg-green-600 text-white p-2 rounded-r-2xl border-2 border-green-500 hover:border-green-600">
+                            <Button type="submit" className="flex bg-[#00ab36] hover:bg-green-600 text-white p-2 rounded-r-xl border-2 border-[#00ab36] hover:border-green-600">
                                 Subscribe
                             </Button>
                         </form>

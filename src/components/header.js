@@ -1,16 +1,37 @@
 // src/components/Header.js
 
 import React, { useState, useEffect } from "react";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import { motion, useAnimation } from "framer-motion";
 
 import Arrow from "../assets/arrow_header.svg";
 import Logo from "../assets/logo_full.svg";
-import { StaticImage } from "gatsby-plugin-image";
+
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"; // Import GatsbyImage
+
 import { Menu, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from "lucide-react";
 
 const Header = () => {
+  // GraphQL query to fetch the logo image
+  const data = useStaticQuery(graphql`
+    query Logo {
+      allFile(filter: { name: { eq: "logo" } }) {
+        edges {
+          node {
+            childImageSharp {
+              gatsbyImageData(width: 600)
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  // Extracting the logo image data
+  const logoImageData = data.allFile.edges[0]?.node.childImageSharp.gatsbyImageData;
+  const logoImage = getImage(logoImageData); // Convert to Gatsby Image
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSecondMenuOpen, setIsSecondMenuOpen] = useState(false);
@@ -59,14 +80,10 @@ const Header = () => {
   return (
     <header className={`md:max-w-6xl  mx-auto ${isScrolled ? " lg:max-w-7xl " : ""
           }`}>
-      <div className={`absolute md:hidden z-50 w-full ${isMenuOpen ? "bg-stone-950" : ""} top-4 max-w-6xl  lg:max-w-7xl mx-auto px-4 py-2 flex justify-between items-center`}>
+      <div className={`absolute md:hidden z-50 w-full text-stone-50 ${isMenuOpen ? "bg-stone-950" : ""} top-4 max-w-6xl  lg:max-w-7xl mx-auto px-4 py-2 flex justify-between items-center`}>
         {/* Logo and Title */}
         <Link to="/">
-          <StaticImage
-              src="../images/logo.png"
-              alt="SecureMyOrg Logo"
-              className="w-[12rem] h-auto"
-            />
+          <GatsbyImage image={logoImage} alt="SecureMyOrg Logo" className="w-[10rem] h-auto text-stone-50" />
         </Link>
         {/* Mobile Menu Button */}
         {/* Open Menu Button */}
@@ -98,14 +115,10 @@ const Header = () => {
         animate={controls}
         className={`fixed md:hidden w-full z-50 top-4 ${isScrolled ? 'bg-stone-950' : 'bg-transparent'}`}
       >
-        <div className="max-w-6xl  lg:max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+        <div className="max-w-6xl  lg:max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
           {/* Logo and Title */}
           <Link to="/">
-            <StaticImage
-              src="../images/logo.png"
-              alt="SecureMyOrg Logo"
-              className="w-[12rem] h-auto"
-            />
+            <GatsbyImage image={logoImage} alt="SecureMyOrg Logo" className="w-[10rem] h-auto text-stone-50" />
           </Link>
           {/* Mobile Menu Button */}
           <button onClick={secondToggleMenu} className="md:hidden text-white">
@@ -135,11 +148,7 @@ const Header = () => {
       <header className="bg-transparent absolute top-0 w-full max-w-6xl mx-auto overflow-hidden py-4 pt-8 rounded-xl  md:flex items-center justify-between px-4 z-50 hidden">
         {/* Logo and Title */}
         <Link to="/" className="flex items-center opacity-100">
-          <StaticImage
-            src="../images/logo.png"
-            alt="SecureMyOrg Logo"
-            className="w-[12rem] h-auto"
-          />
+          <GatsbyImage image={logoImage} alt="SecureMyOrg Logo" className="w-[10rem] h-auto text-stone-50" />
           {/* <Logo className="h-12" /> */}
           {/* <span className="text-white font-bold ml-2">SecureMyOrg</span> */}
         </Link>
@@ -171,11 +180,7 @@ const Header = () => {
         <header className="bg-[#19191B]/90 fixed w-full max-w-6xl  lg:max-w-7xl top-4  overflow-hidden py-4 px-2 rounded-xl  md:flex items-center justify-between px-4 z-50 hidden">
           {/* Logo and Title */}
           <Link to="/" className="flex items-center opacity-100">
-            <StaticImage
-              src="../images/logo.png"
-              alt="SecureMyOrg Logo"
-              className="w-[12rem] h-auto"
-            />
+            <GatsbyImage image={logoImage} alt="SecureMyOrg Logo" className="w-[10rem] h-auto text-stone-50" />
             {/* <Logo className="h-12" /> */}
             {/* <span className="text-white font-bold ml-2">SecureMyOrg</span> */}
           </Link>
@@ -203,3 +208,5 @@ const Header = () => {
 };
 
 export default Header;
+
+

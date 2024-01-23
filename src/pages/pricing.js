@@ -88,9 +88,9 @@ const PricingCard = ({ title, price, features, footnote, buttonText, link }) => 
 const PricingPage = () => {
     return (
         <Layout >
-            <div className="container mx-auto md:max-w-screen-lg  lg:max-w-screen-xl text-white py-32 pt-52">
-                <h1 className="text-6xl font-bold text-center mb-6">Simple Transparent <span className='text-[#09DE4C]'>Pricing</span></h1>
-                <p className='mb-12 text-center'>Plans that are crafted just for you</p>
+            <div className="px-4 lg:container  mx-auto md:max-w-screen-lg  lg:max-w-screen-xl text-white py-32 pt-52">
+                <h1 className="text-5xl leading-[1.4] lg:text-6xl font-bold text-center mb-6">Simple Transparent <span className='text-[#09DE4C]'>Pricing</span></h1>
+                <p className='mb-12 text-center text-sm lg:text-base'>Plans that are crafted just for you</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
                     {/* Pricing cards */}
                     <PricingCard

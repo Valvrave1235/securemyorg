@@ -254,7 +254,7 @@ const IndexPage = ({ data }) => {
           </section>
           <BgGreen className="block w-full h-full z-0 top-0 absolute object-cover  lg:h-[70rem]" />
         </motion.section>
-        <hr className=" border-white border-b-4  md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto lg:mt-12" />
+        <hr className=" border-white border-b-8  md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto lg:mt-12" />
         {/* <motion.div
           ref={trustedCompaniesAnimation.ref}
           initial={{ y: 100, opacity: 0 }}
@@ -262,7 +262,7 @@ const IndexPage = ({ data }) => {
           transition={{ duration: 0.5 }}
           className="trusted-companies-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
         > */}
-        <section className="md:py-24 py-24 lg:py-12 flex flex-col gap-14 md:max-w-screen-lg lg:max-w-screen-xl lg:px-12 mx-auto">
+        <section className="md:py-24 py-24 lg:py-24 flex flex-col gap-14 md:max-w-screen-lg lg:max-w-screen-xl lg:px-12 mx-auto">
             <motion.div
               ref={sectionRef}
               initial={{ y: 100, opacity: 0 }}
@@ -381,8 +381,8 @@ const IndexPage = ({ data }) => {
               transition={{ duration: 0.5 }}
               className="animated-section"
             >
-                <div className=" md:pt-12   grid grid-cols-2 gap-4 md:flex md:flex-row">
-                  <div className="flex md:pr-12 py-1 ">
+                <div className=" md:pt-12   grid grid-cols-2 gap-4 md:gap-12 lg:gap-24 md:flex md:flex-row">
+                  <div className="flex  py-1 ">
                     {/* <StaticImage
                     quality={100}
                       src="../images/numbers/1.png"
@@ -400,7 +400,7 @@ const IndexPage = ({ data }) => {
                     </div>
                     {/* Vulnerabilities Found */}
                   </div>
-                  <div className="flex md:px-12 py-1 ">
+                  <div className="flex  ">
                     <div className="flex flex-col">
                       <h4 className="text-purple-500 font-bold text-5xl lg:text-6xl mb-4 lg:mb-2">
                         1M +
@@ -412,7 +412,7 @@ const IndexPage = ({ data }) => {
                     {/* <Follow className="overflow-visible " /> */}
                     {/* Private Data Saved */}
                   </div>
-                  <div className="flex md:px-12 py-1 ">
+                  <div className="flex  ">
                     <div className="flex flex-col">
                       <h4 className="text-purple-500 font-bold text-5xl lg:text-6xl mb-4 lg:mb-2">
                         ~ 20h
@@ -424,7 +424,7 @@ const IndexPage = ({ data }) => {
                     {/* <Duration className="overflow-visible " /> */}
                     {/* For First Critical Bug */}
                   </div>
-                  <div className="flex md:px-12 py-1 ">
+                  <div className="flex  ">
                     <div className="flex flex-col">
                       <h4 className="text-purple-500 font-bold text-5xl lg:text-6xl mb-4 lg:mb-2">
                         100%
@@ -439,7 +439,7 @@ const IndexPage = ({ data }) => {
             </motion.div>
           </section>
 
-        <hr className="border-white border-b-8 lg:border-b  md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto lg:mt-12" />
+        <hr className="border-white border-b-8  md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto lg:mt-12" />
         <motion.div
           ref={testimonyAnimation.ref}
           initial={{ y: 100, opacity: 0 }}
@@ -996,19 +996,19 @@ const IndexPage = ({ data }) => {
             }}
           >
             <div className="flex flex-col lg:py-12 lg:pt-24 lg:px-8 pb-24 lg:pb-[10rem] md:pb-0">
-              <h3 className="text-3xl w-full text-center lg:text-start lg:text-4xl font-bold lg:w-8/12 leading-10">
+              <h3 className="text-3xl w-full text-center lg:text-start lg:text-4xl xl:text-5xl font-bold lg:w-8/12 leading-10">
                 Have problems with 
                 security and scaling? 
               </h3>
-              <h4 className="text-3xl w-full text-center lg:text-start lg:text-4xl font-bold lg:w-5/12 leading-10">
+              <h4 className="text-3xl w-full text-center lg:text-start lg:text-4xl xl:text-5xl font-bold lg:w-5/12 leading-10">
                 Let’s talk
               </h4>
               <div className="flex w-full justify-center items-center pt-12 lg:pt-0 lg:justify-start lg:items-start">
                 <Button
-                  className="mt-8 bg-stone-50 text-stone-950 rounded-xl w-fit text-xl font-bold py-8 px-4 lg:px-4 lg:py-6 gap-2 hover:bg-stone-50 my-12 flex justify-center items-center lg:justify-start lg:items-start"
+                  className="mt-8 bg-stone-50 text-stone-950 rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-stone-50 my-12 flex justify-center items-center lg:justify-start "
                   asChild
                 >
-                  <a href="https://cal.com/securemyorg/firstmeet" className="hover:bg-stone-50">
+                  <a href="https://cal.com/securemyorg/firstmeet" >
                     <Rocket2 className="w-6 h-8" />
                     Book a Call
                   </a>

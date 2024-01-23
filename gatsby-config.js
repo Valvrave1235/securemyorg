@@ -3,7 +3,7 @@
  */
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://securemyorg.com/`,
   },
   plugins: [
     'gatsby-plugin-postcss',
@@ -32,23 +32,6 @@ module.exports = {
         icon: `src/images/logo-icon.png`,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-favicons',
-    //   options: {
-    //     logo: `./src/assets/logo.svg`,
-    //     appName: 'Secure My Org - Enterprise Security in 3 Simple Steps',
-    //     background: '#000',
-    //     icons: {
-    //       android: true,
-    //       appleIcon: true,
-    //       appleStartup: true,
-    //       coast: false,
-    //       favicons: true,
-    //       yandex: false,
-    //       windows: false
-    //     }
-    //   }
-    // },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -63,6 +46,13 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/src/blog/`, // The folder where your markdown files are located
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`, // The folder where your markdown files are located
       },
     },
     `gatsby-transformer-remark`, // This plugin transforms markdown to html
