@@ -124,6 +124,13 @@ const useScrollAnimation = () => {
   return { ref, controls };
 };
 
+const SecurityService = ({ icon, title, description }) => (
+  <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center pb-12 md:pb-0">
+    {icon && React.cloneElement(icon, { className: 'w-full h-[20rem]' })}
+    <h3 className="text-2xl font-bold leading-10">{title}</h3>
+    <p className="lg:leading-10">{description}</p>
+  </div>
+);
 
 
 const IndexPage = ({ data }) => {
@@ -224,10 +231,10 @@ const IndexPage = ({ data }) => {
             loaded={particlesLoaded}
             options={particlesConfig}
           />
-          <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] lg:pt-[18rem] text-center justify-center items-center  md:max-w-screen-lg lg:max-w-screen-xl px-12 mx-auto ">
+          <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] lg:pt-[18rem] text-center justify-center items-center  md:max-w-screen-lg lg:max-w-screen-xl lg:px-12 mx-auto ">
             <div className="z-10 relative flex flex-col justify-center items-center gap-4">
               <h1
-                className="text-4xl md:text-6xl font-bold w-12/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient lg:text-[4rem] lg:w-8/12 lg:mb-8 "
+                className="text-5xl leading-[1.4] mb-4 md:text-6xl font-bold w-12/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient lg:text-[4rem] lg:w-8/12 lg:mb-8 "
                 style={{
                   backgroundImage:
                     "linear-gradient(0deg, rgb(199, 250, 137) 0%, var(--token-359d51d1-40e3-4fe7-a0b2-ff2bb63577d5, rgb(236, 239, 242)) 100%);",
@@ -235,7 +242,7 @@ const IndexPage = ({ data }) => {
               >
                 Scale Securely in 3 Simple Steps
               </h1>
-              <p className="mt-4 text-stone-100 font-sans bg-clip-text  bg-text-gradient text-md w-8/12  ">
+              <p className="mt-4 text-xs leading-6 w-10/12 text-stone-100 font-sans bg-clip-text  bg-text-gradient text-md lg:w-8/12 ">
                 We are your cybersecurity partner, to ensure your app, code and
                 cloud security.
               </p>
@@ -255,7 +262,7 @@ const IndexPage = ({ data }) => {
           transition={{ duration: 0.5 }}
           className="trusted-companies-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
         > */}
-        <section className="md:py-24 py-12 flex flex-col gap-14 md:max-w-screen-lg lg:max-w-screen-xl px-12 mx-auto">
+        <section className="md:py-24 py-24 lg:py-12 flex flex-col gap-14 md:max-w-screen-lg lg:max-w-screen-xl lg:px-12 mx-auto">
             <motion.div
               ref={sectionRef}
               initial={{ y: 100, opacity: 0 }}
@@ -274,9 +281,9 @@ const IndexPage = ({ data }) => {
               initial={{ y: 100, opacity: 0 }}
               animate={servicesAnimation.controls}
               transition={{ duration: 0.5 }}
-              className="services-section"
+              className="services-section "
             >
-              <div className="md:hidden">
+              <div className="md:hidden py-12">
                 <Marquee>
                   <div className="mx-4">
                     <LogoElastic />
@@ -384,10 +391,10 @@ const IndexPage = ({ data }) => {
                     /> */}
                     {/* <View className="overflow-visible " /> */}
                     <div className="flex flex-col">
-                      <h4 className="text-purple-400 font-bold text-6xl mb-2">
+                      <h4 className="text-purple-500 font-bold text-5xl lg:text-6xl mb-4 lg:mb-2">
                         120+
                       </h4>
-                      <p className="text-stone-200 text-base">
+                      <p className="text-stone-200 text-ms lg:text-base ">
                         Vulnerabilities Found
                       </p>
                     </div>
@@ -395,7 +402,7 @@ const IndexPage = ({ data }) => {
                   </div>
                   <div className="flex md:px-12 py-1 ">
                     <div className="flex flex-col">
-                      <h4 className="text-purple-400 font-bold text-6xl mb-2">
+                      <h4 className="text-purple-500 font-bold text-5xl lg:text-6xl mb-4 lg:mb-2">
                         1M +
                       </h4>
                       <p className="text-stone-200 text-base">
@@ -407,7 +414,7 @@ const IndexPage = ({ data }) => {
                   </div>
                   <div className="flex md:px-12 py-1 ">
                     <div className="flex flex-col">
-                      <h4 className="text-purple-400 font-bold text-6xl mb-2">
+                      <h4 className="text-purple-500 font-bold text-5xl lg:text-6xl mb-4 lg:mb-2">
                         ~ 20h
                       </h4>
                       <p className="text-stone-200 text-base">
@@ -419,7 +426,7 @@ const IndexPage = ({ data }) => {
                   </div>
                   <div className="flex md:px-12 py-1 ">
                     <div className="flex flex-col">
-                      <h4 className="text-purple-400 font-bold text-6xl mb-2">
+                      <h4 className="text-purple-500 font-bold text-5xl lg:text-6xl mb-4 lg:mb-2">
                         100%
                       </h4>
                       <p className="text-stone-200 text-base">Recurring Client</p>
@@ -432,56 +439,41 @@ const IndexPage = ({ data }) => {
             </motion.div>
           </section>
 
-        <hr className="border-white border-b  md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto lg:mt-12" />
+        <hr className="border-white border-b-8 lg:border-b  md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto lg:mt-12" />
         <motion.div
           ref={testimonyAnimation.ref}
           initial={{ y: 100, opacity: 0 }}
           animate={testimonyAnimation.controls}
           transition={{ duration: 0.5 }}
-          className="services-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
+          className="services-section md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto"
         >
-          <section className="bg-transparent text-gray-100 py-24 flex flex-col gap-4">
-            <h2 className="text-4xl lg:text-5xl mb-4 font-extrabold w-full md:w-8/12  py-8">
+          <section className="bg-transparent text-gray-100 py-4 lg:py-24 flex flex-col gap-4">
+            <h2 className="text-3xl lg:text-5xl mb-4 font-bold lg:font-extrabold w-full md:w-8/12  py-8">
               Our services for <br />
               your <span className="text-[#09DE4C]">cyber security</span>
             </h2>
 
             <div className="grid md:grid-cols-2 grid-cols-1 gap-4 text-center">
-              <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-                <Shield className="w-full h-auto" />
-                <h3 className="text-2xl font-bold">Cloud Security</h3>
-                <p>
-                  We help you secure your AWS and GCP cloud while automating
-                  your cloud security using terraform.
-                </p>
-              </div>
-              <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-                <Key className="w-full h-auto" />
-                <h3 className="text-2xl font-bold">VAPT</h3>
-                <p>
-                  We uncover and fix security vulnerabilities of mobile and web,
-                  while providing solutions to mitigate risk.
-                </p>
-              </div>
-
-              <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-                <Contact className="w-full h-auto" />
-                <h3 className="text-2xl font-bold">Security Training</h3>
-                <p>
-                  Equip your team with the knowledge and skills to safeguard
-                  company data and applications.
-                </p>
-              </div>
-              <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center ">
-                <Video className="w-full h-auto" />
-                <h3 className="text-2xl font-bold">
-                  Security Content Creation
-                </h3>
-                <p>
-                  We craft engaging security demos, insightful blogs, and
-                  ractical tutorials for our clients.
-                </p>
-              </div>
+              <SecurityService
+                icon={<Shield />}
+                title="Cloud Security"
+                description="We help you secure your AWS and GCP cloud while automating your cloud security using terraform."
+              />
+              <SecurityService
+                icon={<Key />}
+                title="VAPT"
+                description="We uncover and fix security vulnerabilities of mobile and web, while providing solutions to mitigate risk."
+              />
+              <SecurityService
+                icon={<Contact />}
+                title="Security Training"
+                description="Equip your team with the knowledge and skills to safeguard company data and applications."
+              />
+              <SecurityService
+                icon={<Video />}
+                title="Security Content Creation"
+                description="We craft engaging security demos, insightful blogs, and practical tutorials for our clients."
+              />
             </div>
           </section>
         </motion.div>
@@ -490,7 +482,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={cybersecurity.controls}
           transition={{ duration: 0.5 }}
-          className="services-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
+          className="services-section md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto"
         >
           <section className="py-24 flex flex-col gap-4">
             <h3 className="md:text-4xl md:w-8/12 leading-10 py-12 text-3xl font-bold">
@@ -523,7 +515,7 @@ const IndexPage = ({ data }) => {
                     transition={{ duration: 0.5 }}
                   >
                     <aside className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center">
-                      <Client className="w-[20rem] h-auto" />
+                      <Client className="w-full lg:w-[20rem] h-auto" />
                     </aside>
                   </motion.div>
                 </div>
@@ -551,7 +543,7 @@ const IndexPage = ({ data }) => {
                     transition={{ duration: 0.5 }}
                     className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center"
                   >
-                    <Log className="w-[20rem] h-auto" />
+                    <Log className="w-full lg:w-[20rem] h-auto" />
                   </motion.aside>
                 </div>
                 <div className="flex flex-col md:flex-row gap-8 sticky top-32">
@@ -578,7 +570,7 @@ const IndexPage = ({ data }) => {
                     transition={{ duration: 0.5 }}
                   >
                     <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center">
-                      <Tabel className="w-[20rem] h-auto" />
+                      <Tabel className="w-full lg:w-[20rem] h-auto" />
                     </div>
                   </motion.div>
                 </div>
@@ -592,7 +584,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={process.controls}
           transition={{ duration: 0.5 }}
-          className="services-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
+          className="services-section md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto"
         >
           <section>
             <h2 className="font-bold md:text-4xl text-3xl md:leading-relaxed">
@@ -927,7 +919,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={sayaboutus.controls}
           transition={{ duration: 0.5 }}
-          className="animated-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
+          className="animated-section md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto"
         >
           <section className="py-24">
             <Carousel>
@@ -994,35 +986,39 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={faq.controls}
           transition={{ duration: 0.5 }}
-          className="animated-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
+          className="animated-section md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto"
         >
           <section
-            className="flex gap-4 p-4  my-12 rounded-3xl relative"
+            className="flex gap-4 p-2  my-12 rounded-3xl relative"
             style={{
               background:
                 "linear-gradient(180deg, rgba(35, 39, 46, 0) 0%, rgba(35, 39, 46, 0.00838519) 11.79%, rgba(35, 39, 46, 0.0324148) 21.38%, rgba(35, 39, 46, 0.0704) 29.12%, rgba(35, 39, 46, 0.120652) 35.34%, rgba(35, 39, 46, 0.181481) 40.37%, rgba(35, 39, 46, 0.2512) 44.56%, rgba(35, 39, 46, 0.328119) 48.24%, rgba(35, 39, 46, 0.410548) 51.76%, rgba(35, 39, 46, 0.4968) 55.44%, rgba(35, 39, 46, 0.585185) 59.63%, rgba(35, 39, 46, 0.674015) 64.66%, rgba(35, 39, 46, 0.7616) 70.88%, rgba(35, 39, 46, 0.846252) 78.62%, rgba(35, 39, 46, 0.926281) 88.21%, #23272E 100%)",
             }}
           >
-            <div className="py-12 pt-24 px-8 pb-[10rem] md:pb-0">
-              <h3 className="text-4xl font-bold">
-                Have problems with <br />
-                security and scaling? <br />
-                Let’s talk
+            <div className="flex flex-col lg:py-12 lg:pt-24 lg:px-8 pb-24 lg:pb-[10rem] md:pb-0">
+              <h3 className="text-3xl w-full text-center lg:text-start lg:text-4xl font-bold lg:w-8/12 leading-10">
+                Have problems with 
+                security and scaling? 
               </h3>
-              <Button
-                className="mt-8 bg-stone-50 text-stone-950 rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-stone-50 my-12"
-                asChild
-              >
-                <a href="https://cal.com/securemyorg/firstmeet" className="hover:bg-stone-50">
-                  <Rocket2 className="w-6 h-8" />
-                  Book a Call
-                </a>
-              </Button>
+              <h4 className="text-3xl w-full text-center lg:text-start lg:text-4xl font-bold lg:w-5/12 leading-10">
+                Let’s talk
+              </h4>
+              <div className="flex w-full justify-center items-center pt-12 lg:pt-0 lg:justify-start lg:items-start">
+                <Button
+                  className="mt-8 bg-stone-50 text-stone-950 rounded-xl w-fit text-xl font-bold py-8 px-4 lg:px-4 lg:py-6 gap-2 hover:bg-stone-50 my-12 flex justify-center items-center lg:justify-start lg:items-start"
+                  asChild
+                >
+                  <a href="https://cal.com/securemyorg/firstmeet" className="hover:bg-stone-50">
+                    <Rocket2 className="w-6 h-8" />
+                    Book a Call
+                  </a>
+                </Button>
+              </div>
             </div>
             <StaticImage
               src="../images/objek.png"
               alt="object"
-              className="md:w-[28rem] w-[15rem]  h-auto absolute -bottom-[0rem] -right-0"
+              className="md:w-[28rem] w-[15rem] hidden md:block  h-auto absolute -bottom-[0rem] -right-0"
             />
             {/* <Objek /> */}
           </section>
