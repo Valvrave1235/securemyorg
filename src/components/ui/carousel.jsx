@@ -113,22 +113,71 @@ const Carousel = React.forwardRef((
 Carousel.displayName = "Carousel"
 
 const CarouselContent = React.forwardRef(({ className, ...props }, ref) => {
-  const { carouselRef, orientation } = useCarousel()
+  const { carouselRef, orientation, canScrollPrev, canScrollNext } = useCarousel();
 
+  console.log(canScrollPrev, "canScrollPrev")
+  console.log(canScrollNext, "canScrollNext")
   return (
-    (<div ref={carouselRef} className="overflow-hidden">
-      <div
-        ref={ref}
-        className={cn(
-          "flex",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
-          className
-        )}
-        {...props} />
-    </div>)
+   <div className="relative">
+      {/* Gradient overlay on the left (for horizontal orientation) or top (for vertical orientation) */}
+      {orientation === "horizontal" && canScrollPrev && (
+        <div
+          className="absolute left-0 top-0 bottom-0 w-4 lg:w-24 g-gradient-to-r from-cyan-500 to-blue-500 z-10"
+          style={{
+            backgroundImage: "linear-gradient(270deg, rgba(2,0,36,0) 0%, rgba(0,0,0,1) 100%)",
+          }}
+        />
+      )}
+      {orientation === "vertical" && canScrollPrev && (
+        <div
+          className="absolute left-0 top-0 h-4 g-gradient-to-r from-cyan-500 to-blue-500 z-10"
+          style={{
+            backgroundImage: "linear-gradient(270deg, rgba(2,0,36,0) 0%, rgba(0,0,0,1) 100%)",
+          }}
+        />
+      )}
+      <div ref={carouselRef} className="overflow-hidden relative">
+        
+  
+        <div
+          ref={ref}
+          className={cn(
+            "flex",
+            orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
+            "relative", // Add relative positioning
+            className
+          )}
+          {...props}
+        >
+         
+          {/* Carousel items */}
+          {props.children}
+  
+          
+        </div>
+        
+      </div>
+      {/* Gradient overlay on the right (for horizontal orientation) or bottom (for vertical orientation) */}
+      {orientation === "horizontal" && canScrollNext && (
+        <div
+          className="absolute -right-8 top-0 bottom-0 bg-gradient-to-l from-transparent to-[white] z-10 w-4 lg:w-24"
+          style={{
+            backgroundImage: "linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(0,0,0,1) 100%)",
+          }}
+        />
+      )}
+      {orientation === "vertical" && canScrollNext && (
+        <div
+          className="absolute bottom-0 right-0 h-4 bg-gradient-to-t from-transparent to-[white] z-10"
+          style={{
+            backgroundImage: "linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(0,0,0,1) 100%)",
+          }}
+        />
+      )}
+   </div>
   );
-})
-CarouselContent.displayName = "CarouselContent"
+});
+
 
 const CarouselItem = React.forwardRef(({ className, ...props }, ref) => {
   const { orientation } = useCarousel()

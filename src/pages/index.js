@@ -213,14 +213,24 @@ const IndexPage = ({ data }) => {
   const particlesLoaded = useCallback(async (container) => {
     await console.log(container);
   }, []);
+
+  const bgGreenNew = getImage(data.bgGreen.edges[0].node.childImageSharp.gatsbyImageData)
+  const bgPhone = getImage(data.bgPhone.edges[0].node.childImageSharp.gatsbyImageData)
+
+  const securityImages = {
+    vap: getImage(data.vap.edges[0].node.childImageSharp.gatsbyImageData),
+    shield: getImage(data.shield.edges[0].node.childImageSharp.gatsbyImageData),
+    securityContent: getImage(data.securityContent.edges[0].node.childImageSharp.gatsbyImageData),
+    security: getImage(data.security.edges[0].node.childImageSharp.gatsbyImageData),
+  };
   return (
     <Layout>
-      <div className="px-4">
+      <div className="lg:px-4">
         <motion.section
           initial={{ y: 100, opacity: 0 }} // Start from below
           animate={heroControls}
           transition={{ duration: 0.5, delay: 0.2 }} // Delayed start for visibility
-          className="hero-section relative  particles-container"
+          className="hero-section relative  particles-container "
           // style={{ backgroundImage: 'url(/bg-green.png)' }}
         >
           {/* Particles component added here */}
@@ -234,7 +244,7 @@ const IndexPage = ({ data }) => {
           <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem] lg:pt-[18rem] text-center justify-center items-center  md:max-w-screen-lg lg:max-w-screen-xl lg:px-12 mx-auto ">
             <div className="z-10 relative flex flex-col justify-center items-center gap-4">
               <h1
-                className="text-5xl leading-[1.4] mb-4 md:text-6xl font-bold w-12/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient lg:text-[4rem] lg:w-8/12 lg:mb-8 "
+                className="text-5xl px-4 md:px-0 leading-[1.4] mb-4 md:text-6xl font-bold w-12/12 md:leading-tight text-transparent bg-clip-text bg-text-gradient lg:text-[4rem] lg:w-8/12 lg:mb-8 "
                 style={{
                   backgroundImage:
                     "linear-gradient(0deg, rgb(199, 250, 137) 0%, var(--token-359d51d1-40e3-4fe7-a0b2-ff2bb63577d5, rgb(236, 239, 242)) 100%);",
@@ -252,7 +262,20 @@ const IndexPage = ({ data }) => {
               </Button>
             </div>
           </section>
-          <BgGreen className="block w-full h-full z-0 top-0 absolute object-cover  lg:h-[70rem]" />
+          {/* <BgGreen className="block w-full h-full z-0 top-0 absolute object-cover  lg:h-[70rem]" /> */}
+
+          <GatsbyImage image={bgGreenNew} alt="bg green new" className="hidden md:block w-full h-full z-0 -top-[20rem] absolute object-contain" 
+          style={{
+            position:"absolute"
+          }}
+          
+          />
+          <GatsbyImage image={bgPhone} alt="bg green new" className="block md:hidden w-full h-full z-0 -top-[0rem] absolute object-contain " 
+          style={{
+            position:"absolute"
+          }}
+          
+          />
         </motion.section>
         <hr className=" border-white border-b-8  md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto lg:mt-12" />
         {/* <motion.div
@@ -262,7 +285,7 @@ const IndexPage = ({ data }) => {
           transition={{ duration: 0.5 }}
           className="trusted-companies-section md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto"
         > */}
-        <section className="md:py-24 py-24 lg:py-24 flex flex-col gap-14 md:max-w-screen-lg lg:max-w-screen-xl lg:px-12 mx-auto">
+        <section className="md:py-24 py-24 lg:py-24 flex flex-col gap-14 md:max-w-screen-lg lg:max-w-screen-xl lg:px-12 mx-auto px-4 ">
             <motion.div
               ref={sectionRef}
               initial={{ y: 100, opacity: 0 }}
@@ -406,7 +429,7 @@ const IndexPage = ({ data }) => {
                         1M +
                       </h4>
                       <p className="text-stone-200 text-base">
-                        Vulnerabilities Found
+                      Private Data Saved
                       </p>
                     </div>
                     {/* <Follow className="overflow-visible " /> */}
@@ -445,7 +468,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={testimonyAnimation.controls}
           transition={{ duration: 0.5 }}
-          className="services-section md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto"
+          className="services-section md:max-w-screen-lg lg:max-w-screen-xl px-4 lg:px-12   mx-auto"
         >
           <section className="bg-transparent text-gray-100 py-4 lg:py-24 flex flex-col gap-4">
             <h2 className="text-3xl lg:text-5xl mb-4 font-bold lg:font-extrabold w-full md:w-8/12  py-8">
@@ -454,6 +477,28 @@ const IndexPage = ({ data }) => {
             </h2>
 
             <div className="grid md:grid-cols-2 grid-cols-1 gap-4 text-center">
+              <SecurityService
+                icon={<GatsbyImage image={securityImages.shield} alt="Shield" />}
+                title="Cloud Security"
+                description="We help you secure your AWS and GCP cloud while automating your cloud security using terraform."
+              />
+              <SecurityService
+                icon={<GatsbyImage image={securityImages.vap} alt="VAPT" />}
+                title="VAPT"
+                description="We uncover and fix security vulnerabilities of mobile and web, while providing solutions to mitigate risk."
+              />
+              <SecurityService
+                icon={<GatsbyImage image={securityImages.security} alt="Security Training" />}
+                title="Security Training"
+                description="Equip your team with the knowledge and skills to safeguard company data and applications."
+              />
+              <SecurityService
+                icon={<GatsbyImage image={securityImages.securityContent} alt="Security Content Creation" />}
+                title="Security Content Creation"
+                description="We craft engaging security demos, insightful blogs, and practical tutorials for our clients."
+              />
+            </div>
+            {/* <div className="grid md:grid-cols-2 grid-cols-1 gap-4 text-center">
               <SecurityService
                 icon={<Shield />}
                 title="Cloud Security"
@@ -474,7 +519,7 @@ const IndexPage = ({ data }) => {
                 title="Security Content Creation"
                 description="We craft engaging security demos, insightful blogs, and practical tutorials for our clients."
               />
-            </div>
+            </div> */}
           </section>
         </motion.div>
         <motion.div
@@ -482,7 +527,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={cybersecurity.controls}
           transition={{ duration: 0.5 }}
-          className="services-section md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto"
+          className="services-section md:max-w-screen-lg lg:max-w-screen-xl px-4 lg:px-12   mx-auto"
         >
           <section className="py-24 flex flex-col gap-4">
             <h3 className="md:text-4xl md:w-8/12 leading-10 py-12 text-3xl font-bold">
@@ -584,7 +629,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={process.controls}
           transition={{ duration: 0.5 }}
-          className="services-section md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto"
+          className="services-section md:max-w-screen-lg lg:max-w-screen-xl px-4 lg:px-12   mx-auto"
         >
           <section>
             <h2 className="font-bold md:text-4xl text-3xl md:leading-relaxed">
@@ -611,7 +656,7 @@ const IndexPage = ({ data }) => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-stone-50 text-sm">
-                  <p>
+                  <p className="leading-6">
                     We have always had a wonderful experience with Aseem and his
                     team. Their professionalism and timely updates have
                     reassured me of good work. When we had a crucial feature
@@ -643,7 +688,7 @@ const IndexPage = ({ data }) => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-stone-50 text-sm">
-                  <p>
+                  <p className="leading-6">
                     I have worked with Aseem in Blinkit (Grofers) and I feel
                     very proud to get to know him, such a hard-working and
                     all-rounder in his role. His overall presence has really a
@@ -675,7 +720,7 @@ const IndexPage = ({ data }) => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-stone-50 text-sm">
-                  <p>
+                  <p className="leading-6">
                     I have worked with Aseem for a year. He has a great
                     technical skillset combined with being an excellent problem
                     solver which has helped a lot to solve the Security
@@ -703,7 +748,7 @@ const IndexPage = ({ data }) => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-stone-50 text-sm">
-                  <p>
+                  <p className="leading-6">
                     We were referred to Aseem by one of our employees who had
                     happened to know Aseem. To begin with, Aseem helped us
                     understand our security posture. He helped put the basics in
@@ -919,7 +964,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={sayaboutus.controls}
           transition={{ duration: 0.5 }}
-          className="animated-section md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto"
+          className="animated-section md:max-w-screen-lg lg:max-w-screen-xl w-full px-4 lg:px-12   mx-auto"
         >
           <section className="py-24">
             <Carousel>
@@ -938,45 +983,47 @@ const IndexPage = ({ data }) => {
                   <CarouselNext />
                 </div>
               </div>
-              <CarouselContent className="items-center ">
-                {posts.map(({ node }) => (
-                  <CarouselItem
-                    className="md:basis-1/3 text-sm rounded-xl  bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center mx-3 h-fit p-0 rounded-t-lg my-12"
-                    key={node.fields.slug}
-                  >
-                    <Link
-                      to={node.fields.slug}
-                      className="flex flex-col gap-4 rounded-t-xl"
+<div className="w-11/12 md:w-full">
+                <CarouselContent className="items-center ">
+                  {posts.map(({ node }) => (
+                    <CarouselItem
+                      className="md:basis-1/3 text-sm rounded-xl  bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center mx-3 h-fit p-0 rounded-t-lg my-12"
+                      key={node.fields.slug}
                     >
-                      <GatsbyImage
-                        image={getImage(node.frontmatter.thumbnail)}
-                        alt={node.frontmatter.title}
-                        className="h-1/2 object-cover rounded-t-xl w-full"
-                      />
-                      <div className="px-8 pr-8 py-4 pb-8 flex flex-col gap-4">
-                        <p className="text-[#FBCE00]">
-                          {node.frontmatter.category}
-                        </p>
-                        <h3 className="font-bold text-base">
-                          {node.frontmatter.title}
-                        </h3>
-                        <p className="line-clamp-3 text-gray-200">
-                          {node.frontmatter.description || node.excerpt}
-                        </p>
-                        <div className="flex gap-4 justify-between w-full pt-6 font-semibold">
-                          <p>{formatDate(node.frontmatter.date)}</p>
-                          <Link
-                            to={node.fields.slug}
-                            className="text-[#09DE4C] justify-center items-center flex gap-2 font-semibold"
-                          >
-                            Read More <Arrow className="w-3 h-auto mt-1" />
-                          </Link>
+                      <Link
+                        to={node.fields.slug}
+                        className="flex flex-col gap-4 rounded-t-xl"
+                      >
+                        <GatsbyImage
+                          image={getImage(node.frontmatter.thumbnail)}
+                          alt={node.frontmatter.title}
+                          className="h-1/2 object-cover rounded-t-xl w-full"
+                        />
+                        <div className="px-8 pr-8 py-4 pb-8 flex flex-col gap-4">
+                          <p className="text-[#FBCE00]">
+                            {node.frontmatter.category}
+                          </p>
+                          <h3 className="font-bold text-base">
+                            {node.frontmatter.title}
+                          </h3>
+                          <p className="line-clamp-3 text-gray-200">
+                            {node.frontmatter.description || node.excerpt}
+                          </p>
+                          <div className="flex gap-4 justify-between w-full pt-6 font-semibold">
+                            <p>{formatDate(node.frontmatter.date)}</p>
+                            <Link
+                              to={node.fields.slug}
+                              className="text-[#09DE4C] justify-center items-center flex gap-2 font-semibold"
+                            >
+                              Read More <Arrow className="w-3 h-auto mt-1" />
+                            </Link>
+                          </div>
                         </div>
-                      </div>
-                    </Link>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
+                      </Link>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+</div>
             </Carousel>
           </section>
         </motion.div>
@@ -986,7 +1033,7 @@ const IndexPage = ({ data }) => {
           initial={{ y: 100, opacity: 0 }}
           animate={faq.controls}
           transition={{ duration: 0.5 }}
-          className="animated-section md:max-w-screen-lg lg:max-w-screen-xl lg:px-12   mx-auto"
+          className="animated-section md:max-w-screen-lg lg:max-w-screen-xl px-4 lg:px-12   mx-auto"
         >
           <section
             className="flex gap-4 p-2  my-12 rounded-3xl relative"
@@ -996,14 +1043,14 @@ const IndexPage = ({ data }) => {
             }}
           >
             <div className="flex flex-col lg:py-12 lg:pt-24 lg:px-8 pb-24 lg:pb-[10rem] md:pb-0">
-              <h3 className="text-3xl w-full text-center lg:text-start lg:text-4xl xl:text-5xl font-bold lg:w-8/12 leading-10">
+              <h3 className="text-3xl w-full text-center md:text-start lg:text-4xl xl:text-5xl font-bold md:w-8/12 leading-10">
                 Have problems with 
                 security and scaling? 
               </h3>
-              <h4 className="text-3xl w-full text-center lg:text-start lg:text-4xl xl:text-5xl font-bold lg:w-5/12 leading-10">
+              <h4 className="text-3xl w-full text-center md:text-start lg:text-4xl xl:text-5xl font-bold md:w-5/12 leading-10">
                 Let’s talk
               </h4>
-              <div className="flex w-full justify-center items-center pt-12 lg:pt-0 lg:justify-start lg:items-start">
+              <div className="flex w-full justify-center items-center pt-12 lg:pt-0 md:justify-start md:items-start">
                 <Button
                   className="mt-8 bg-stone-50 text-stone-950 rounded-xl w-fit text-xl font-bold px-4 py-6 gap-2 hover:bg-stone-50 my-12 flex justify-center items-center lg:justify-start "
                   asChild
@@ -1051,6 +1098,61 @@ export const pageQuery = graphql`
         }
       }
     }
+     vap: allFile(filter: {name: {eq: "vap"}}) {
+    edges {
+      node {
+        childImageSharp {
+          gatsbyImageData(width: 600)
+        }
+      }
+    }
+  }
+    shield: allFile(filter: {name: {eq: "shield"}}) {
+    edges {
+      node {
+        childImageSharp {
+          gatsbyImageData(width: 600)
+        }
+      }
+    }
+  }
+  securityContent: allFile(filter: {name: {eq: "security-content"}}) {
+    edges {
+      node {
+        childImageSharp {
+          gatsbyImageData(width: 600)
+        }
+      }
+    }
+  }
+    security: allFile(filter: {name: {eq: "security"}}) {
+    edges {
+      node {
+        childImageSharp {
+          gatsbyImageData(width: 600)
+        }
+      }
+    }
+  }
+
+  bgGreen: allFile(filter: {name: {eq: "bg-green-new"}}) {
+    edges {
+      node {
+        childImageSharp {
+          gatsbyImageData(width: 600)
+        }
+      }
+    }
+  }
+   bgPhone: allFile(filter: {name: {eq: "bg-phone"}}) {
+    edges {
+      node {
+        childImageSharp {
+          gatsbyImageData(width: 600)
+        }
+      }
+    }
+  }
   }
 `;
 
