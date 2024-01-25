@@ -27,6 +27,7 @@ import Rocket from "../assets/rocket.svg";
 import LogoElastic from "../assets/logo_elastic.svg";
 import LogoFramer from "../assets/logo_framer.svg";
 import LogoPipedrive from "../assets/logo_pipedrive.svg";
+import LastShields from "../assets/LastShields.svg";
 import LogoGitlab from "../assets/logo_gitlab.svg";
 import LogoMonday from "../assets/logo_monday.svg";
 import LogoBooking from "../assets/logo_booking.svg";
@@ -1036,7 +1037,7 @@ const IndexPage = ({ data }) => {
           className="animated-section md:max-w-screen-lg lg:max-w-screen-xl px-4 lg:px-12   mx-auto"
         >
           <section
-            className="flex gap-4 p-2  my-12 rounded-3xl relative"
+            className="flex gap-4 p-2  my-12 rounded-3xl relative overflow-hidden"
             style={{
               background:
                 "linear-gradient(180deg, rgba(35, 39, 46, 0) 0%, rgba(35, 39, 46, 0.00838519) 11.79%, rgba(35, 39, 46, 0.0324148) 21.38%, rgba(35, 39, 46, 0.0704) 29.12%, rgba(35, 39, 46, 0.120652) 35.34%, rgba(35, 39, 46, 0.181481) 40.37%, rgba(35, 39, 46, 0.2512) 44.56%, rgba(35, 39, 46, 0.328119) 48.24%, rgba(35, 39, 46, 0.410548) 51.76%, rgba(35, 39, 46, 0.4968) 55.44%, rgba(35, 39, 46, 0.585185) 59.63%, rgba(35, 39, 46, 0.674015) 64.66%, rgba(35, 39, 46, 0.7616) 70.88%, rgba(35, 39, 46, 0.846252) 78.62%, rgba(35, 39, 46, 0.926281) 88.21%, #23272E 100%)",
@@ -1062,11 +1063,14 @@ const IndexPage = ({ data }) => {
                 </Button>
               </div>
             </div>
-            <StaticImage
+            <div className="">
+              <LastShields className="hidden md:block lg:w-[45rem] h-auto absolute lg:-bottom-[9rem] -right-[8rem] " />
+            </div>
+            {/* <StaticImage
               src="../images/objek.png"
               alt="object"
               className="md:w-[28rem] w-[15rem] hidden md:block  h-auto absolute -bottom-[0rem] -right-0"
-            />
+            /> */}
             {/* <Objek /> */}
           </section>
         </motion.div>

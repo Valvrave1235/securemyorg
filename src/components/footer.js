@@ -67,7 +67,7 @@ const Footer = () => {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormControl>
-                                            <Input placeholder="shadcn" {...field} className="rounded-l-xl bg-stone-50 text-stone-950" />
+                                            <Input placeholder="name@email.com" {...field} className="rounded-l-xl bg-stone-50 placeholder:text-stone-400 text-stone-950" />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
