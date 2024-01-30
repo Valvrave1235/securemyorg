@@ -265,13 +265,13 @@ const IndexPage = ({ data }) => {
           </section>
           {/* <BgGreen className="block w-full h-full z-0 top-0 absolute object-cover  lg:h-[70rem]" /> */}
 
-          <GatsbyImage image={bgGreenNew} alt="bg green new" className="hidden md:block w-full h-full z-0 -top-[20rem] absolute object-contain" 
+          <GatsbyImage image={bgGreenNew} alt="bg green new mobile" className="hidden lg:block w-full h-full z-0 -top-[20rem] absolute object-contain" 
           style={{
             position:"absolute"
           }}
           
           />
-          <GatsbyImage image={bgPhone} alt="bg green new" className="block md:hidden w-full h-full z-0 -top-[0rem] absolute object-contain " 
+          <GatsbyImage image={bgPhone} alt="bg green new" className="block lg:hidden w-full h-full z-0 -top-[0rem] absolute object-contain " 
           style={{
             position:"absolute"
           }}
