@@ -9,7 +9,7 @@ import Layout from '../components/layout';
 const Privacy = () => {
     return (
         <Layout>
-            <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem]  md:max-w-screen-lg  lg:max-w-screen-xlmx-auto  ">
+            <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem]  md:max-w-screen-lg  lg:max-w-6xl mx-auto ">
                 <h1 className="text-7xl mb-3 px-4 py-2 font-bold">Privacy Policy</h1>
 
                 <article className="text-xl px-4 py-2 prose-invert prose-h2:text-4xl prose-p:mb-4 prose-headings:font-bold prose-headings:my-12 font-sans prose-headings:font-sans  prose-ul:list-disc prose-ul:pl-6 prose-ul:py-4">

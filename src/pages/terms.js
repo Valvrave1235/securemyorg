@@ -13,7 +13,7 @@ const Terms = () => {
 
     return (
         <Layout>
-            <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem]  md:max-w-screen-lg  lg:max-w-screen-xlmx-auto  ">
+            <section className="flex flex-col gap-4 relative py-40 md:pt-[15rem]  md:max-w-screen-lg  lg:max-w-6xl mx-auto ">
                 {/* Particles component added here */}
                 {/* <Particles
                     id="tsparticles"
