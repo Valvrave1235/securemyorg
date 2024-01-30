@@ -9,6 +9,7 @@ import Particles from "react-particles";
 import particlesConfig from "../../particlesConfig.json"; // Ensure this path is correct
 
 import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
+import { useMediaQuery } from 'react-responsive';
 
 import { graphql } from "gatsby";
 import { Button } from "@/components/ui/button";
@@ -126,6 +127,7 @@ const useScrollAnimation = () => {
 };
 
 const SecurityService = ({ icon, title, description }) => (
+
   <div className="rounded-xl p-8 bg-[#19191B] border-[#343B46] flex flex-col gap-4 justify-center items-center pb-12 md:pb-0">
     {icon && React.cloneElement(icon, { className: 'w-full h-[20rem]' })}
     <h3 className="text-2xl font-bold leading-10">{title}</h3>
@@ -135,6 +137,9 @@ const SecurityService = ({ icon, title, description }) => (
 
 
 const IndexPage = ({ data }) => {
+  const isLargeScreen = useMediaQuery({ minWidth: 1024 });
+  const isSmallScreen = useMediaQuery({ maxWidth: 1023 }); // One pixel less than the 'lg' breakpoint
+
   const posts = data.allMarkdownRemark.edges;
   const [isScrolled, setIsScrolled] = useState(false);
   const controls = useAnimation();
@@ -265,18 +270,25 @@ const IndexPage = ({ data }) => {
           </section>
           {/* <BgGreen className="block w-full h-full z-0 top-0 absolute object-cover  lg:h-[70rem]" /> */}
 
-          <GatsbyImage image={bgGreenNew} alt="bg green new mobile" className="hidden lg:block w-full h-full z-0 -top-[20rem] absolute object-contain" 
-          style={{
-            position:"absolute"
-          }}
+
+          {isLargeScreen && (
+            <GatsbyImage image={bgGreenNew} alt="bg green new mobile" className="hidden lg:block w-full h-full z-0 -top-[20rem] absolute object-contain"
+              style={{
+                position: "absolute"
+              }}
+            />
+          )}
+          {isSmallScreen && (
+            <GatsbyImage image={bgPhone} alt="bg green new" className="block lg:hidden w-full h-full z-0 -top-[0rem] absolute object-contain "
+              style={{
+                position: "absolute"
+              }}
+
+            />
+          )}
           
-          />
-          <GatsbyImage image={bgPhone} alt="bg green new" className="block lg:hidden w-full h-full z-0 -top-[0rem] absolute object-contain " 
-          style={{
-            position:"absolute"
-          }}
-          
-          />
+
+         
         </motion.section>
         <hr className=" border-white border-b-8  md:max-w-screen-lg lg:max-w-screen-xl px-12   mx-auto lg:mt-12" />
         {/* <motion.div
