@@ -272,16 +272,23 @@ const IndexPage = ({ data }) => {
 
 
           {isLargeScreen && (
-            <GatsbyImage image={bgGreenNew} alt="bg green new mobile" className="hidden lg:block w-full h-full z-0 -top-[20rem] absolute object-contain"
+            <GatsbyImage image={bgGreenNew} alt="bg green new " className="hidden lg:block w-full h-full z-0 
+            -top-[20rem] absolute object-contain"
+              objectFit="contain"
               style={{
-                position: "absolute"
+                position: "absolute",
+                objectFit: 'contain'
               }}
             />
           )}
           {isSmallScreen && (
-            <GatsbyImage image={bgPhone} alt="bg green new" className="block lg:hidden w-full h-full z-0 -top-[0rem] absolute object-contain "
+            <GatsbyImage image={bgPhone} alt="bg green new mobile" 
+              className="block lg:hidden w-full h-full z-0 -top-[10rem] absolute object-cover "
+              imgStyle={{ objectFit: 'cover' }}
+              objectFit="cover"
               style={{
-                position: "absolute"
+                position: "absolute",
+                objectFit: 'cover'
               }}
 
             />
